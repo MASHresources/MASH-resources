@@ -4,7 +4,6 @@ If you are completely new to R, you are in the right place.
 
 Learning R can feel intimidating at first. Unlike software such as Excel and SPSS, R asks you to **type instructions** to tell the computer what you want it to do rather than clicking icons and menus.
 
-That can feel strange at first.
 
 The good news is that you do **not** need to be a programmer to learn R. You just need to learn a few basic ideas, practise them, and gradually build up your understanding.
 
