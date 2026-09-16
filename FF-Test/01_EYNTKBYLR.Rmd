@@ -93,6 +93,7 @@ Packages are collections of additional functions, data and other resources that 
 
 R is powerful, but there are some things that can make it difficult to use when you first start. The main thing being that you have to interact with it as a programming language.
 
+
 If you are used to software where you select options from menus, R may initially feel unfamiliar and there will be quite a lot to learn.
 
 Before being proficient in R, you will need to learn:
@@ -103,7 +104,7 @@ Before being proficient in R, you will need to learn:
 -   How to structure your code
 -   How to find and fix errors
 
-This can feel daunting at first but is \*\* completely normal.\*\*
+This can feel daunting at first but is **completely normal**.
 
 The first few sessions of learning R are often the hardest because you are learning a new way of communicating with a computer.
 
