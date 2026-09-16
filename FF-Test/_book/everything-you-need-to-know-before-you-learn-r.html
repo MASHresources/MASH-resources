@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 2 Everything you need to know before you learn R | First Steps in R</title>
+<meta name="author" content="MASH">
+<meta name="description" content="If you are completely new to R, you are in the right place. Learning R can feel intimidating at first. Unlike software such as Excel and SPSS, R asks you to type instructions to tell the computer...">
+<meta name="generator" content="bookdown 0.48 with bs4_book()">
+<meta property="og:title" content="Chapter 2 Everything you need to know before you learn R | First Steps in R">
+<meta property="og:type" content="book">
+<meta property="og:description" content="If you are completely new to R, you are in the right place. Learning R can feel intimidating at first. Unlike software such as Excel and SPSS, R asks you to type instructions to tell the computer...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 2 Everything you need to know before you learn R | First Steps in R">
+<meta name="twitter:description" content="If you are completely new to R, you are in the right place. Learning R can feel intimidating at first. Unlike software such as Excel and SPSS, R asks you to type instructions to tell the computer...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.10.0/transition.js"></script><script src="libs/bs3compat-0.10.0/tabs.js"></script><script src="libs/bs3compat-0.10.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">First Steps in R</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled"><li><a class="" href="index.html"><span class="header-section-number">Chapter 2</span> Everything you need to know before you learn R</a></li></ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="everything-you-need-to-know-before-you-learn-r" class="section level1" number="2">
+<h1>
+<span class="header-section-number">2</span> Everything you need to know before you learn R<a class="anchor" aria-label="anchor" href="#everything-you-need-to-know-before-you-learn-r"><i class="fas fa-link"></i></a>
+</h1>
+<p>If you are completely new to R, you are in the right place.</p>
+<p>Learning R can feel intimidating at first. Unlike software such as Excel and SPSS, R asks you to <strong>type instructions</strong> to tell the computer what you want it to do rather than clicking icons and menus.</p>
+<p>That can feel strange at first.</p>
+<p>The good news is that you do <strong>not</strong> need to be a programmer to learn R. You just need to learn a few basic ideas, practise them, and gradually build up your understanding.</p>
+<p>This document is not intended to teach you R - rather, it should help you get started and highlight the key concepts to know before you try to learn R.</p>
+<p>By the end, you should understand:</p>
+<ul>
+<li>What R is</li>
+<li>The difference between R and Rstudio</li>
+<li>Some advantages and disadvantages of R versus other software</li>
+<li>Main parts of the RStudio interface</li>
+<li>How to begin coding in R</li>
+<li>Where to find help and learning materials</li>
+<li>How to continue learning R independently</li>
+</ul>
+<div class="success-box">
+<p>👍 <strong>The most important thing to remember:</strong> You do not need to understand everything before you start. Learning R is a process.</p>
+</div>
+<div id="what-is-r" class="section level2" number="2.1">
+<h2>
+<span class="header-section-number">2.1</span> What is R?<a class="anchor" aria-label="anchor" href="#what-is-r"><i class="fas fa-link"></i></a>
+</h2>
+<p>R is a <strong>programming language</strong>. That means that instead of telling R what to do by clicking buttons in a menu, you generally type instructions.</p>
+<p>For example, you can ask R to calculate 2+2</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">2</span> <span class="op">+</span> <span class="fl">2</span></span></code></pre></div>
+<p>and it will return:</p>
+<pre><code>#&gt; [1] 4</code></pre>
+<p>R is widely used for statistics, data analysis and data visualisation. It is used by students, researchers, universities, governments, businesses and many other organisations.</p>
+<p>R is especially useful when you need to:</p>
+<ul>
+<li>Work with data</li>
+<li>Perform calculations</li>
+<li>Carry out statistical analyses</li>
+<li>Create graphs and visualisations</li>
+<li>Manipulate datasets</li>
+</ul>
+<div id="what-is-rstudio" class="section level3" number="2.1.1">
+<h3>
+<span class="header-section-number">2.1.1</span> What is RStudio?<a class="anchor" aria-label="anchor" href="#what-is-rstudio"><i class="fas fa-link"></i></a>
+</h3>
+<p>You will often hear people talk about <strong>R and RStudio</strong> as though they are the same thing.</p>
+<p>They are not.</p>
+<p><strong>R is the programming language itself.</strong> It is the thing that actually performs your calculations, analyses and commands.</p>
+<p><strong>RStudio is an Integrated Development Environment (IDE) for R.</strong> A fancy term for a user dashboard. It provides a convenient interface for working with R.</p>
+<div class="info-box">
+<p>💡 <strong>Think of it this way:</strong></p>
+<p>If R is the engine, RStudio is the dashboard that makes the engine easier to use.</p>
+</div>
+<p>You can use R without RStudio, but RStudio provides a much more convenient environment for writing, running and organising R code.</p>
+<p>When you are getting started, you will normally install <strong>both R and RStudio</strong>.</p>
+</div>
+<div id="why-learn-r" class="section level3" number="2.1.2">
+<h3>
+<span class="header-section-number">2.1.2</span> Why learn R?<a class="anchor" aria-label="anchor" href="#why-learn-r"><i class="fas fa-link"></i></a>
+</h3>
+<p>There are lots of reasons to learn R.</p>
+<div id="its-free" class="section level4" number="2.1.2.1">
+<h4>
+<span class="header-section-number">2.1.2.1</span> It’s free!<a class="anchor" aria-label="anchor" href="#its-free"><i class="fas fa-link"></i></a>
+</h4>
+<p>One of the biggest advantages of R is that it is <strong>free</strong>. You do not need to buy a licence to continue using R after you graduate and there are no limits to how many devices you install it on.</p>
+</div>
+<div id="its-flexible" class="section level4" number="2.1.2.2">
+<h4>
+<span class="header-section-number">2.1.2.2</span> It’s flexible!<a class="anchor" aria-label="anchor" href="#its-flexible"><i class="fas fa-link"></i></a>
+</h4>
+<p>R can be used for an enormous range of tasks from calculating statistics, plotting data, statistical analysis, hypothesis tests, regression, automating tasks, writing reports and much more.</p>
+</div>
+<div id="its-widely-used" class="section level4" number="2.1.2.3">
+<h4>
+<span class="header-section-number">2.1.2.3</span> It’s widely used!<a class="anchor" aria-label="anchor" href="#its-widely-used"><i class="fas fa-link"></i></a>
+</h4>
+<p>R is widely used in scientific research and academia, as well as industry. R has an enormous library of <strong>packages</strong> to help you perform even quite specific tasks.</p>
+<p>Packages are collections of additional functions, data and other resources that extend what R can do.</p>
+<div class="info-box">
+<p>ℹ️ R can do a huge amount. And if it cannot already do something you need, there is often a package that can help — or you can potentially create your own solution.</p>
+</div>
+</div>
+</div>
+<div id="the-downsides-of-r" class="section level3" number="2.1.3">
+<h3>
+<span class="header-section-number">2.1.3</span> The downsides of R<a class="anchor" aria-label="anchor" href="#the-downsides-of-r"><i class="fas fa-link"></i></a>
+</h3>
+<p>R is powerful, but there are some things that can make it difficult to use when you first start. The main thing being that you have to interact with it as a programming language.</p>
+<p>If you are used to software where you select options from menus, R may initially feel unfamiliar and there will initially be quite a lot to learn.</p>
+<p>Before being proficient in R, you will need to learn:</p>
+<ul>
+<li>How R understands commands</li>
+<li>What objects are</li>
+<li>How functions work</li>
+<li>How to structure your code</li>
+<li>How to find and fix errors</li>
+</ul>
+<p>This can feel daunting at first but is ** completely normal.**</p>
+<p>The first few sessions of learning R are often the hardest because you are learning a new way of communicating with a computer.</p>
+<p>In software such as Excel, to plot a graph you might:</p>
+<ol style="list-style-type: decimal">
+<li>select some cells;</li>
+<li>click <em>insert</em>;</li>
+<li>select the chart type you want;</li>
+<li>click OK.</li>
+</ol>
+<p>In R, you might instead type something like:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/boxplot.html">boxplot</a></span><span class="op">(</span><span class="va">my_data</span><span class="op">)</span></span></code></pre></div>
+<p>and get a plot such as</p>
+<div class="inline-figure"><img src="01_EYNTKBYLR_files/figure-html/unnamed-chunk-5-1.png" alt="" width="672"></div>
+</div>
+</div>
+<div id="installing-r-and-rstudio" class="section level2" number="2.2">
+<h2>
+<span class="header-section-number">2.2</span> Installing R and RStudio<a class="anchor" aria-label="anchor" href="#installing-r-and-rstudio"><i class="fas fa-link"></i></a>
+</h2>
+<p>The <a href="https://sheffield.ac.uk/mash/stats-resources/r">University of Sheffield MASH R resources page</a> contains a guide to downloading and setting up both <a href="https://cran.r-project.org/">R</a> and <a href="https://posit.co/products/open-source/rstudio">RStudio</a>.</p>
+<p>Alternatively, go to both the <a href="https://cran.r-project.org/">R</a> and <a href="https://posit.co/products/open-source/rstudio">RStudio</a> webpages and download the appropriate version for your device.</p>
+</div>
+<div id="getting-to-know-rstudio" class="section level2" number="2.3">
+<h2>
+<span class="header-section-number">2.3</span> Getting to know RStudio<a class="anchor" aria-label="anchor" href="#getting-to-know-rstudio"><i class="fas fa-link"></i></a>
+</h2>
+<p>When you open RStudio, you will probably see several different sections or <strong>panes</strong>.</p>
+<p>The exact arrangement can vary depending on your version and settings.</p>
+<p>A common layout contains four main panes:</p>
+<ol style="list-style-type: decimal">
+<li>(Top-left) <strong>Source</strong>
+</li>
+<li>(Bottom-left) <strong>Console</strong>
+</li>
+<li>(Top-right) <strong>Environment / History</strong>
+</li>
+<li>(Bottom-left) <strong>Files / Plots / Packages / Help</strong>
+</li>
+</ol>
+<div id="source" class="section level3" number="2.3.1">
+<h3>
+<span class="header-section-number">2.3.1</span> 1. Source<a class="anchor" aria-label="anchor" href="#source"><i class="fas fa-link"></i></a>
+</h3>
+<p>The <strong>Source</strong> pane is where you can write, edit and save your code. If it is the first time opening Rstudio, the <strong>Source</strong> pane may not appear until you click the following.</p>
+<p>File &gt; New File &gt; R Script</p>
+<p>The <strong>Source pane</strong> is where you should normally develop your analysis. The saved code is referred to as a script and has the file extension <code>.R</code>. These files can be reopened and worked on at any time.</p>
+</div>
+<div id="console" class="section level3" number="2.3.2">
+<h3>
+<span class="header-section-number">2.3.2</span> 2. Console<a class="anchor" aria-label="anchor" href="#console"><i class="fas fa-link"></i></a>
+</h3>
+<p>The <strong>Console</strong> is where R receives and executes commands.</p>
+<p>You can type directly into it. The result will appear underneath. Unlike an R script, the <strong>Console</strong> is temporary and anything you type into it is not saved. The <strong>Console</strong> is particularly useful for:</p>
+<ul>
+<li>Trying out commands</li>
+<li>Testing ideas</li>
+<li>Checking the result of a function</li>
+<li>Troubleshooting</li>
+</ul>
+<blockquote>
+<p>Tip: you can press the <strong>Up</strong> key with your cursor in the Console to quickly cycle through commands you have typed recently**</p>
+</blockquote>
+</div>
+<div id="environment-history" class="section level3" number="2.3.3">
+<h3>
+<span class="header-section-number">2.3.3</span> 3. Environment / History<a class="anchor" aria-label="anchor" href="#environment-history"><i class="fas fa-link"></i></a>
+</h3>
+<p>The <strong>Environment</strong> pane shows objects that currently exist in your R session.</p>
+<p>For example, if you run the code:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">student_scores</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">65</span>, <span class="fl">72</span>, <span class="fl">81</span>, <span class="fl">69</span>, <span class="fl">88</span><span class="op">)</span></span></code></pre></div>
+<p>the object <code>student_scores</code> will appear in the <strong>Environment</strong>. <em>We’ll talk more about objects later</em>.</p>
+<p>The <strong>Environment</strong> therefore gives you a useful overview of the objects you have created.</p>
+<p>There are other tabs within this pane, the next most useful being the <strong>History</strong> tab which shows all the commands that you have previously entered.</p>
+<p>This can be useful when you are trying to remember something you did earlier in your session.</p>
+</div>
+<div id="files-plots-packages-help" class="section level3" number="2.3.4">
+<h3>
+<span class="header-section-number">2.3.4</span> 4. Files / Plots / Packages / Help<a class="anchor" aria-label="anchor" href="#files-plots-packages-help"><i class="fas fa-link"></i></a>
+</h3>
+<p>The last window contains several tabs including <strong>Files, Plots, Packages and Help</strong>.</p>
+<p>The <strong>Files</strong> tab allows you to navigate through folders on your computer (see <strong>Working Directories</strong> for more detail).</p>
+<p><strong>Plots</strong> displays graphs that you create in R.</p>
+<p><strong>Packages</strong> allows you to see packages that are installed in your R session.</p>
+<p><strong>Help</strong> displays R’s documentation when you request it using the <code>?</code> command (see <a href="#Errors">Errors</a> for further help).</p>
+<p>The following table summarises the pane functions.</p>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th>Window</th>
+<th>What it does</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><strong>Source</strong></td>
+<td>Write and edit R scripts</td>
+</tr>
+<tr class="even">
+<td><strong>Console</strong></td>
+<td>Run R commands</td>
+</tr>
+<tr class="odd">
+<td><strong>Environment</strong></td>
+<td>View objects currently stored in R</td>
+</tr>
+<tr class="even">
+<td><strong>History</strong></td>
+<td>View previously entered commands</td>
+</tr>
+<tr class="odd">
+<td><strong>Files</strong></td>
+<td>Navigate through files and folders</td>
+</tr>
+<tr class="even">
+<td><strong>Plots</strong></td>
+<td>View graphs</td>
+</tr>
+<tr class="odd">
+<td><strong>Packages</strong></td>
+<td>Install and manage packages</td>
+</tr>
+<tr class="even">
+<td><strong>Help</strong></td>
+<td>Access R documentation</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="working-directories" class="section level3" number="2.3.5">
+<h3>
+<span class="header-section-number">2.3.5</span> Working directories<a class="anchor" aria-label="anchor" href="#working-directories"><i class="fas fa-link"></i></a>
+</h3>
+<p>One concept that often causes confusion when you first start using R is the <strong>working directory</strong>.</p>
+<p>The <strong>working directory</strong> is the folder that R is currently using as its default location for reading and writing files.</p>
+<p>You can find your current working directory by running:</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/getwd.html">getwd</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p><code><a href="https://rdrr.io/r/base/getwd.html">getwd()</a></code> means <strong>get working directory</strong>.</p>
+<p>You can change the working directory using <code><a href="https://rdrr.io/r/base/getwd.html">setwd()</a></code> and the path to your desired folder. For example:</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/getwd.html">setwd</a></span><span class="op">(</span><span class="st">"C:/Users/YourName/Documents/R"</span><span class="op">)</span></span></code></pre></div>
+<p>The exact path will depend on your computer.</p>
+<div class="info-box">
+<p>ℹ️ You do not necessarily need to use <code><a href="https://rdrr.io/r/base/getwd.html">setwd()</a></code>. Instead, in the <strong>Files</strong> tab, click <strong>…</strong> on the right-hand side, click through the file explorer to find the folder you want then click <strong>Open</strong>. Click the cog symbol titled <strong>More</strong> then Select <strong>Set as Working Directory</strong>.</p>
+</div>
+</div>
+</div>
+<div id="learning-how-to-write-code" class="section level2" number="2.4">
+<h2>
+<span class="header-section-number">2.4</span> Learning how to write code<a class="anchor" aria-label="anchor" href="#learning-how-to-write-code"><i class="fas fa-link"></i></a>
+</h2>
+<p>There are a few things that are worth understanding right at the beginning.</p>
+<p>R is primarily controlled by typing commands. You can think of each line of R code as an instruction.</p>
+<p>For example, to find the mean of the <code>student_scores</code> given above you’d type:</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">student_scores</span><span class="op">)</span></span></code></pre></div>
+<p>It is very important before learning R to realise that <strong>you do not have to memorise everything.</strong></p>
+<p>One of the most important skills in R is knowing how to find information. It is unlikely that you will remember the code for everything you want to do.</p>
+<p>That is normal.</p>
+<p>Learning R is not about memorising an enormous list of commands. It is about learning enough of the language that you can understand, debug (fix) and build code.</p>
+<p>The <a href="https://sheffield.ac.uk/mash/stats-resources/r#First-steps">University of Sheffield MASH R resources page</a> provides first steps in R.</p>
+<p>These first steps will guide you through:</p>
+<ul>
+<li>Installing R</li>
+<li>Downloading RStudio</li>
+<li>Interacting with R</li>
+<li>Understanding objects and functions</li>
+<li>Working with vectors</li>
+<li>Getting started with data</li>
+<li>Installing packages</li>
+</ul>
+<p>These are a good place to get started!</p>
+<div id="what-is-a-command" class="section level3" number="2.4.1">
+<h3>
+<span class="header-section-number">2.4.1</span> What is a command?<a class="anchor" aria-label="anchor" href="#what-is-a-command"><i class="fas fa-link"></i></a>
+</h3>
+<p>A <strong>command</strong> is an instruction that you give to R.</p>
+<p>To run a command in the <strong>Console</strong> you simply type your command and press <strong>Enter</strong>.</p>
+<p>To run a command in the <strong>Source</strong> pane (script) there are two ways:</p>
+<ul>
+<li><p>Highlight the line(s) of code and press <strong>Ctrl + Enter</strong> on your keyboard or the <strong>Run</strong> key in the top right of the Source pane.</p></li>
+<li><p>Put your cursor on the line of code and press <strong>Ctrl + Enter</strong>. This also moves the cursor to the next line so you can easily run the next line.</p></li>
+</ul>
+<div class="success-box">
+<p>👍 To quickly highlight your entire script click <strong>Ctrl + A</strong> with your cursor anywhere in the script.</p>
+</div>
+<p>An example command is:</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">2</span> <span class="op">+</span> <span class="fl">2</span></span></code></pre></div>
+<p>an instruction asking R to add two numbers.</p>
+<p>Another example is:</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">even_numbers</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">4</span>, <span class="fl">6</span>, <span class="fl">8</span><span class="op">)</span></span></code></pre></div>
+<p>This tells R to create an <em>object</em> named <code>even_numbers</code> by combing the numbers 2,4,6 and 8. Note here, that in programming we call this a vector. Vectors are formed in R using the function <code><a href="https://rdrr.io/r/base/c.html">c()</a></code> where <code>c</code> stands for combine.</p>
+<p>You will quickly become familiar with the basic structure of R commands.</p>
+</div>
+<div id="what-is-a-function" class="section level3" number="2.4.2">
+<h3>
+<span class="header-section-number">2.4.2</span> What is a function?<a class="anchor" aria-label="anchor" href="#what-is-a-function"><i class="fas fa-link"></i></a>
+</h3>
+<p>A <strong>function</strong> is a piece of code designed to perform a particular task.</p>
+<p>Functions are one of the most important concepts in R.</p>
+<p>For example:</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">4</span>, <span class="fl">6</span>, <span class="fl">8</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p>gives the following output.</p>
+<pre><code>#&gt; [1] 5</code></pre>
+<p>Here:</p>
+<ul>
+<li>
+<code>mean</code> is the function;</li>
+<li>
+<code>c(2, 4, 6, 8)</code> is the input;</li>
+<li>the function calculates the mean.</li>
+</ul>
+<p>Functions are generally followed by parentheses:</p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">function_name</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p>The information that you give to a function is called an <strong>argument</strong>.</p>
+<p>For example:</p>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fl">3.14159</span>, digits <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 3.14</span></span></code></pre></div>
+<p>Here:</p>
+<ul>
+<li>
+<code><a href="https://rdrr.io/r/base/Round.html">round()</a></code> is the function;</li>
+<li>
+<code>3.14159</code> is the value being rounded;</li>
+<li>
+<code>digits = 2</code> tells R how many decimal places to use.</li>
+</ul>
+</div>
+<div id="objects" class="section level3" number="2.4.3">
+<h3>
+<span class="header-section-number">2.4.3</span> Objects<a class="anchor" aria-label="anchor" href="#objects"><i class="fas fa-link"></i></a>
+</h3>
+<p>Objects are another fundamental idea in R.</p>
+<p>An object is something that R can store and work with.</p>
+<p>For example:</p>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">age</span> <span class="op">&lt;-</span> <span class="fl">21</span></span></code></pre></div>
+<p>Here we have created an object called <code>age</code>.</p>
+<p>We can then ask R to show us its value:</p>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">age</span></span>
+<span><span class="co">#&gt; [1] 21</span></span></code></pre></div>
+<p>We can also use it in another calculation:</p>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">age</span> <span class="op">+</span> <span class="fl">1</span></span>
+<span><span class="co">#&gt; [1] 22</span></span></code></pre></div>
+<div id="assignment" class="section level4" number="2.4.3.1">
+<h4>
+<span class="header-section-number">2.4.3.1</span> Assignment<a class="anchor" aria-label="anchor" href="#assignment"><i class="fas fa-link"></i></a>
+</h4>
+<p>The <code>&lt;-</code> symbol is commonly used to assign a value to an object.</p>
+<p>For example:</p>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">my_number</span> <span class="op">&lt;-</span> <span class="fl">10</span></span></code></pre></div>
+<p>This means store the value <code>10</code> in an object called <code>my_number</code>.</p>
+<p>Objects can contain different types of information. They do not have to contain just single numbers.</p>
+<p>For example, an object can contain text:</p>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">student_name</span> <span class="op">&lt;-</span> <span class="st">"Alex"</span></span></code></pre></div>
+<p>Or several numbers:</p>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">test_scores</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">65</span>, <span class="fl">72</span>, <span class="fl">81</span>, <span class="fl">69</span>, <span class="fl">88</span><span class="op">)</span></span></code></pre></div>
+<p>For now, the important thing is simply to understand that R allows you to <strong>store information in objects and then use those objects later</strong>.</p>
+</div>
+<div id="naming-objects" class="section level4" number="2.4.3.2">
+<h4>
+<span class="header-section-number">2.4.3.2</span> Naming objects<a class="anchor" aria-label="anchor" href="#naming-objects"><i class="fas fa-link"></i></a>
+</h4>
+<p>It is a good idea to give objects sensible names. When naming objects, best practices are to:</p>
+<ol style="list-style-type: decimal">
+<li>Be informative about that the object represents</li>
+<li>Do not use spaces</li>
+<li>If it has multiple words in the name, separate these by underscores or capitalise each word.</li>
+<li>Do not include dots or other symbols</li>
+</ol>
+<p>Good examples are:</p>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">age</span> <span class="op">&lt;-</span> <span class="fl">21</span></span>
+<span><span class="va">average_score</span> <span class="op">&lt;-</span> <span class="fl">75</span></span>
+<span><span class="va">TestScores</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">65</span>, <span class="fl">72</span>, <span class="fl">81</span>, <span class="fl">69</span>, <span class="fl">88</span><span class="op">)</span></span></code></pre></div>
+<p>Compared with bad names:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="everything-you-need-to-know-before-you-learn-r.html#cb21-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">21</span></span>
+<span id="cb21-2"><a href="everything-you-need-to-know-before-you-learn-r.html#cb21-2" tabindex="-1"></a>average score <span class="ot">&lt;-</span> <span class="dv">75</span></span>
+<span id="cb21-3"><a href="everything-you-need-to-know-before-you-learn-r.html#cb21-3" tabindex="-1"></a>TEST.SCORES<span class="sc">!</span> <span class="er">&lt;</span><span class="sc">-</span>  <span class="fu">c</span>(<span class="dv">65</span>, <span class="dv">72</span>, <span class="dv">81</span>, <span class="dv">69</span>, <span class="dv">88</span>)</span></code></pre></div>
+<p>The last two objects <code>average score</code> and <code>TEST.SCORES!</code> are so bad that they will give you the following error!</p>
+<pre><code>#&gt; Error in parse(text = input): &lt;text&gt;:1:9: unexpected symbol
+#&gt; 1: average score
+#&gt;             ^</code></pre>
+</div>
+</div>
+<div id="comments" class="section level3" number="2.4.4">
+<h3>
+<span class="header-section-number">2.4.4</span> Comments<a class="anchor" aria-label="anchor" href="#comments"><i class="fas fa-link"></i></a>
+</h3>
+<p>You can add comments to your R code using the <code>#</code> symbol.</p>
+<p>Anything after <code>#</code> on that line will be treated as a comment rather than R code and wont be executed when you run that line or script.</p>
+<p>For example:</p>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Calculate the mean of the scores</span></span>
+<span><span class="va">scores</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">5</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">scores</span><span class="op">)</span></span></code></pre></div>
+<p>Comments are useful for explaining what your code is doing.</p>
+<p>You can also use comments to organise a script:</p>
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># -----------------------------------</span></span>
+<span><span class="co"># Calculate summary statistics</span></span>
+<span><span class="co"># -----------------------------------</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">scores</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">scores</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">scores</span><span class="op">)</span></span></code></pre></div>
+<div class="success-box">
+<p>👍 <strong>Good habit</strong></p>
+<p>Write comments that help you — and someone else — understand what your code is doing.</p>
+</div>
+<p>Keeping your code organised. As your R scripts become longer, organisation becomes increasingly important.</p>
+<p>You can use comments and headings to divide your code into sections.</p>
+<p>For example:</p>
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Load packages</span></span>
+<span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Import data</span></span>
+<span></span>
+<span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"my_data.csv"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Explore data</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Analysis</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">score</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Visualisation</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">score</span><span class="op">)</span></span></code></pre></div>
+<p>This makes your script much easier to read.</p>
+</div>
+<div id="errors" class="section level3" number="2.4.5">
+<h3>
+<span class="header-section-number">2.4.5</span> Errors<a class="anchor" aria-label="anchor" href="#errors"><i class="fas fa-link"></i></a>
+</h3>
+<div class="warning-box">
+<p>⚠️ <strong>Help! I’ve got an Error.</strong></p>
+</div>
+<p>Getting errors, warnings and breaking your code are completely normal when programming - not just when you are learning it. Errors are not a sign that you are bad at coding. They are a very normal and it is likely you will see them frequently.</p>
+<p>For example, if you type:</p>
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="st">"This is not a number"</span><span class="op">)</span></span></code></pre></div>
+<p>R will complain because it doesn’t know how to take the mean of something that isn’t numeric.</p>
+<p>You may see an error message such as:</p>
+<pre class="text"><code>Warning message:
+In mean.default("this is not a number") :
+  argument is not numeric or logical: returning NA</code></pre>
+<p>The error message is actually useful. It is R trying to tell you what went wrong.</p>
+<div class="info-box">
+<p>ℹ️ <strong>When something goes wrong:</strong></p>
+<ol style="list-style-type: decimal">
+<li>Do not panic</li>
+<li>Read the error message</li>
+<li>Look at the line of code that caused the problem</li>
+<li>Check your spelling</li>
+<li>Check your brackets</li>
+<li>Check your quotation marks</li>
+<li>Check whether you have created the objects you are using</li>
+<li>Search the error message if you are unsure</li>
+</ol>
+</div>
+<div class="success-box">
+<p>👍 <strong>It is just as important to learn how to debug your code as it is to learn how to write code.</strong></p>
+</div>
+<p>When stuck for coding solutions, experienced R users regularly:</p>
+<p><strong>1. Search Online</strong></p>
+<p>Often, a quick Google (or your preferred search engine) will give you the syntax you need to perform/fix what you want in R.</p>
+<p><strong>2. Look at documentation</strong></p>
+<p>Some of the more frequently used packages such as <a href="https://ggplot2.tidyverse.org/">ggplot2</a> (a powerful packages for creating graphs) have very thorough documentation that can be very helpful in learning how to use it.</p>
+<p><strong>3. Use R help pages</strong></p>
+<p>R has a built-in help system. For example, if you want to find out more about the <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> function, you can type:</p>
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="op">?</span><span class="va">mean</span></span></code></pre></div>
+<p>The Help pane in RStudio will then display information about the function. See <strong>Getting to Know Rstudio</strong> to find out more information about the Help pane.</p>
+<p>R help pages can initially look intimidating. You will usually see information about:</p>
+<ul>
+<li>What the function does.</li>
+<li>How to use it.</li>
+<li>The value it returns.</li>
+<li>Examples of it in use.</li>
+</ul>
+<p>The <strong>Examples</strong> section is particularly useful when you are learning.</p>
+<p>You can often copy an example, run it yourself and then modify it.</p>
+<p><strong>4. Ask peers</strong></p>
+<p>In industry, academia and any other workplace it is very common to ask peers and colleagues for help with coding. Often, a solution to your problem will already exist and they may have seen it somewhere before. This is especially useful when your code is giving you errors - an extra pair of eyes always helps! In some cases, you often spot the error as your explaining your out loud to someone else.</p>
+<p><strong>5. Using AI</strong></p>
+<p>It’s fairly commonplace now to use AI to debug or write code for you. Whilst this can be incredible useful it should be used with caution. Generative AI has a habit of producing over complex code that, whilst looking shiny and professional, is very hard to understand, modify and fix if you don’t have a good grasp on the underlying language.</p>
+<p>Understanding the concepts of coding are fundamental in providing solutions to problems and performing novel research. The long-term benefit of learning, reading and writing code yourself far outweigh the short term benefit of generating a sophisticated analysis with no development of your understanding.</p>
+<p>Not only this, for some university assessments, the use of AI may not be tolerated at all, so it is good to check that you are using AI in a way that is honest, fair and responsible. Thorough guidance on the use of AI at The University of Sheffield can be found on the <a href="https://sheffield.ac.uk/study-skills/digital/generative-ai/assessment#unfair-means">StudySkills@Sheffield</a> webpage.</p>
+</div>
+</div>
+<div id="mash-support" class="section level2" number="2.5">
+<h2>
+<span class="header-section-number">2.5</span> MASH support<a class="anchor" aria-label="anchor" href="#mash-support"><i class="fas fa-link"></i></a>
+</h2>
+<p>There are lots of ways to learn R, and you do not have to learn it alone. Here at MASH, we offer friendly and specialist support from workshops to 1:1 sessions to suit your needs. Here are the main ways we can support you.</p>
+<div id="mash-workshops" class="section level3" number="2.5.1">
+<h3>
+<span class="header-section-number">2.5.1</span> MASH workshops<a class="anchor" aria-label="anchor" href="#mash-workshops"><i class="fas fa-link"></i></a>
+</h3>
+<p>MASH runs workshops covering statistics, mathematics and software skills.</p>
+<p>R workshops are a great way to learn alongside other students and ask questions as you go.</p>
+<p>We offer <a href="https://301skills.shef.ac.uk/events/284/upcoming">R workshops for ultra-beginners</a>. These are designed for people who want to learn R from the very basics, without any prior knowledge - excellent if you have never coded before.</p>
+<p>We also have more bespoke R workshops such as</p>
+<ul>
+<li><a href="https://301skills.shef.ac.uk/events/287/upcoming">MASH workshop: Using R for data visualisation</a></li>
+<li><a href="https://301skills.shef.ac.uk/events/391/upcoming">MASH workshop: Using R for hypothesis testing</a></li>
+<li><a href="https://301skills.shef.ac.uk/events/291/upcoming">MASH workshop: Using R for regression</a></li>
+</ul>
+<p>You can find and book workshops on the <a href="https://students.sheffield.ac.uk/mash/workshops#bookig-calendar">MASH workshops booking calendar</a></p>
+</div>
+<div id="mash-online-resources" class="section level3" number="2.5.2">
+<h3>
+<span class="header-section-number">2.5.2</span> MASH online resources<a class="anchor" aria-label="anchor" href="#mash-online-resources"><i class="fas fa-link"></i></a>
+</h3>
+<p>The <a href="https://sheffield.ac.uk/mash/stats-resources/r#First-steps">MASH First steps in R resources</a> are designed to help you get started from the beginning, providing videos and help pages for getting started with R.</p>
+</div>
+<div id="mash-1-1-support" class="section level3" number="2.5.3">
+<h3>
+<span class="header-section-number">2.5.3</span> MASH 1-1 support<a class="anchor" aria-label="anchor" href="#mash-1-1-support"><i class="fas fa-link"></i></a>
+</h3>
+<p>If you are stuck, you can also book a 1-1 appointment with MASH.</p>
+<p>A 1:1 can be particularly useful if you have a specific question about:</p>
+<ul>
+<li>A research problem</li>
+<li>How to implement a statistical method</li>
+<li>R code that is not working</li>
+<li>Interpreting your output</li>
+</ul>
+<p>You can book a 1-1 appointment on the <a href="https://students.sheffield.ac.uk/mash/bookings/stats-support#book-here">MASH statistics 1-1 appointment booking page</a></p>
+</div>
+</div>
+<div id="where-to-go-next" class="section level2" number="2.6">
+<h2>
+<span class="header-section-number">2.6</span> Where to go next<a class="anchor" aria-label="anchor" href="#where-to-go-next"><i class="fas fa-link"></i></a>
+</h2>
+<p>Once you have got through the basics, there are lots of other resources you can use to continue learning.</p>
+<div id="yarrr-the-pirates-guide-to-r" class="section level3" number="2.6.1">
+<h3>
+<span class="header-section-number">2.6.1</span> YaRrr! The Pirate’s Guide to R<a class="anchor" aria-label="anchor" href="#yarrr-the-pirates-guide-to-r"><i class="fas fa-link"></i></a>
+</h3>
+<p><a href="https://bookdown.org/ndphillips/YaRrr/">YaRrr! The Pirate’s Guide to R</a> is a clear, free online textbook.</p>
+<p>It provides an accessible introduction to R and includes examples that you can work through yourself.</p>
+</div>
+<div id="r-for-data-science" class="section level3" number="2.6.2">
+<h3>
+<span class="header-section-number">2.6.2</span> R for Data Science<a class="anchor" aria-label="anchor" href="#r-for-data-science"><i class="fas fa-link"></i></a>
+</h3>
+<p><a href="https://www.google.co.uk/books/edition/R_for_Data_Science/I6y3DQAAQBAJ?hl=en&amp;gbpv=0">R for Data Science</a> by Hadley Wickham is a great guide for importing, wrangling, manipulating and visualising data.</p>
+</div>
+<div id="learn-r-by-example" class="section level3" number="2.6.3">
+<h3>
+<span class="header-section-number">2.6.3</span> Learn R by example<a class="anchor" aria-label="anchor" href="#learn-r-by-example"><i class="fas fa-link"></i></a>
+</h3>
+<p><a href="https://www.learnbyexample.org/r/">Learn R by example</a> is an easily to follow website organised around examples.</p>
+<p>It covers topics ranging from basic R syntax through data structures, functions, data import, graphics and more.</p>
+</div>
+<div id="swirl" class="section level3" number="2.6.4">
+<h3>
+<span class="header-section-number">2.6.4</span> Swirl<a class="anchor" aria-label="anchor" href="#swirl"><i class="fas fa-link"></i></a>
+</h3>
+<p><strong>Swirl</strong> is a package for learning R interactively within RStudio.</p>
+<p>Instead of reading instructions on a webpage and then switching between your browser and RStudio, Swirl gives you interactive lessons directly in R.</p>
+<p>Begin by installing the <code>swirl</code> package.</p>
+<p>Type the following command into the <strong>Console</strong>:</p>
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"swirl"</span><span class="op">)</span></span></code></pre></div>
+<p>Wait for the installation to finish.</p>
+<p>Once the installation is complete, load the package:</p>
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="http://swirlstats.com">"swirl"</a></span><span class="op">)</span></span></code></pre></div>
+<p>Then start Swirl by typing:</p>
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/swirl/man/swirl.html">swirl</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p>Swirl will begin interacting with you. Simply read the instructions on the screen and enter your responses.</p>
+</div>
+</div>
+<div id="step-by-step-process-for-learning-r" class="section level2" number="2.7">
+<h2>
+<span class="header-section-number">2.7</span> Step-by-step process for learning R<a class="anchor" aria-label="anchor" href="#step-by-step-process-for-learning-r"><i class="fas fa-link"></i></a>
+</h2>
+<blockquote>
+<p>Important: There is no single “correct” way to learn R.</p>
+</blockquote>
+<p>However, a useful approach is:</p>
+<p><strong>Step 1</strong> — Get R and RStudio installed</p>
+<p>Make sure both are installed and that you can open RStudio.</p>
+<p>Start with the <a href="https://sheffield.ac.uk/mash/stats-resources/r#First-steps">MASH First steps in R resources</a> if you need help.</p>
+<p><strong>Step 2</strong> — Learn the basic language</p>
+<p>Get comfortable with:</p>
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Objects</span></span>
+<span><span class="va">my_number</span> <span class="op">&lt;-</span> <span class="fl">10</span></span>
+<span></span>
+<span><span class="co"># Vectors</span></span>
+<span><span class="va">my_numbers</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">20</span>, <span class="fl">30</span>, <span class="fl">40</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Functions</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">my_numbers</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Indexing</span></span>
+<span><span class="va">my_numbers</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span></code></pre></div>
+<p>Executing <code>my_numbers[1]</code> will give the value 10, the number with <em>index</em> 1 (i.e. the 1st number) of the vector <code>my_numbers</code>.</p>
+<p>Knowing how to index in R is incredibly useful for removing, adding and selecting specifc rows of your data, as well as other things. It is well worth spending time to learn about it.</p>
+<blockquote>
+<p>Note: If you have used other programming languages before, you will be aware that 0 is usually the first index of a vector. This is different in R. Indexing starts from 1.</p>
+</blockquote>
+<p><strong>Step 3</strong> — Practise</p>
+<p>Do not just read R code.</p>
+<ul>
+<li>Type it</li>
+<li>Change it</li>
+<li>Break it</li>
+<li>Fix it</li>
+</ul>
+<p>Try to predict what will happen before you run it.</p>
+<p><strong>Step 4</strong> — Work with R data sets</p>
+<p>Once you understand the basics, start working with data. R has an amazing library of built-in real world datasets. These are nice clean examples of data that are frequently used to demonstrate visualisation and data analysis.</p>
+<p>To access the data sets you need to install the <code>datasets</code> package using the following commands.</p>
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"datasets"</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">datasets</span><span class="op">)</span></span></code></pre></div>
+<p>You can then run the command</p>
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p>to view a list of the datasets available. To load a dataset you simply type the dataset. For example, for the <code>iris</code> dataset you simply run:</p>
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width Species</span></span>
+<span><span class="co">#&gt; 1          5.1         3.5          1.4         0.2  setosa</span></span>
+<span><span class="co">#&gt; 2          4.9         3.0          1.4         0.2  setosa</span></span>
+<span><span class="co">#&gt; 3          4.7         3.2          1.3         0.2  setosa</span></span>
+<span><span class="co">#&gt; 4          4.6         3.1          1.5         0.2  setosa</span></span>
+<span><span class="co">#&gt; 5          5.0         3.6          1.4         0.2  setosa</span></span>
+<span><span class="co">#&gt; 6          5.4         3.9          1.7         0.4  setosa</span></span></code></pre></div>
+<p><strong>Note:</strong> By putting <code>iris</code> in the function <code><a href="https://rdrr.io/r/utils/head.html">head()</a></code>, R only shows us the first few rows of the data.</p>
+<p>Important concepts to learn with the example data are:</p>
+<ul>
+<li>Importing data</li>
+<li>Cleaning data</li>
+<li>Selecting variables</li>
+<li>Adding new variables</li>
+<li>Plotting graphs</li>
+<li>Statistical analysis</li>
+</ul>
+<p><strong>Step 5</strong> — Build something</p>
+<p>The best way to learn R is to use it. Try using R for something that you actually need to do.</p>
+<p>For example:</p>
+<blockquote>
+<p>“I have a dataset. Can I use R to calculate some summary statistics and make a graph?”</p>
+</blockquote>
+<p>Maybe we wanted to create a graph showing the differences in sepal width between species in the <code>iris</code> dataset. We can make a quick plot using the following code.</p>
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/boxplot.html">boxplot</a></span><span class="op">(</span></span>
+<span>  <span class="va">Sepal.Width</span> <span class="op">~</span> <span class="va">Species</span>,</span>
+<span>  data <span class="op">=</span> <span class="va">iris</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="01_EYNTKBYLR_files/figure-html/unnamed-chunk-37-1.png" alt="" width="672"></div>
+<p><strong>Step 6</strong> - Develop it</p>
+<p>Once you have a minimal viable product of what you want to create, now it is time to develop your code. This could mean, making plots look better, making analysis more sophisticated, or simply organising your code better for yourself or another reader.</p>
+<p>For example, we might improve our code above by using the <code>ggplot2</code> package and adding in some comments for the user.</p>
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Load in ggplot packages</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Plot a boxplot of sepal widths coloured by iris species</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">iris</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Species</span>, y <span class="op">=</span> <span class="va">Sepal.Width</span>, fill <span class="op">=</span> <span class="va">Species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Sepal Width by Species"</span>,</span>
+<span>    x <span class="op">=</span> <span class="st">"Species"</span>,</span>
+<span>    y <span class="op">=</span> <span class="st">"Sepal Width"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="01_EYNTKBYLR_files/figure-html/unnamed-chunk-38-1.png" alt="" width="672"></div>
+</div>
+<div id="final-advice" class="section level2" number="2.8">
+<h2>
+<span class="header-section-number">2.8</span> Final advice<a class="anchor" aria-label="anchor" href="#final-advice"><i class="fas fa-link"></i></a>
+</h2>
+<p>When learning R, you may sometimes feel that everyone else understands it except you.</p>
+<p>That’s not true.</p>
+<p>Even experienced R users regularly search for functions, look at documentation, make mistakes and spend time figuring out why something isn’t working.</p>
+<p>The difference is that, with practice, you gradually become better at solving those problems.</p>
+<p>You do not need to become an expert before you can use R.</p>
+<p>You just need to keep building your knowledge.</p>
+<div class="success-box">
+<p>👍 <strong>Start small. Practise often. Don’t be afraid of errors. Ask for help.</strong></p>
+</div>
+</div>
+<div id="your-r-learning-checklist" class="section level2" number="2.9">
+<h2>
+<span class="header-section-number">2.9</span> Your R learning checklist<a class="anchor" aria-label="anchor" href="#your-r-learning-checklist"><i class="fas fa-link"></i></a>
+</h2>
+<p>Use this checklist to keep track of your progress.</p>
+<ul class="task-list">
+<li><label><input type="checkbox">I understand what R is.</label></li>
+<li><label><input type="checkbox">I understand the difference between R and RStudio.</label></li>
+<li><label><input type="checkbox">I have installed R.</label></li>
+<li><label><input type="checkbox">I have installed RStudio.</label></li>
+<li><label><input type="checkbox">I can open RStudio.</label></li>
+<li><label><input type="checkbox">I know where to find the <a href="https://sheffield.ac.uk/mash/stats-resources/r#First-steps">MASH First steps in R resources</a> page.</label></li>
+<li><label><input type="checkbox">I know what the Console is.</label></li>
+<li><label><input type="checkbox">I know what an R script is.</label></li>
+<li><label><input type="checkbox">I understand the difference between the Console and a script.</label></li>
+<li><label><input type="checkbox">I know what a command is.</label></li>
+<li><label><input type="checkbox">I know what a function is.</label></li>
+<li><label><input type="checkbox">I know what an argument is.</label></li>
+<li><label><input type="checkbox">I can create an object.</label></li>
+<li><label><input type="checkbox">I can create a vector.</label></li>
+<li><label><input type="checkbox">I can call a function.</label></li>
+<li><label><input type="checkbox">I know what a package is.</label></li>
+<li><label><input type="checkbox">I know the difference between installing and loading a package.</label></li>
+<li><label><input type="checkbox">I know how to find help for a function.</label></li>
+<li><label><input type="checkbox">I understand what a working directory is.</label></li>
+<li><label><input type="checkbox">I know how to save an R script.</label></li>
+<li><label><input type="checkbox">I know how to <a href="https://students.sheffield.ac.uk/mash/bookings/stats-support#book-here">book a MASH 1:1 appointment</a>.</label></li>
+<li><label><input type="checkbox">I know how to <a href="https://students.sheffield.ac.uk/mash/workshops#bookig-calendar">book a MASH R workshop</a></label></li>
+</ul>
+</div>
+<div id="glossary" class="section level2" number="2.10">
+<h2>
+<span class="header-section-number">2.10</span> Glossary<a class="anchor" aria-label="anchor" href="#glossary"><i class="fas fa-link"></i></a>
+</h2>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="50%">
+<col width="50%">
+</colgroup>
+<thead><tr class="header">
+<th>Term</th>
+<th>Brief description</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><strong>R</strong></td>
+<td>A programming language used for statistics, data analysis and data visualisation.</td>
+</tr>
+<tr class="even">
+<td><strong>RStudio</strong></td>
+<td>An Integrated Development Environment (IDE) that provides an interface for working with R.</td>
+</tr>
+<tr class="odd">
+<td><strong>Command</strong></td>
+<td>An instruction given to R to perform an action.</td>
+</tr>
+<tr class="even">
+<td><strong>Function</strong></td>
+<td>A piece of code designed to perform a particular task.</td>
+</tr>
+<tr class="odd">
+<td><strong>Argument</strong></td>
+<td>Information supplied to a function that tells it what to work with or how to behave.</td>
+</tr>
+<tr class="even">
+<td><strong>Object</strong></td>
+<td>Something that R can store and work with, such as a number, text or vector.</td>
+</tr>
+<tr class="odd">
+<td><strong>Assignment</strong></td>
+<td>The process of storing a value in an object, commonly using <code>&lt;-</code>.</td>
+</tr>
+<tr class="even">
+<td><strong>Package</strong></td>
+<td>A collection of additional functions, data and resources that extends R’s capabilities.</td>
+</tr>
+<tr class="odd">
+<td><strong>Script</strong></td>
+<td>A saved file containing R code, usually with the <code>.R</code> file extension.</td>
+</tr>
+<tr class="even">
+<td><strong>Console</strong></td>
+<td>The RStudio pane where R commands are entered and executed.</td>
+</tr>
+<tr class="odd">
+<td><strong>Source</strong></td>
+<td>The RStudio pane where you write, edit and save R scripts.</td>
+</tr>
+<tr class="even">
+<td><strong>Environment</strong></td>
+<td>The RStudio pane showing objects currently stored in your R session.</td>
+</tr>
+<tr class="odd">
+<td><strong>History</strong></td>
+<td>An RStudio tab showing commands previously entered during your session.</td>
+</tr>
+<tr class="even">
+<td><strong>Working directory</strong></td>
+<td>The folder R uses as its default location for reading and writing files.</td>
+</tr>
+<tr class="odd">
+<td><strong>Comment</strong></td>
+<td>Text beginning with <code>#</code> that R ignores when executing code.</td>
+</tr>
+<tr class="even">
+<td><strong>Debugging</strong></td>
+<td>The process of finding and fixing problems in code.</td>
+</tr>
+<tr class="odd">
+<td><strong>Error</strong></td>
+<td>A message from R indicating that something has gone wrong when running code.</td>
+</tr>
+<tr class="even">
+<td><strong>Warning</strong></td>
+<td>A message from R indicating that something may not have worked as expected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="empty"></div>
+<div class="empty"></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <div id="book-on-this-page"></div>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>First Steps in R</strong>" was written by MASH. It was last built on 2026-09-16.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

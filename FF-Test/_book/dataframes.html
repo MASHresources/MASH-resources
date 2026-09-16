@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 8 Dataframes | First Steps in R</title>
+<meta name="author" content="MASH">
+<meta name="description" content="8.1 Introduction This document is part of our “First Steps in R” resources. It follows on from similar documents about vectors, matrices and functions in R. It is assumed that the reader...">
+<meta name="generator" content="bookdown 0.48 with bs4_book()">
+<meta property="og:title" content="Chapter 8 Dataframes | First Steps in R">
+<meta property="og:type" content="book">
+<meta property="og:description" content="8.1 Introduction This document is part of our “First Steps in R” resources. It follows on from similar documents about vectors, matrices and functions in R. It is assumed that the reader...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 8 Dataframes | First Steps in R">
+<meta name="twitter:description" content="8.1 Introduction This document is part of our “First Steps in R” resources. It follows on from similar documents about vectors, matrices and functions in R. It is assumed that the reader...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.10.0/transition.js"></script><script src="libs/bs3compat-0.10.0/tabs.js"></script><script src="libs/bs3compat-0.10.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">First Steps in R</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
+<li><a class="" href="everything-you-need-to-know-before-you-learn-r.html"><span class="header-section-number">2</span> Everything you need to know before you learn R</a></li>
+<li><a class="" href="downloading-r-and-rstudio.html"><span class="header-section-number">3</span> Downloading R and RStudio</a></li>
+<li><a class="" href="first-interactions-with-r-and-rstudio.html"><span class="header-section-number">4</span> First interactions with R and RStudio</a></li>
+<li><a class="" href="vectors.html"><span class="header-section-number">5</span> Vectors</a></li>
+<li><a class="" href="functions.html"><span class="header-section-number">6</span> Functions</a></li>
+<li><a class="" href="matricies.html"><span class="header-section-number">7</span> Matricies</a></li>
+<li><a class="active" href="dataframes.html"><span class="header-section-number">8</span> Dataframes</a></li>
+<li><a class="" href="other-objects.html"><span class="header-section-number">9</span> Other objects</a></li>
+<li><a class="" href="packages.html"><span class="header-section-number">10</span> Packages</a></li>
+<li><a class="" href="exploring-data.html"><span class="header-section-number">11</span> Exploring Data</a></li>
+<li><a class="" href="importing-data.html"><span class="header-section-number">12</span> Importing Data</a></li>
+<li><a class="" href="where-to-go-next-1.html"><span class="header-section-number">13</span> Where to go next</a></li>
+<li><a class="" href="swirl-2.html"><span class="header-section-number">14</span> Swirl</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="dataframes" class="section level1" number="8">
+<h1>
+<span class="header-section-number">8</span> Dataframes<a class="anchor" aria-label="anchor" href="#dataframes"><i class="fas fa-link"></i></a>
+</h1>
+<div id="introduction-5" class="section level2" number="8.1">
+<h2>
+<span class="header-section-number">8.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-5"><i class="fas fa-link"></i></a>
+</h2>
+<p>This document is part of our “First Steps in <strong><em>R</em></strong>” resources. It follows on from similar documents about vectors, matrices and functions in <strong><em>R</em></strong>. It is assumed that the reader understands how to define vectors and matrices and call a function in <strong><em>R</em></strong>. If you would like to recap these topics, the documents and videos are on the MASH website.</p>
+</div>
+<div id="what-is-a-data-frame" class="section level2" number="8.2">
+<h2>
+<span class="header-section-number">8.2</span> What is a Data Frame?<a class="anchor" aria-label="anchor" href="#what-is-a-data-frame"><i class="fas fa-link"></i></a>
+</h2>
+<p>A data frame is the name given in <strong><em>R</em></strong> to a very common way of setting out data. The sampling units are arranged in rows and the variables in columns like so:</p>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="left"></th>
+<th align="center">Physics score (%)</th>
+<th align="center">Chemistry score (%)</th>
+<th align="center">Hair Colour</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">Alfred</td>
+<td align="center">75</td>
+<td align="center">69</td>
+<td align="center">Brown</td>
+</tr>
+<tr class="even">
+<td align="left">Beatrice</td>
+<td align="center">80</td>
+<td align="center">74</td>
+<td align="center">Brown</td>
+</tr>
+<tr class="odd">
+<td align="left">Carl</td>
+<td align="center">72</td>
+<td align="center">80</td>
+<td align="center">Blonde</td>
+</tr>
+<tr class="even">
+<td align="left">Daphne</td>
+<td align="center">79</td>
+<td align="center">80</td>
+<td align="center">Black</td>
+</tr>
+<tr class="odd">
+<td align="left">Earl</td>
+<td align="center">65</td>
+<td align="center">70</td>
+<td align="center">Blonde</td>
+</tr>
+</tbody>
+</table></div>
+<p>This data frame records the scores in Physics and Chemistry along with the hair colour for five (fictional) people.</p>
+</div>
+<div id="defining-a-data-frame-in-r" class="section level2" number="8.3">
+<h2>
+<span class="header-section-number">8.3</span> Defining a Data Frame in <strong><em>R</em></strong><a class="anchor" aria-label="anchor" href="#defining-a-data-frame-in-r"><i class="fas fa-link"></i></a>
+</h2>
+<p>Unlike a matrix, a data frame in <strong><em>R</em></strong> can contain character and numeric data in different columns. However, each column must have either character or numeric data only.</p>
+<p>A data frame is an object so creating one in <strong><em>R</em></strong> is similar to creating a vector or matrix. In this case we use the function <code style="color: blue;">data.frame</code>. The <code style="color: blue;">data.frame</code> function takes vectors as arguments. These vectors form the columns of the data frame and the names of the vectors become the names of the columns. Remember, the columns in the data frame represent the variables, thus each vector contains the data for a single variable.</p>
+<p>The following code defines a vector for each variable in the table above, combines the three vectors into a data frame and asks <strong><em>R</em></strong> to show the data frame.</p>
+<center>
+<code style="color: blue;">phys &lt;- c(75,80,72,79,65)</code><br><code style="color: blue;">chem &lt;- c(69,74,80,80,70)</code><br><code style="color: blue;">hair &lt;- c(“Brown”, “Brown”, “Blonde”, “Black”, “Blonde”)</code><br><code style="color: blue;">eg_frame &lt;- data.frame(phys, chem, hair)</code><br><code style="color: blue;">eg_frame</code>
+</center>
+<p>This is the result when we type this code into the console:</p>
+<figure><center>
+<img src="media/07_media/F_Creating_a_data_frame_in_R_fig1.png" width="200" title="Figure 1" alt="An image showing the data frame outputted in the console in RStudio when the above code is typed in. It has five rows and three columns, and the column titles are 'phys', 'chem' and 'hair', and the rows are labelled from 1-5. In the 'phys' column are the numbers '75, '80', '72', '79' and '65'. In the 'chem' column are the numbers '69', '74', '80', '80' and '70'. In the 'hair' column are the colours 'Brown', 'Brown', 'Blonde', 'Black' and 'Blonde'."><figcaption style="text-align:center">
+Figure 1: The vectors <code style="color: blue;">phys</code>, <code style="color: blue;">chem</code> and <code style="color: blue;">hair</code> are combined to make the data frame <code style="color: blue;">eg_frame</code>, outputted in the console in <b><em>RStudio</em></b>.
+</figcaption>
+</center>
+</figure>
+</div>
+<div id="setting-the-row-names" class="section level2" number="8.4">
+<h2>
+<span class="header-section-number">8.4</span> Setting the Row Names<a class="anchor" aria-label="anchor" href="#setting-the-row-names"><i class="fas fa-link"></i></a>
+</h2>
+<p>If we also want to record the names of the people in our survey, we could just add in another column with their names like so:</p>
+<figure><center>
+<img src="media/07_media/F_Creating_a_data_frame_in_R_fig2.png" width="700" title="Figure 2" alt="An image showing the console in RStudio. In addition to the above code, 'people &lt;- c('Alfred', 'Beatrice', 'Carl', 'Daphne', 'Earl')', between 'hair &lt;- c('Brown', 'Brown', 'Blonde', 'Black', 'Blonde)' and 'eg_frame &lt;- data.frame(phys, chem, hair, people)', is typed in. Underneath 'eg_frame', a data frame with five rows and four columns is outputted, and the column titles are 'phys', 'chem', 'hair' and 'people', and the rows are labelled from 1-5. In the 'phys' column are the numbers '75, '80', '72', '79' and '65'. In the 'chem' column are the numbers '69', '74', '80', '80' and '70'. In the 'hair' column are the colours 'Brown', 'Brown', 'Blonde', 'Black' and 'Blonde'. In the 'people' column are the names 'Alfred', 'Beatrice', 'Carl', 'Daphne' and 'Earl'."><figcaption style="text-align:center">
+Figure 2: Another column, <code style="color: blue;">people</code>, is added to the data frame <code style="color: blue;">eg_frame</code>, outputted in the console in <b><em>RStudio</em></b>.
+</figcaption>
+</center>
+</figure><p>But here, <strong><em>R</em></strong> sees the <code style="color: blue;">people</code> column as another variable we have recorded. If we want to tell <strong><em>R</em></strong> that this column is special because it contains the names of our sampling units we need to label it using <code style="color: blue;">row.names</code>.</p>
+<p>We can do this in the definition of the data frame like so:</p>
+<center>
+<code style="color: blue;">eg_frame &lt;- data.frame(phys, chem, hair, row.names = people)</code>
+</center>
+<p>or we can define the data frame as before and then use <code style="color: blue;">row.names</code> as a function like so:</p>
+<center>
+<code style="color: blue;">eg_frame &lt;- data.frame(phys, chem, hair)</code><br><code style="color: blue;">row.names(eg_frame) &lt;- c(“Alfred”, “Beatrice”, “Carl”, “Daphne”, “Earl”)</code>
+</center>
+<p>With row names added by either of these methods, the data frame looks like this:</p>
+<figure><center>
+<img src="media/07_media/F_Creating_a_data_frame_in_R_fig3.png" width="300" title="Figure 3" alt="An image showing the data frame outputted in the console in RStudio when either of the code options above are typed in. It has five rows and three columns, and the column titles are 'phys', 'chem', and 'hair', and the rows are labelled 'Alfred', 'Beatrice', 'Carl', 'Daphne' and 'Earl'. In the 'phys' column are the numbers '75, '80', '72', '79' and '65'. In the 'chem' column are the numbers '69', '74', '80', '80' and '70'. In the 'hair' column are 'Brown', 'Brown', 'Blonde', 'Black' and 'Blonde'."><figcaption style="text-align:center">
+Figure 3: Row names are added to the data frame <code style="color: blue;">eg_frame</code>, outputted in the console in <b><em>RStudio</em></b>.
+</figcaption>
+</center>
+</figure>
+</div>
+<div id="adding-extra-columns" class="section level2" number="8.5">
+<h2>
+<span class="header-section-number">8.5</span> Adding Extra Columns<a class="anchor" aria-label="anchor" href="#adding-extra-columns"><i class="fas fa-link"></i></a>
+</h2>
+<p>For the data frame above we can add a new column like so:</p>
+<center>
+<code style="color: blue;">biology_scores &lt;- c(80, 69, 71, 72, 75)</code><br><code style="color: blue;">eg_frame$bio &lt;- biology_scores</code>
+</center>
+<p>The first line defines a new vector called <code style="color: blue;">biology_scores</code> which contains the data we want to add to our data frame. The second line uses <code style="color: blue;">$</code> to define a new column within the <code style="color: blue;">eg_frame</code> data frame called <code style="color: blue;">bio</code>. This new column is then assigned the values from the vector <code style="color: blue;">biology_scores</code>.</p>
+<p>Once the new column has been added, the data frame looks like this:</p>
+<figure><center>
+<img src="media/07_media/F_Creating_a_data_frame_in_R_fig4.png" width="300" title="Figure 4" alt="An image showing the data frame outputted in the console in RStudio when the above code is typed in. It has five rows and four columns, and the column titles are 'phys', 'chem', 'hair' and 'bio', and the rows are labelled 'Alfred', 'Beatrice', 'Carl', 'Daphne' and 'Earl'. In the 'phys' column are the numbers '75, '80', '72', '79' and '65'. In the 'chem' column are the numbers '69', '74', '80', '80' and '70'. In the 'hair' column are 'Brown', 'Brown', 'Blonde', 'Black' and 'Blonde'. In the 'bio' column are the numbers '80', '69', '71', '72' and '75'."><figcaption style="text-align:center">
+Figure 4: A new column, <code style="color: blue;">bio</code>, is added to the <code style="color: blue;">eg_frame</code> data frame, outputted in the console in <b><em>RStudio</em></b>.
+</figcaption>
+</center>
+</figure><p>In general, to add a new column, we need code along these lines:</p>
+<center>
+<code style="color: blue;">Name of data frame $ name of new column &lt;- vector containing data for the new column</code>
+</center>
+</div>
+<div id="exercise-4" class="section level2" number="8.6">
+<h2>
+<span class="header-section-number">8.6</span> Exercise<a class="anchor" aria-label="anchor" href="#exercise-4"><i class="fas fa-link"></i></a>
+</h2>
+<p>1. Create a data frame in <strong><em>R</em></strong> to record what you had for breakfast and how long it took you to travel to work/lectures each day last week (you can make up this data if you neglected to keep records). Set the row names as the days of the week when defining the data frame.<br>
+2. Record how long it took you to get home each day in a numeric vector (again, fictional data is acceptable). Add this vector to your data frame as a new column.<br>
+3. Create a data frame in <strong><em>R</em></strong> containing the numbers in this table</p>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="center">Team 1 Score</th>
+<th align="center">Team 2 Score</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="center">2</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center">2</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">4</td>
+</tr>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">3</td>
+</tr>
+</tbody>
+</table></div>
+<p>4. Create a character vector containing the words <code style="color: blue;">game1</code>, <code style="color: blue;">game2</code>, <code style="color: blue;">game3</code>, <code style="color: blue;">game4</code> and <code style="color: blue;">game5</code>. Add this vector to your data frame as the row names.</p>
+<div id="solutions-4" class="section level3" number="8.6.1">
+<h3>
+<span class="header-section-number">8.6.1</span> Solutions<a class="anchor" aria-label="anchor" href="#solutions-4"><i class="fas fa-link"></i></a>
+</h3>
+<details><summary>
+Solutions
+</summary><ol style="list-style-type: decimal">
+<li><p><code style="color: blue;">&gt; breakfast &lt;- c(“egg”, “toast”, “toast”, “cereal”, “egg”)</code><br><code style="color: blue;">&gt; am &lt;- c(20,24,18,20,22)</code><br><code style="color: blue;">&gt; days &lt;- c(“Mon”, “Tues”, “Wed”, “Thur”, “Fri”)</code><br><code style="color: blue;">&gt; Mornings &lt;- data.frame(breakfast,am,row.names=days)</code><br><code style="color: blue;">&gt; Mornings</code><br><code> breakfast am</code><br><code>Mon egg 20</code><br><code>Tues toast 24</code><br><code>Wed toast 18</code><br><code>Thur cereal 20</code><br><code>Fri egg 22</code></p></li>
+<li><p><code style="color: blue;">&gt; pm &lt;- c(23,26,24,28,20)</code><br><code style="color: blue;">&gt; Mornings$pm &lt;- pm</code><br><code style="color: blue;">&gt; Mornings</code><br><code> breakfast am pm</code><br><code>Mon egg 20 23</code><br><code>Tues toast 24 26</code><br><code>Wed toast 18 24</code><br><code>Thur cereal 20 28</code><br><code>Fri egg 22 20</code></p></li>
+<li><p><code style="color: blue;">&gt; Team1Score &lt;- c(2,1,3,2,1)</code><br><code style="color: blue;">&gt; Team2Score &lt;- c(1,1,2,4,3)</code><br><code style="color: blue;">&gt; Scores &lt;- data.frame(Team1Score,Team2Score)</code></p></li>
+<li><p><code style="color: blue;">&gt; Games &lt;- c(“game1”, “game2”, “game3”, “game4”, “game5”)</code><br><code style="color: blue;">&gt; row.names(Scores) &lt;- Games</code><br><code style="color: blue;">&gt; Scores</code><br><code> Team1Score Team2Score</code><br><code>game1 2 1</code><br><code>game2 1 1</code><br><code>game3 3 2</code><br><code>game4 2 4</code><br><code>game5 1 3</code></p></li>
+</ol></details>
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="matricies.html"><span class="header-section-number">7</span> Matricies</a></div>
+<div class="next"><a href="other-objects.html"><span class="header-section-number">9</span> Other objects</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#dataframes"><span class="header-section-number">8</span> Dataframes</a></li>
+<li><a class="nav-link" href="#introduction-5"><span class="header-section-number">8.1</span> Introduction</a></li>
+<li><a class="nav-link" href="#what-is-a-data-frame"><span class="header-section-number">8.2</span> What is a Data Frame?</a></li>
+<li><a class="nav-link" href="#defining-a-data-frame-in-r"><span class="header-section-number">8.3</span> Defining a Data Frame in R</a></li>
+<li><a class="nav-link" href="#setting-the-row-names"><span class="header-section-number">8.4</span> Setting the Row Names</a></li>
+<li><a class="nav-link" href="#adding-extra-columns"><span class="header-section-number">8.5</span> Adding Extra Columns</a></li>
+<li>
+<a class="nav-link" href="#exercise-4"><span class="header-section-number">8.6</span> Exercise</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#solutions-4"><span class="header-section-number">8.6.1</span> Solutions</a></li></ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/07_dataframes.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/07_dataframes.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>First Steps in R</strong>" was written by MASH. It was last built on 2026-09-16.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

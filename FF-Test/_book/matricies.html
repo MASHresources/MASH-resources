@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 7 Matricies | First Steps in R</title>
+<meta name="author" content="MASH">
+<meta name="description" content="7.1 Introduction This document is part of our “First Steps in R” resources. It follows on from similar documents about vectors and functions in R. It is assumed that the reader understands how to...">
+<meta name="generator" content="bookdown 0.48 with bs4_book()">
+<meta property="og:title" content="Chapter 7 Matricies | First Steps in R">
+<meta property="og:type" content="book">
+<meta property="og:description" content="7.1 Introduction This document is part of our “First Steps in R” resources. It follows on from similar documents about vectors and functions in R. It is assumed that the reader understands how to...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 7 Matricies | First Steps in R">
+<meta name="twitter:description" content="7.1 Introduction This document is part of our “First Steps in R” resources. It follows on from similar documents about vectors and functions in R. It is assumed that the reader understands how to...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.10.0/transition.js"></script><script src="libs/bs3compat-0.10.0/tabs.js"></script><script src="libs/bs3compat-0.10.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">First Steps in R</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
+<li><a class="" href="everything-you-need-to-know-before-you-learn-r.html"><span class="header-section-number">2</span> Everything you need to know before you learn R</a></li>
+<li><a class="" href="downloading-r-and-rstudio.html"><span class="header-section-number">3</span> Downloading R and RStudio</a></li>
+<li><a class="" href="first-interactions-with-r-and-rstudio.html"><span class="header-section-number">4</span> First interactions with R and RStudio</a></li>
+<li><a class="" href="vectors.html"><span class="header-section-number">5</span> Vectors</a></li>
+<li><a class="" href="functions.html"><span class="header-section-number">6</span> Functions</a></li>
+<li><a class="active" href="matricies.html"><span class="header-section-number">7</span> Matricies</a></li>
+<li><a class="" href="dataframes.html"><span class="header-section-number">8</span> Dataframes</a></li>
+<li><a class="" href="other-objects.html"><span class="header-section-number">9</span> Other objects</a></li>
+<li><a class="" href="packages.html"><span class="header-section-number">10</span> Packages</a></li>
+<li><a class="" href="exploring-data.html"><span class="header-section-number">11</span> Exploring Data</a></li>
+<li><a class="" href="importing-data.html"><span class="header-section-number">12</span> Importing Data</a></li>
+<li><a class="" href="where-to-go-next-1.html"><span class="header-section-number">13</span> Where to go next</a></li>
+<li><a class="" href="swirl-2.html"><span class="header-section-number">14</span> Swirl</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="matricies" class="section level1" number="7">
+<h1>
+<span class="header-section-number">7</span> Matricies<a class="anchor" aria-label="anchor" href="#matricies"><i class="fas fa-link"></i></a>
+</h1>
+<div id="introduction-4" class="section level2" number="7.1">
+<h2>
+<span class="header-section-number">7.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-4"><i class="fas fa-link"></i></a>
+</h2>
+<p>This document is part of our “First Steps in <strong><em>R</em></strong>” resources. It follows on from similar documents about vectors and functions in <strong><em>R</em></strong>. It is assumed that the reader understands how to define numerical and character vectors and call a function in <strong><em>R</em></strong>. If you would like to recap these topics, the documents and videos are on the MASH website.</p>
+</div>
+<div id="what-is-a-matrix" class="section level2" number="7.2">
+<h2>
+<span class="header-section-number">7.2</span> What is a Matrix?<a class="anchor" aria-label="anchor" href="#what-is-a-matrix"><i class="fas fa-link"></i></a>
+</h2>
+<p>In mathematics, a vector can be thought of as a single line of numbers in order, usually written in a column like so:</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+2 \\
+1 \\
+0 \\
+7 \\
+4 \\
+\end{bmatrix}
+\]</span></p>
+<p>A matrix is a grid of numbers arranged in rows and columns like so:</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+2 &amp; 1 &amp; 0 &amp; 5 \\
+4 &amp; 2 &amp; 3 &amp; 9 \\
+0 &amp; 8 &amp; 8 &amp; 1 \\
+\end{bmatrix}
+\]</span></p>
+<p>Although there are differences between matrices in <strong><em>R</em></strong> and in mathematics, this grid arrangement is the key feature that they have in common.</p>
+</div>
+<div id="defining-a-numerical-matrix-in-r" class="section level2" number="7.3">
+<h2>
+<span class="header-section-number">7.3</span> Defining a Numerical Matrix in <strong><em>R</em></strong><a class="anchor" aria-label="anchor" href="#defining-a-numerical-matrix-in-r"><i class="fas fa-link"></i></a>
+</h2>
+<p>The following code is used to define a matrix in <strong><em>R</em></strong>. We will look at the elements of the code in turn:</p>
+<center>
+<code style="color: blue;">new_matrix &lt;- matrix(1:20, nrow=4, ncol=5)</code>
+</center>
+<p>In <strong><em>R</em></strong>, a matrix is an “object.” To define any new object we begin by giving it a name. Then we use the assignment operator <code style="color: blue;">&lt;-</code> to tell <strong><em>R</em></strong> that the definition of the object is about to follow. We will call our matrix “new_matrix”:</p>
+<center>
+<code style="color: blue;">new_matrix &lt;-</code>
+</center>
+<p>So far, everything is the same as if we were defining a vector. Next we use the function “matrix” to tell <strong><em>R</em></strong> that the object we are defining will be a matrix.</p>
+<p>Once we have stated which numbers we want to arrange in a matrix, we next specify how many rows and columns we want the matrix to have.</p>
+<p>In the above example, we chose <span class="math inline">\(4\)</span> rows and <span class="math inline">\(5\)</span> columns.</p>
+<p>The first argument of the <code style="color: blue;">matrix</code> function must be a vector. In the above example we have used the vector <code style="color: blue;">1:20</code> which is just the numbers <span class="math inline">\(1\)</span>, <span class="math inline">\(2\)</span>, <span class="math inline">\(3\)</span>, <span class="math inline">\(\ldots\)</span> , <span class="math inline">\(20\)</span>. Any vector can be used. The vector can be defined inside the <code style="color: blue;">matrix</code> function like so:</p>
+<center>
+<code style="color: blue;">new_matrix2 &lt;- matrix(c(2,3,2,3,4,6,3,7,6), nrow=3, ncol=3)</code>
+</center>
+<p>In the above example the code tells <strong><em>R</em></strong> to concatenate (join together) the <span class="math inline">\(9\)</span> numbers (<span class="math inline">\(2\)</span>, <span class="math inline">\(3\)</span>, <span class="math inline">\(2\)</span>, <span class="math inline">\(3\)</span>, <span class="math inline">\(4\)</span>, <span class="math inline">\(6\)</span>, <span class="math inline">\(3\)</span>, <span class="math inline">\(7\)</span>, <span class="math inline">\(6\)</span>) into a matrix with <span class="math inline">\(3\)</span> rows and <span class="math inline">\(3\)</span> columns. Alternatively, we can define the vector first and use the name of the vector as an argument like so:</p>
+<center>
+<code style="color: blue;">eg_vector &lt;- c(2,3,2,3,4,6,3,7,6)</code><br><code style="color: blue;">new_matrix2 &lt;- matrix(eg_vector, nrow=3, ncol=3)</code>
+</center>
+<p>If we define this matrix:</p>
+<center>
+<code style="color: blue;">new_matrix &lt;- matrix(1:20, nrow=4, ncol=5)</code>
+</center>
+<p>in <strong><em>R</em></strong> and then ask <strong><em>R</em></strong> to show us the matrix (by typing <code style="color: blue;">new_matrix</code>) we get the following output:</p>
+<figure><center>
+<img src="media/06_media/E_Matrices_in_R_fig1.png" width="600" title="Figure 1" alt="An image showing the console in RStudio where 'new_matrix &lt;- matrix(1:20, nrow=4, ncol=5)' and 'new_matrix' are typed in. Underneath 'new_matrix', a matrix with four rows and five columns is outputted, with the numbers 1-4 down the first column, 5-8 down the second, 9-12 down the third, 13-16 down the fourth and 17-20 down the fifth."><figcaption style="text-align:center">
+Figure 1: <code style="color: blue;">new_matrix</code>, with the data from the vector <code style="color: blue;">1:20</code> arranged by going down the first column, then the second column and so on, is shown in the console in <b><em>RStudio</em></b>.
+</figcaption>
+</center>
+</figure><p>By default <strong><em>R</em></strong> arranges the data from our vector <code style="color: blue;">1:20</code> by going down the first column, then the second column and so on. The matrix function has a fourth argument <code style="color: blue;">byrow</code> which is set to <code style="color: blue;">FALSE</code> by default. If we change <code style="color: blue;">byrow</code> to <code style="color: blue;">TRUE</code>, <strong><em>R</em></strong> starts by assigning data to the first row, then the second row and so on:</p>
+<figure><center>
+<img src="media/06_media/E_Matrices_in_R_fig2.png" width="700" title="Figure 2" alt="An image showing the console in RStudio where 'new_matrix &lt;- matrix(1:20, nrow=4, ncol=5, byrow=TRUE)' and 'new_matrix' are typed in. Underneath 'new_matrix', a matrix with four rows and five columns is outputted, with the numbers 1-5 along the first row, 6-10 along the second, 11-15 along the third and 16-20 along the fourth."><figcaption style="text-align:center">
+Figure 2: <code style="color: blue;">new_matrix</code>, with the data from the vector <code style="color: blue;">1:20</code> arranged by going along the first row, the second row and so on, is shown in the console in <b><em>RStudio</em></b>.
+</figcaption>
+</center>
+</figure><p>The preferred order for the arguments in the <code style="color: blue;">matrix</code> function is as shown above. The vector containing the data must <strong>always</strong> be the first argument. However, we can put the other arguments in any order as long as the labels <code style="color: blue;">nrow=</code>, <code style="color: blue;">ncol=</code> and <code style="color: blue;">byrow=</code> are used. Without labels, these arguments <strong>must</strong> be in the order shown above. Each of these three lines of code all define exactly the same matrix:</p>
+<center>
+<code style="color: blue;">new_matrix &lt;- matrix(1:20, nrow=4, ncol=5, byrow=TRUE)</code><br><code style="color: blue;">new_matrix &lt;- matrix(1:20, ncol=5, byrow=TRUE, nrow=4)</code><br><code style="color: blue;">new_matrix &lt;- matrix(1:20, 4, 5, TRUE)</code>
+</center>
+</div>
+<div id="character-matrices" class="section level2" number="7.4">
+<h2>
+<span class="header-section-number">7.4</span> Character Matrices<a class="anchor" aria-label="anchor" href="#character-matrices"><i class="fas fa-link"></i></a>
+</h2>
+<p>The previous examples discuss numerical matrices. If we define a character vector and ask <strong><em>R</em></strong> to arrange it into a matrix, the resulting matrix is called a character matrix.</p>
+<p>For example:</p>
+<center>
+<code style="color: blue;">char_vec = c(“a”, “b”, “c”, “d”, “e”, “f”, “g”, “h”, “i”)</code><br><code style="color: blue;">char_matrix &lt;- matrix(char_vec, nrow=3, ncol=3)</code><br><code style="color: blue;">char_matrix</code>
+</center>
+<p>produces the following:</p>
+<figure><center>
+<img src="media/06_media/E_Matrices_in_R_fig3.png" width="700" title="Figure 3" alt="An image showing the console in RStudio where 'char_vec = c('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i')', 'char_matrix &lt;- matrix(char_vec, nrow=3, col=3)' and 'char_matrix' are typed in. Underneath 'char_matrix', a matrix with three rows and three columns is outputted, with the letters 'a', 'b' and 'c'  down the first column, 'd', 'e' and 'f' down the second and 'g', 'h' and 'i' down the third."><figcaption style="text-align:center">
+Figure 3: <code style="color: blue;">char_matrix</code> is shown in the console in <b><em>RStudio</em></b>.
+</figcaption>
+</center>
+</figure><p>If we define <code style="color: blue;">char_matrix</code> and <code style="color: blue;">new_matrix</code> as above, we can see in the “Environment” window (top right) that the first is stored as a character matrix and the second as a numeric matrix.</p>
+<figure><center>
+<img src="media/06_media/E_Matrices_in_R_fig4.png" width="900" title="Figure 4" alt="An image showing the top right window (the 'Environment') in RStudio. Under 'Data', 'char_matrix' and 'chr [1:3, 1:3] 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i'' are displayed inline, and underneath that 'new_matrix' and 'int[1:4, 1:5] 1 6 11 16 2 7 12 17 3 8...' are displayed inline. 'chr' and 'int' are cricled. Under 'Values', 'char_vec' and 'chr [1:9] 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i'' are displayed inline."><figcaption style="text-align:center">
+Figure 4: The top right window (the “Environment”) in <b><em>RStudio</em></b> where <code style="color: blue;">char_matrix</code> is shown to be a stored as a character matrix and <code style="color: blue;">new_matrix</code> is shown to be stored as a numeric matrix.
+</figcaption>
+</center>
+</figure><p><code>chr</code> stands for character and <code>int</code> stands for integer (since all the numbers in our numeric matrix are integers).</p>
+</div>
+<div id="combining-vectors-to-make-matrices" class="section level2" number="7.5">
+<h2>
+<span class="header-section-number">7.5</span> Combining Vectors to Make Matrices<a class="anchor" aria-label="anchor" href="#combining-vectors-to-make-matrices"><i class="fas fa-link"></i></a>
+</h2>
+<p>It may be more convenient to define a vector for each row or column of a matrix and then ask <strong><em>R</em></strong> to put the vectors together into a matrix. This can be done with the <code style="color: blue;">rbind</code> and <code style="color: blue;">cbind</code> functions. <code style="color: blue;">rbind</code> combines the vectors as rows and <code style="color: blue;">cbind</code> as columns like so:</p>
+<figure><center>
+<img src="media/06_media/E_Matrices_in_R_fig5.png" width="300" title="Figure 5" alt="An image showing the console in RStudio where 'one &lt;- c(1,2,3)', 'two &lt;- c(4,5,6)', 'three &lt;- c(7,8,9)', 'rbind(one, two, three)' and 'cbind(one, two, three)' are typed in. Underneath 'rbind(one, two, three)' a matrix with three rows and three columns is outputted, with the numbers 1-3 along the first row, 4-6 along the second and 7-9 along the third. Underneath 'cbind(one, two, three)' a matrix with three rows and three columns is outputted, with the numbers 1-3 down the first column, 4-6 down the second and 7-9 down the third."><figcaption style="text-align:center">
+Figure 5: The vectors <code style="color: blue;">one</code>, <code style="color: blue;">two</code> and <code style="color: blue;">three</code> are combined as rows and as columns to make matrices, outputted in the console in <b><em>RStudio</em></b>.
+</figcaption>
+</center>
+</figure>
+</div>
+<div id="combining-numeric-and-character-vectors" class="section level2" number="7.6">
+<h2>
+<span class="header-section-number">7.6</span> Combining Numeric and Character Vectors<a class="anchor" aria-label="anchor" href="#combining-numeric-and-character-vectors"><i class="fas fa-link"></i></a>
+</h2>
+<p>Numeric and character vectors can be combined to make a matrix using <code style="color: blue;">rbind</code> or <code style="color: blue;">cbind</code> like so:</p>
+<figure><center>
+<img src="media/06_media/E_Matrices_in_R_fig6.png" width="300" title="Figure 6" alt="An image showing the console in RStudio. 'one &lt;- c(1,2,3)', 'alpha &lt;- c('a', 'b', 'c')', 'eg &lt;- rbind(one, alpha)' and 'eg' are typed in. Underneath 'eg', a matrix with two rows and three columns is outputted, with the numbers 1-3 along the first row and the letters 'a', 'b' and 'c' along the second row."><figcaption style="text-align:center">
+Figure 6: The vectors <code style="color: blue;">one</code> and <code style="color: blue;">alpha</code> are combined as rows to make the matrix <code style="color: blue;">eg</code>, outputted in the console in <b><em>RStudio</em></b>.
+</figcaption>
+</center>
+</figure><p>But if we check how <strong><em>R</em></strong> has stored this matrix, we will see that it is a character matrix:</p>
+<figure><center>
+<img src="media/06_media/E_Matrices_in_R_fig7.png" width="900" title="Figure 7" alt="An image showing the  top right window (the 'Environment') in RStudio. Under 'Data', 'eg' and 'chr [1:2, 1:3] '1' 'a' '2' 'b' '3' 'c'' are displayed inline.'chr' is circled. Under 'Values', 'alpha' and 'chr [1:3] 'a' 'b' 'c'' are displayed inline and underneath that, 'one' and 'num [1:3] 1 2 3' are displayed inline."><figcaption style="text-align:center">
+Figure 7: The top right window (the “Environment”) in <b><em>RStudio</em></b> where <code style="color: blue;">eg</code> is shown to be stored as a character matrix.
+</figcaption>
+</center>
+</figure><p>This means that <strong><em>R</em></strong> is now classifying the first row of the matrix as characters and not numbers. Matrices can only have one data type, and when we combine a character vector and a numeric vector, the numeric data is ‘coerced’ to become characters. If we want a row (or column) of numerical data and another with data stored as characters, we need to use a data frame. Data frames are dealt with in other documents in this series which can be found on the MASH website.</p>
+</div>
+<div id="exercise-3" class="section level2" number="7.7">
+<h2>
+<span class="header-section-number">7.7</span> Exercise<a class="anchor" aria-label="anchor" href="#exercise-3"><i class="fas fa-link"></i></a>
+</h2>
+<p>In <strong><em>RStudio</em></strong>, define:</p>
+<ol style="list-style-type: decimal">
+<li>A numerical matrix ordered by columns</li>
+<li>A numerical matrix ordered by rows</li>
+<li>A character matrix</li>
+<li>Three numerical vectors of length <span class="math inline">\(5\)</span> called <code style="color: blue;">a</code>, <code style="color: blue;">b</code> and <code style="color: blue;">c</code>
+</li>
+<li>A matrix which has vectors <code style="color: blue;">a</code>, <code style="color: blue;">b</code> and <code style="color: blue;">c</code> as rows</li>
+<li>A matrix which has vectors <code style="color: blue;">a</code>, <code style="color: blue;">b</code> and <code style="color: blue;">c</code> as columns</li>
+</ol>
+<div id="solutions-3" class="section level3" number="7.7.1">
+<h3>
+<span class="header-section-number">7.7.1</span> Solutions<a class="anchor" aria-label="anchor" href="#solutions-3"><i class="fas fa-link"></i></a>
+</h3>
+<details><summary>
+Solutions
+</summary><ol style="list-style-type: decimal">
+<li><p>First let’s create a numerical vector of random integers using the <code style="color: blue;"><a href="https://rdrr.io/r/base/sample.html">sample()</a></code> command. The following creates a vector of random integers between <span class="math inline">\(0\)</span> and <span class="math inline">\(9\)</span> of length <span class="math inline">\(12\)</span>:<br><code style="color: blue;">&gt; num_vect1 &lt;- sample(0:9, 12,replace=TRUE)</code><br><code style="color: blue;">&gt; num_vect1</code><br><code> [1] 1 6 1 1 7 5 3 2 7 5 9 0</code><br>
+Now create a matrix ordered by columns (remember the default is by columns):<br><code style="color: blue;">&gt; num_mat_col &lt;- matrix(num_vect1,nrow=3, ncol=4)</code><br><code style="color: blue;">&gt; num_mat_col</code><br><code> [,1] [,2] [,3] [,4]</code><br><code>[1,] 1 1 3 5</code><br><code>[2,] 6 7 2 9</code><br><code>[3,] 1 5 7 0</code></p></li>
+<li><p>Now create a matrix ordered by rows:<br><code style="color: blue;">&gt; num_mat_row &lt;- matrix(num_vect1,nrow=3, ncol=4, byrow=TRUE)</code><br><code style="color: blue;">&gt; num_mat_row</code><br><code> [,1] [,2] [,3] [,4]</code><br><code>[1,] 1 6 1 1</code><br><code>[2,] 7 5 3 2</code><br><code>[3,] 7 5 9 0</code></p></li>
+<li><p>To create a sequential vector of letters, we can use either <code style="color: blue;">letters</code> or <code style="color: blue;">LETTERS</code> depending on whether you want lowercase or capitals. The following creates a character vector with the first <span class="math inline">\(12\)</span> letters of the alphabet:<br><code style="color: blue;">&gt; char_vect &lt;- letters[1:12]</code><br>
+You can also take a random sample of letters of the alphabet using the <code style="color: blue;"><a href="https://rdrr.io/r/base/sample.html">sample()</a></code> function:<br><code style="color: blue;">&gt; char_vect &lt;- sample(1etters[1:12],12, replace=TRUE)</code><br><code style="color: blue;">&gt; char_vect</code><br><code> [1] “d” “a” “g” “d” “b” “f” “d” “f” “f” “b” “f” “i”</code><br>
+The following uses the character vector that has been created to create a character matrix:<br><code style="color: blue;">&gt; matrix_char &lt;- matrix(char_vect,3,4)</code><br><code style="color: blue;">&gt; matrix_char</code><br><code> [,1] [,2] [,3] [,4]</code><br><code>[1,] “d” “d” “d” “b” </code><br><code>[2,] “a” “b” “f” “f” </code><br><code>[3,] “g” “f” “f” “i” </code><br>
+Alternatively, you can pick the character strings for your matrix by hand:
+<code style="color: blue;">char_vect &lt;- c(“first word”, “second word”, …)</code></p></li>
+<li><p>Now to create three vectors:<br><code style="color: blue;">&gt; a &lt;- sample(0:9,5,replace=TRUE)</code><br><code style="color: blue;">&gt; b &lt;- sample(0:9,5,replace=TRUE)</code><br><code style="color: blue;">&gt; c &lt;- sample(0:9,5,replace=TRUE)</code><br><code style="color: blue;">&gt; a</code><br><code>[1] 3 7 8 9 7</code><br><code style="color: blue;">&gt; b</code><br><code>[1] 7 2 9 7 3</code><br><code style="color: blue;">&gt; c</code><br><code>[1] 3 8 9 4 8</code><br>
+(Again, these vectors have been produced by picking numbers between <span class="math inline">\(0\)</span> and <span class="math inline">\(9\)</span> at random. You don’t have to use the same method here, any numbers will do in your vectors.)</p></li>
+<li><p><code style="color: blue;">&gt; row_matrix &lt;- rbind(a,b,c)</code><br><code style="color: blue;">&gt; row_matrix</code><br><code> [,1] [,2] [,3] [,4] [,5]</code><br><code>a 3 7 8 9 7</code><br><code>b 7 2 9 7 3</code><br><code>c 3 8 9 4 8</code></p></li>
+<li><p><code style="color: blue;">&gt; col_matrix &lt;- cbind(a,b,c)</code><br><code style="color: blue;">&gt; col_matrix</code><br><code> a b c</code><br><code>[1,] 3 7 3</code><br><code>[2,] 7 2 8</code><br><code>[3,] 8 9 9</code><br><code>[4,] 9 7 4</code><br><code>[5,] 7 3 8</code></p></li>
+</ol>
+<p>&lt;&gt;</p>
+
+</details>
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="functions.html"><span class="header-section-number">6</span> Functions</a></div>
+<div class="next"><a href="dataframes.html"><span class="header-section-number">8</span> Dataframes</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#matricies"><span class="header-section-number">7</span> Matricies</a></li>
+<li><a class="nav-link" href="#introduction-4"><span class="header-section-number">7.1</span> Introduction</a></li>
+<li><a class="nav-link" href="#what-is-a-matrix"><span class="header-section-number">7.2</span> What is a Matrix?</a></li>
+<li><a class="nav-link" href="#defining-a-numerical-matrix-in-r"><span class="header-section-number">7.3</span> Defining a Numerical Matrix in R</a></li>
+<li><a class="nav-link" href="#character-matrices"><span class="header-section-number">7.4</span> Character Matrices</a></li>
+<li><a class="nav-link" href="#combining-vectors-to-make-matrices"><span class="header-section-number">7.5</span> Combining Vectors to Make Matrices</a></li>
+<li><a class="nav-link" href="#combining-numeric-and-character-vectors"><span class="header-section-number">7.6</span> Combining Numeric and Character Vectors</a></li>
+<li>
+<a class="nav-link" href="#exercise-3"><span class="header-section-number">7.7</span> Exercise</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#solutions-3"><span class="header-section-number">7.7.1</span> Solutions</a></li></ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/06_Matrices.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/06_Matrices.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>First Steps in R</strong>" was written by MASH. It was last built on 2026-09-16.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

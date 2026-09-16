@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 9 Other objects | First Steps in R</title>
+<meta name="author" content="MASH">
+<meta name="description" content="9.1 Introduction This document is part of our “First Steps in R” resources. In previous documents we discussed character and numeric vectors, matrices and data frames. It is assumed the reader is...">
+<meta name="generator" content="bookdown 0.48 with bs4_book()">
+<meta property="og:title" content="Chapter 9 Other objects | First Steps in R">
+<meta property="og:type" content="book">
+<meta property="og:description" content="9.1 Introduction This document is part of our “First Steps in R” resources. In previous documents we discussed character and numeric vectors, matrices and data frames. It is assumed the reader is...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 9 Other objects | First Steps in R">
+<meta name="twitter:description" content="9.1 Introduction This document is part of our “First Steps in R” resources. In previous documents we discussed character and numeric vectors, matrices and data frames. It is assumed the reader is...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.10.0/transition.js"></script><script src="libs/bs3compat-0.10.0/tabs.js"></script><script src="libs/bs3compat-0.10.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">First Steps in R</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
+<li><a class="" href="everything-you-need-to-know-before-you-learn-r.html"><span class="header-section-number">2</span> Everything you need to know before you learn R</a></li>
+<li><a class="" href="downloading-r-and-rstudio.html"><span class="header-section-number">3</span> Downloading R and RStudio</a></li>
+<li><a class="" href="first-interactions-with-r-and-rstudio.html"><span class="header-section-number">4</span> First interactions with R and RStudio</a></li>
+<li><a class="" href="vectors.html"><span class="header-section-number">5</span> Vectors</a></li>
+<li><a class="" href="functions.html"><span class="header-section-number">6</span> Functions</a></li>
+<li><a class="" href="matricies.html"><span class="header-section-number">7</span> Matricies</a></li>
+<li><a class="" href="dataframes.html"><span class="header-section-number">8</span> Dataframes</a></li>
+<li><a class="active" href="other-objects.html"><span class="header-section-number">9</span> Other objects</a></li>
+<li><a class="" href="packages.html"><span class="header-section-number">10</span> Packages</a></li>
+<li><a class="" href="exploring-data.html"><span class="header-section-number">11</span> Exploring Data</a></li>
+<li><a class="" href="importing-data.html"><span class="header-section-number">12</span> Importing Data</a></li>
+<li><a class="" href="where-to-go-next-1.html"><span class="header-section-number">13</span> Where to go next</a></li>
+<li><a class="" href="swirl-2.html"><span class="header-section-number">14</span> Swirl</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="other-objects" class="section level1" number="9">
+<h1>
+<span class="header-section-number">9</span> Other objects<a class="anchor" aria-label="anchor" href="#other-objects"><i class="fas fa-link"></i></a>
+</h1>
+<div id="introduction-6" class="section level2" number="9.1">
+<h2>
+<span class="header-section-number">9.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-6"><i class="fas fa-link"></i></a>
+</h2>
+<p>This document is part of our “First Steps in <strong><em>R</em></strong>” resources. In previous documents we discussed character and numeric vectors, matrices and data frames. It is assumed the reader is familiar with these topics. If you would like a recap, the materials are available on the MASH website. This document introduces the reader to some more commonly used kinds of object. If you are new to <strong><em>R</em></strong>, it is not necessary to know all the details of every object available but it is useful to know that they exist.</p>
+</div>
+<div id="factors" class="section level2" number="9.2">
+<h2>
+<span class="header-section-number">9.2</span> Factors<a class="anchor" aria-label="anchor" href="#factors"><i class="fas fa-link"></i></a>
+</h2>
+<p>A factor is useful for storing categorical data. A factor is similar to a vector but <strong><em>R</em></strong> also keeps track of the “levels” of data. For example, if we are recording whether people are left or right handed, we might store our data in a vector like so:</p>
+<center>
+<code style="color: blue;">handed &lt;- c(“right”, “left”, “left”, “right”, “right”, “right”, “right”)</code>
+</center>
+<p>If we turn this data into a factor like so</p>
+<center>
+<code style="color: blue;">eg_factor &lt;- factor(handed)</code>
+</center>
+<p>We find that when we ask <strong><em>R</em></strong> to show us the object <code style="color: blue;">eg_factor</code> we get:</p>
+<figure><center>
+<img src="media/08_media/G_Other_objects_fig1.png" width="500" title="Figure 1" alt="An image showing the console in RStudio, where 'eg_factor' is typed in. Underneath 'eg_factor' are the words 'right', 'left', 'left', 'right', 'right', 'right', 'right'. Underneath that is 'Levels: left right'."><figcaption style="text-align:center">
+Figure 1: <code style="color: blue;">eg_factor</code>, with the levels of data, is shown in the console in <b><em>RStudio</em></b>.
+</figcaption>
+</center>
+</figure><p>The levels of data are <code style="color: blue;">left</code> and <code style="color: blue;">right</code> and this information is now also stored. We might need to use factors rather than character vectors because some functions expect data to be stored as a factor.</p>
+</div>
+<div id="lists" class="section level2" number="9.3">
+<h2>
+<span class="header-section-number">9.3</span> Lists<a class="anchor" aria-label="anchor" href="#lists"><i class="fas fa-link"></i></a>
+</h2>
+<p>Vectors in <strong><em>R</em></strong> contain a “list” of values. Separately, a list is also a kind of object in <strong><em>R</em></strong>. A list-object can contain vectors, matrices, numbers, strings, data frames or anything else we can define as an object in <strong><em>R</em></strong>. To define a list we use the command <code style="color: blue;"><a href="https://rdrr.io/r/base/list.html">list()</a></code> and the objects we wish to put in the list go in the brackets separated by commas.</p>
+<p>If we create several diverse objects like so:</p>
+<center>
+<code style="color: blue;">x &lt;- c(4,2,5,3,6)</code><br><code style="color: blue;">y &lt;- matrix(1:20,4,5)</code><br><code style="color: blue;">z &lt;- 8*7</code><br><code style="color: blue;">a &lt;- c(“this”, “is”, “a”, “character”, “vector”)</code>
+</center>
+<p>We can then store them in a list like so:</p>
+<center>
+<code style="color: blue;">eg_list &lt;- list (x,y,z,a)</code>
+</center>
+<p>When we ask <strong><em>R</em></strong> to show us this list, we get the following:</p>
+<figure><center>
+<img src="media/08_media/G_Other_objects_fig2.png" width="600" title="Figure 2" alt="An image showing the console in RStudio, where 'eg_list' is typed in. Underneath 'eg_list' are the numbers '4', '2', '5', '3', '6'. Underneath that is a matrix with four rows and five columns. The numbers 1-4 are down the first column, 5-8 down the second, 9-12 down the third, 13-16 down the fourth and 17-20 down the fifth. Beneath the matrix is the number '56' and then there are the words 'this' 'is' 'a' 'character' 'vector'."><figcaption style="text-align:center">
+Figure 2: The objects <code style="color: blue;">x</code>, <code style="color: blue;">y</code>, <code style="color: blue;">z</code> and <code style="color: blue;">a</code> are stored in the list <code style="color: blue;">eg_list</code>, outputted in the console in <b><em>RStudio</em></b>.
+</figcaption>
+</center>
+</figure>
+</div>
+<div id="logical-vectors" class="section level2" number="9.4">
+<h2>
+<span class="header-section-number">9.4</span> Logical Vectors<a class="anchor" aria-label="anchor" href="#logical-vectors"><i class="fas fa-link"></i></a>
+</h2>
+<p>We have seen numeric and character vectors in previous documents. A third option is logical vectors. Logical values are <code style="color: blue;">TRUE</code> and <code style="color: blue;">FALSE</code>. <strong><em>R</em></strong> associates a numerical value of <span class="math inline">\(1\)</span> with <code style="color: blue;">TRUE</code> and <span class="math inline">\(0\)</span> with <code style="color: blue;">FALSE</code>.</p>
+<p>Logical vectors are usually used to consider the properties of other vectors.</p>
+<p>For example, if we define a vector <code style="color: blue;">x</code> as <span class="math inline">\(1, 2, 3, \ldots, 10\)</span> like so:</p>
+<center>
+<code style="color: blue;">x &lt;- 1:10</code>
+</center>
+<p>Then the command</p>
+<center>
+<code style="color: blue;">x &gt; 5</code>
+</center>
+<p>asks <strong><em>R</em></strong> to evaluate the statement <code style="color: blue;">x &gt; 5</code> for each element of the vector <code style="color: blue;">x</code>. A logical vector is returned like so:</p>
+<figure><center>
+<img src="media/08_media/G_Other_objects_fig3.png" width="600" title="Figure 3" alt="An image showing the console in RStudio, where 'x &lt;- 1:10' and 'x &lt; 5' are typed in. Underneath 'x &lt; 5' are the words 'TRUE', 'TRUE', 'TRUE', 'TRUE', 'FALSE', 'FALSE', 'FALSE', 'FALSE', 'FALSE', 'FALSE'."><figcaption style="text-align:center">
+Figure 3: The statement <code style="color: blue;">x &gt; 5</code> is evaluated for each element of the vector <code style="color: blue;">x</code>, and a logical vector is outputted in the console in <b><em>RStudio</em></b>.
+</figcaption>
+</center>
+</figure><p>A useful command is:</p>
+<center>
+<code style="color: blue;">is.na(vector_name_here)</code>
+</center>
+<p>which can be used like so:</p>
+<figure><center>
+<img src="media/08_media/G_Other_objects_fig4.png" width="400" title="Figure 4" alt="An image showing the console in RStudio, where 'vector &lt;- c(1,2,NA,4,5)' and 'is.na(vector)' are typed in. Underneath 'is.na(vector)' are the words 'FALSE', 'FALSE', 'TRUE', 'FALSE', 'FALSE'."><figcaption style="text-align:center">
+Figure 4: Each element of the vector <code style="color: blue;">vector</code> is determined if it has the value <code style="color: blue;">NA</code> and a logical vector is outputted in the console in <b><em>RStudio</em></b>.
+</figcaption>
+</center>
+</figure><p>The command</p>
+<center>
+<code style="color: blue;">anyNA(vector_name_here)</code>
+</center>
+<p>will return a single result that is <code style="color: blue;">TRUE</code> if a vector contains one or more value of <code style="color: blue;">NA</code> and <code style="color: blue;">FALSE</code> if there are no missing values in the vector.</p>
+</div>
+<div id="arrays" class="section level2" number="9.5">
+<h2>
+<span class="header-section-number">9.5</span> Arrays<a class="anchor" aria-label="anchor" href="#arrays"><i class="fas fa-link"></i></a>
+</h2>
+<p>A matrix can be thought of as a <span class="math inline">\(2\)</span>-dimensional “grid” of numbers (or character strings) like so:</p>
+<p><span class="math display">\[ \begin{array}{|c|c|c|c|}
+\hline
+2 &amp; 4 &amp; 1 &amp; -5 \\ \hline
+2 &amp; 0 &amp; 2 &amp; 10 \\ \hline
+-8 &amp; -1 &amp; 6 &amp; 8 \\ \hline
+0 &amp; -6 &amp; -7 &amp; 9 \\ \hline
+3 &amp; 21 &amp; 4 &amp; 8 \\ \hline
+\end{array}  \]</span></p>
+<p>An array is the same as a matrix except we can have more than <span class="math inline">\(2\)</span> dimensions. For example, we can picture a <span class="math inline">\(3\)</span>-dimensional array like the cube below. We would have one value in each of the small cubes:</p>
+<figure><center>
+<img src="media/08_media/G_Other_objects_fig5.png" width="300" title="Figure 5" alt="An image showing a cube which is six small squares in width, six small squares in height and four small squares in depth."><figcaption style="text-align:center">
+Figure 5: A cube representing a <span class="math inline">\(3\)</span>-dimensional array.
+</figcaption>
+</center>
+</figure><p>In <strong><em>R</em></strong> we can define an array like so:</p>
+<center>
+<code style="color: blue;">array_name &lt;- array (data, dim = dimensions)</code>
+</center>
+<p>Here <code style="color: blue;">data</code> is a vector containing the values to be put into the array and <code style="color: blue;">dimensions</code> is a vector containing the dimensions of the array.</p>
+<p>Example: If we wish to arrange the numbers <span class="math inline">\(1\)</span> to <span class="math inline">\(27\)</span> into a <span class="math inline">\(3 \times 3 \times 3\)</span> cube we can do so thus:</p>
+<center>
+<code style="color: blue;">eg_array &lt;- array(1:27, dim = c(3,3,3))</code>
+</center>
+<p><strong><em>R</em></strong> displays the array by showing one “layer” of the cube at a time like so:</p>
+<figure><center>
+<img src="media/08_media/G_Other_objects_fig6.png" width="200" title="Figure 6" alt="An image showing the console in RStudio, where 'eg_array' is typed in. Underneath, three matrices are outputted, each with three rows and three columns. In the first matrix, the numbers 1-3 go down the first column, 4-6 down the second and 7-9 down the third. In the second matrix, the numbers 10-12 go dwon the first column, 13-15 down the second and 16-18 down the third. In the third matrix, the numbers 19-21 go down the first column, 22-24 down the second and 25-27 down the third. "><figcaption style="text-align:center">
+Figure 6: The array <code style="color: blue;">eg_array</code> is outputted in the console in <b><em>RStudio</em></b>.
+</figcaption>
+</center>
+</figure>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="dataframes.html"><span class="header-section-number">8</span> Dataframes</a></div>
+<div class="next"><a href="packages.html"><span class="header-section-number">10</span> Packages</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#other-objects"><span class="header-section-number">9</span> Other objects</a></li>
+<li><a class="nav-link" href="#introduction-6"><span class="header-section-number">9.1</span> Introduction</a></li>
+<li><a class="nav-link" href="#factors"><span class="header-section-number">9.2</span> Factors</a></li>
+<li><a class="nav-link" href="#lists"><span class="header-section-number">9.3</span> Lists</a></li>
+<li><a class="nav-link" href="#logical-vectors"><span class="header-section-number">9.4</span> Logical Vectors</a></li>
+<li><a class="nav-link" href="#arrays"><span class="header-section-number">9.5</span> Arrays</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/08_OtherObjects.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/08_OtherObjects.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>First Steps in R</strong>" was written by MASH. It was last built on 2026-09-16.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

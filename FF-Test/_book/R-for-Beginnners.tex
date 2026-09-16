@@ -1,0 +1,1453 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={R for ultra-beginnners},
+  pdfauthor={MASH:(part of StudySkills@Sheffield)},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{R for ultra-beginnners}
+\author{MASH:(part of \href{mailto:StudySkills@Sheffield}{\nolinkurl{StudySkills@Sheffield}})}
+\date{2026-09-16}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\chapter{About}\label{about}
+
+What this book is about
+
+\chapter{Everything you need to know before you learn R}\label{everything-you-need-to-know-before-you-learn-r}
+
+If you are completely new to R, you are in the right place.
+
+Learning R can feel intimidating at first. Unlike software such as Excel and SPSS, R asks you to \textbf{type instructions} to tell the computer what you want it to do rather than clicking icons and menus.
+
+That can feel strange at first.
+
+The good news is that you do \textbf{not} need to be a programmer to learn R. You just need to learn a few basic ideas, practise them, and gradually build up your understanding.
+
+This document is not intended to teach you R - rather, it should help you get started and highlight the key concepts to know before you try to learn R.
+
+By the end, you should understand:
+
+\begin{itemize}
+\tightlist
+\item
+  What R is
+\item
+  The difference between R and Rstudio
+\item
+  Some advantages and disadvantages of R versus other software
+\item
+  Main parts of the RStudio interface
+\item
+  How to begin coding in R
+\item
+  Where to find help and learning materials
+\item
+  How to continue learning R independently
+\end{itemize}
+
+\begin{quote}
+\textbf{The most important thing to remember:} You do not need to understand everything before you start. Learning R is a process.
+\end{quote}
+
+\section{What is R?}\label{what-is-r}
+
+R is a \textbf{programming language}. That means that instead of telling R what to do by clicking buttons in a menu, you generally type instructions.
+
+For example, you can ask R to calculate 2+2
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{2} \SpecialCharTok{+} \DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+and it will return:
+
+\begin{verbatim}
+#> [1] 4
+\end{verbatim}
+
+R is widely used for statistics, data analysis and data visualisation. It is used by students, researchers, universities, governments, businesses and many other organisations.
+
+R is especially useful when you need to:
+
+\begin{itemize}
+\tightlist
+\item
+  Work with data
+\item
+  Perform calculations
+\item
+  Carry out statistical analyses
+\item
+  Create graphs and visualisations
+\item
+  Manipulate datasets
+\end{itemize}
+
+\subsection{What is RStudio?}\label{what-is-rstudio}
+
+You will often hear people talk about \textbf{R and RStudio} as though they are the same thing.
+
+They are not.
+
+\textbf{R is the programming language itself.} It is the thing that actually performs your calculations, analyses and commands.
+
+\textbf{RStudio is an Integrated Development Environment (IDE) for R.} A fancy term for a user dashboard. It provides a convenient interface for working with R.
+
+\textbf{Think of it this way:}
+If R is the engine, RStudio is the dashboard that makes the engine easier to use.
+
+You can use R without RStudio, but RStudio provides a much more convenient environment for writing, running and organising R code.
+
+When you are getting started, you will normally install \textbf{both R and RStudio}.
+
+\subsection{Why learn R?}\label{why-learn-r}
+
+There are lots of reasons to learn R.
+
+\subsubsection{It's free!}\label{its-free}
+
+One of the biggest advantages of R is that it is \textbf{free}. You do not need to buy a licence to continue using R after you graduate and there are no limits to how many devices you install it on.
+
+\subsubsection{It's flexible!}\label{its-flexible}
+
+R can be used for an enormous range of tasks from calculating statistics, plotting data, statistical analysis, hypothesis tests, regression, automating tasks, writing reports and much more.
+
+\subsubsection{It's widely used!}\label{its-widely-used}
+
+R is widely used in scientific research and academia, as well as industry. R has an enormous library of \textbf{packages} to help you perform even quite specific tasks.
+
+Packages are collections of additional functions, data and other resources that extend what R can do.
+
+\begin{quote}
+\textbf{R can do a huge amount. And if it cannot already do something you need, there is often a package that can help --- or you can potentially create your own solution.}
+\end{quote}
+
+\subsection{The downsides of R}\label{the-downsides-of-r}
+
+R is powerful, but there are some things that can make it difficult to use when you first start. The main thing being that you have to interact with it as a programming language.
+
+If you are used to software where you select options from menus, R may initially feel unfamiliar and there will initially be quite a lot to learn.
+
+Before being proficient in R, you will need to learn:
+
+\begin{itemize}
+\tightlist
+\item
+  How R understands commands
+\item
+  What objects are
+\item
+  How functions work
+\item
+  How to structure your code
+\item
+  How to find and fix errors
+\end{itemize}
+
+This can feel daunting at first but is ** completely normal.**
+
+The first few sessions of learning R are often the hardest because you are learning a new way of communicating with a computer.
+
+In software such as Excel, to plot a graph you might:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  select some cells;
+\item
+  click \emph{insert};
+\item
+  select the chart type you want;
+\item
+  click OK.
+\end{enumerate}
+
+In R, you might instead type something like:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(my\_data)}
+\end{Highlighting}
+\end{Shaded}
+
+and get a plot such as
+
+\pandocbounded{\includegraphics[keepaspectratio]{01_EYNTKBYLR_files/figure-latex/unnamed-chunk-5-1.pdf}}
+
+\section{Installing R and RStudio}\label{installing-r-and-rstudio}
+
+The \href{https://sheffield.ac.uk/mash/stats-resources/r}{University of Sheffield MASH R resources page} contains a guide to downloading and setting up both \href{https://cran.r-project.org/}{R} and \href{https://posit.co/products/open-source/rstudio}{RStudio}.
+
+Alternatively, go to both the \href{https://cran.r-project.org/}{R} and \href{https://posit.co/products/open-source/rstudio}{RStudio} webpages and download the appropriate version for your device.
+
+\section{Getting to know RStudio}\label{getting-to-know-rstudio}
+
+When you open RStudio, you will probably see several different sections or \textbf{panes}.
+
+The exact arrangement can vary depending on your version and settings.
+
+A common layout contains four main panes:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  (Top-left) \textbf{Source}
+\item
+  (Bottom-left) \textbf{Console}
+\item
+  (Top-right) \textbf{Environment / History}
+\item
+  (Bottom-left) \textbf{Files / Plots / Packages / Help}
+\end{enumerate}
+
+\subsection{1. Source}\label{source}
+
+The \textbf{Source} pane is where you can write, edit and save your code. If it is the first time opening Rstudio, the \textbf{Source} pane may not appear until you click the following.
+
+File \textgreater{} New File \textgreater{} R Script
+
+The \textbf{Source pane} is where you should normally develop your analysis. The saved code is referred to as a script and has the file extension \texttt{.R}. These files can be reopened and worked on at any time.
+
+\subsection{2. Console}\label{console}
+
+The \textbf{Console} is where R receives and executes commands.
+
+You can type directly into it. The result will appear underneath. Unlike an R script, the \textbf{Console} is temporary and anything you type into it is not saved. The \textbf{Console} is particularly useful for:
+
+\begin{itemize}
+\tightlist
+\item
+  Trying out commands
+\item
+  Testing ideas
+\item
+  Checking the result of a function
+\item
+  Troubleshooting
+\end{itemize}
+
+\begin{quote}
+Tip: you can press the \textbf{Up} key with your cursor in the Console to quickly cycle through commands you have typed recently**
+\end{quote}
+
+\subsection{3. Environment / History}\label{environment-history}
+
+The \textbf{Environment} pane shows objects that currently exist in your R session.
+
+For example, if you run the code:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{student\_scores }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{65}\NormalTok{, }\DecValTok{72}\NormalTok{, }\DecValTok{81}\NormalTok{, }\DecValTok{69}\NormalTok{, }\DecValTok{88}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+the object \texttt{student\_scores} will appear in the \textbf{Environment}. \emph{We'll talk more about objects later}.
+
+The \textbf{Environment} therefore gives you a useful overview of the objects you have created.
+
+There are other tabs within this pane, the next most useful being the \textbf{History} tab which shows all the commands that you have previously entered.
+
+This can be useful when you are trying to remember something you did earlier in your session.
+
+\subsection{4. Files / Plots / Packages / Help}\label{files-plots-packages-help}
+
+The last window contains several tabs including \textbf{Files, Plots, Packages and Help}.
+
+The \textbf{Files} tab allows you to navigate through folders on your computer (see \textbf{Working Directories} for more detail).
+
+\textbf{Plots} displays graphs that you create in R.
+
+\textbf{Packages} allows you to see packages that are installed in your R session.
+
+\textbf{Help} displays R's documentation when you request it using the \texttt{?} command (see \hyperref[Errors]{Errors} for further help).
+
+The following table summarises the pane functions.
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+Window & What it does \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{Source} & Write and edit R scripts \\
+\textbf{Console} & Run R commands \\
+\textbf{Environment} & View objects currently stored in R \\
+\textbf{History} & View previously entered commands \\
+\textbf{Files} & Navigate through files and folders \\
+\textbf{Plots} & View graphs \\
+\textbf{Packages} & Install and manage packages \\
+\textbf{Help} & Access R documentation \\
+\end{longtable}
+
+\subsection{Working directories}\label{working-directories}
+
+One concept that often causes confusion when you first start using R is the \textbf{working directory}.
+
+The \textbf{working directory} is the folder that R is currently using as its default location for reading and writing files.
+
+You can find your current working directory by running:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{getwd}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\texttt{getwd()} means \textbf{get working directory}.
+
+You can change the working directory using \texttt{setwd()} and the path to your desired folder. For example:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{setwd}\NormalTok{(}\StringTok{"C:/Users/YourName/Documents/R"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+The exact path will depend on your computer.
+
+\begin{quote}
+\textbf{Tip:} You do not necessarily need to use \texttt{setwd()}. Instead, in the \textbf{Files} tab, click \textbf{\ldots{}} on the right-hand side, click through the file explorer to find the folder you want then click \textbf{Open}. Click the cog symbol titled \textbf{More} then Select \textbf{Set as Working Directory}.
+\end{quote}
+
+\section{Learning how to write code}\label{learning-how-to-write-code}
+
+There are a few things that are worth understanding right at the beginning.
+
+R is primarily controlled by typing commands. You can think of each line of R code as an instruction.
+
+For example, to find the mean of the \texttt{student\_scores} given above you'd type:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(student\_scores)}
+\end{Highlighting}
+\end{Shaded}
+
+It is very important before learning R to realise that \textbf{you do not have to memorise everything.}
+
+One of the most important skills in R is knowing how to find information. It is unlikely that you will remember the code for everything you want to do.
+
+That is normal.
+
+Learning R is not about memorising an enormous list of commands. It is about learning enough of the language that you can understand, debug (fix) and build code.
+
+The \href{https://sheffield.ac.uk/mash/stats-resources/r\#First-steps}{University of Sheffield MASH R resources page} provides first steps in R.
+
+These first steps will guide you through:
+
+\begin{itemize}
+\tightlist
+\item
+  Installing R
+\item
+  Downloading RStudio
+\item
+  Interacting with R
+\item
+  Understanding objects and functions
+\item
+  Working with vectors
+\item
+  Getting started with data
+\item
+  Installing packages
+\end{itemize}
+
+These are a good place to get started!
+
+\subsection{What is a command?}\label{what-is-a-command}
+
+A \textbf{command} is an instruction that you give to R.
+
+To run a command in the \textbf{Console} you simply type your command and press \textbf{Enter}.
+
+To run a command in the \textbf{Source} pane (script) there are two ways:
+
+\begin{itemize}
+\item
+  Highlight the line(s) of code and press \textbf{Ctrl + Enter} on your keyboard or the \textbf{Run} key in the top right of the Source pane.
+\item
+  Put your cursor on the line of code and press \textbf{Ctrl + Enter}. This also moves the cursor to the next line so you can easily run the next line.
+\end{itemize}
+
+\begin{quote}
+Tip: To quickly highlight your entire script click \textbf{Ctrl + A} with your cursor anywhere in the script.
+\end{quote}
+
+An example command is:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{2} \SpecialCharTok{+} \DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+an instruction asking R to add two numbers.
+
+Another example is:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{even\_numbers }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{8}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+This tells R to create an \emph{object} named \texttt{even\_numbers} by combing the numbers 2,4,6 and 8. Note here, that in programming we call this a vector. Vectors are formed in R using the function \texttt{c()} where \texttt{c} stands for combine.
+
+You will quickly become familiar with the basic structure of R commands.
+
+\subsection{What is a function?}\label{what-is-a-function}
+
+A \textbf{function} is a piece of code designed to perform a particular task.
+
+Functions are one of the most important concepts in R.
+
+For example:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{8}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+gives the following output.
+
+\begin{verbatim}
+#> [1] 5
+\end{verbatim}
+
+Here:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{mean} is the function;
+\item
+  \texttt{c(2,\ 4,\ 6,\ 8)} is the input;
+\item
+  the function calculates the mean.
+\end{itemize}
+
+Functions are generally followed by parentheses:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{function\_name}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+The information that you give to a function is called an \textbf{argument}.
+
+For example:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{round}\NormalTok{(}\FloatTok{3.14159}\NormalTok{, }\AttributeTok{digits =} \DecValTok{2}\NormalTok{)}
+\CommentTok{\#\textgreater{} [1] 3.14}
+\end{Highlighting}
+\end{Shaded}
+
+Here:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{round()} is the function;
+\item
+  \texttt{3.14159} is the value being rounded;
+\item
+  \texttt{digits\ =\ 2} tells R how many decimal places to use.
+\end{itemize}
+
+\subsection{Objects}\label{objects}
+
+Objects are another fundamental idea in R.
+
+An object is something that R can store and work with.
+
+For example:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{age }\OtherTok{\textless{}{-}} \DecValTok{21}
+\end{Highlighting}
+\end{Shaded}
+
+Here we have created an object called \texttt{age}.
+
+We can then ask R to show us its value:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{age}
+\CommentTok{\#\textgreater{} [1] 21}
+\end{Highlighting}
+\end{Shaded}
+
+We can also use it in another calculation:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{age }\SpecialCharTok{+} \DecValTok{1}
+\CommentTok{\#\textgreater{} [1] 22}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Assignment}\label{assignment}
+
+The \texttt{\textless{}-} symbol is commonly used to assign a value to an object.
+
+For example:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my\_number }\OtherTok{\textless{}{-}} \DecValTok{10}
+\end{Highlighting}
+\end{Shaded}
+
+This means store the value \texttt{10} in an object called \texttt{my\_number}.
+
+Objects can contain different types of information. They do not have to contain just single numbers.
+
+For example, an object can contain text:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{student\_name }\OtherTok{\textless{}{-}} \StringTok{"Alex"}
+\end{Highlighting}
+\end{Shaded}
+
+Or several numbers:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{test\_scores }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{65}\NormalTok{, }\DecValTok{72}\NormalTok{, }\DecValTok{81}\NormalTok{, }\DecValTok{69}\NormalTok{, }\DecValTok{88}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+For now, the important thing is simply to understand that R allows you to \textbf{store information in objects and then use those objects later}.
+
+\subsubsection{Naming objects}\label{naming-objects}
+
+It is a good idea to give objects sensible names. When naming objects, best practices are to:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Be informative about that the object represents
+\item
+  Do not use spaces
+\item
+  If it has multiple words in the name, separate these by underscores or capitalise each word.
+\item
+  Do not include dots or other symbols
+\end{enumerate}
+
+Good examples are:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{age }\OtherTok{\textless{}{-}} \DecValTok{21}
+\NormalTok{average\_score }\OtherTok{\textless{}{-}} \DecValTok{75}
+\NormalTok{TestScores }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{65}\NormalTok{, }\DecValTok{72}\NormalTok{, }\DecValTok{81}\NormalTok{, }\DecValTok{69}\NormalTok{, }\DecValTok{88}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Compared with bad names:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OtherTok{\textless{}{-}} \DecValTok{21}
+\NormalTok{average score }\OtherTok{\textless{}{-}} \DecValTok{75}
+\NormalTok{TEST.SCORES}\SpecialCharTok{!} \ErrorTok{\textless{}}\SpecialCharTok{{-}}  \FunctionTok{c}\NormalTok{(}\DecValTok{65}\NormalTok{, }\DecValTok{72}\NormalTok{, }\DecValTok{81}\NormalTok{, }\DecValTok{69}\NormalTok{, }\DecValTok{88}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+The last two objects \texttt{average\ score} and \texttt{TEST.SCORES!} are so bad that they will give you the following error!
+
+\begin{verbatim}
+#> Error in parse(text = input): <text>:1:9: unexpected symbol
+#> 1: average score
+#>             ^
+\end{verbatim}
+
+\subsection{Comments}\label{comments}
+
+You can add comments to your R code using the \texttt{\#} symbol.
+
+Anything after \texttt{\#} on that line will be treated as a comment rather than R code and wont be executed when you run that line or script.
+
+For example:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Calculate the mean of the scores}
+\NormalTok{scores }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{)}
+\FunctionTok{mean}\NormalTok{(scores)}
+\end{Highlighting}
+\end{Shaded}
+
+Comments are useful for explaining what your code is doing.
+
+You can also use comments to organise a script:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\CommentTok{\# Calculate summary statistics}
+\CommentTok{\# {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\FunctionTok{mean}\NormalTok{(scores)}
+\FunctionTok{median}\NormalTok{(scores)}
+\FunctionTok{sd}\NormalTok{(scores)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Good habit:} Write comments that help you --- and someone else --- understand what your code is doing.
+\end{quote}
+
+Keeping your code organised. As your R scripts become longer, organisation becomes increasingly important.
+
+You can use comments and headings to divide your code into sections.
+
+For example:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Load packages}
+
+\FunctionTok{library}\NormalTok{(ggplot2)}
+
+\CommentTok{\# Import data}
+
+\NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"my\_data.csv"}\NormalTok{)}
+
+\CommentTok{\# Explore data}
+
+\FunctionTok{head}\NormalTok{(data)}
+\FunctionTok{summary}\NormalTok{(data)}
+
+\CommentTok{\# Analysis}
+
+\FunctionTok{mean}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{score)}
+
+\CommentTok{\# Visualisation}
+
+\FunctionTok{plot}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{score)}
+\end{Highlighting}
+\end{Shaded}
+
+This makes your script much easier to read.
+
+\subsection{Errors}\label{errors}
+
+:warning: \textbf{Help! I've got an Error !}
+
+Getting errors, warnings and breaking your code are completely normal when programming - not just when you are learning it. Errors are not a sign that you are bad at coding. They are a very normal and it is likely you will see them frequently.
+
+For example, if you type:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(}\StringTok{"This is not a number"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+R will complain because it doesn't know how to take the mean of something that isn't numeric.
+
+You may see an error message such as:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Warning message:}
+\NormalTok{In mean.default("this is not a number") :}
+\NormalTok{  argument is not numeric or logical: returning NA}
+\end{Highlighting}
+\end{Shaded}
+
+The error message is actually useful. It is R trying to tell you what went wrong.
+
+:information\_source: \textbf{When something goes wrong:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Do not panic
+\item
+  Read the error message
+\item
+  Look at the line of code that caused the problem
+\item
+  Check your spelling
+\item
+  Check your brackets
+\item
+  Check your quotation marks
+\item
+  Check whether you have created the objects you are using
+\item
+  Search the error message if you are unsure
+\end{enumerate}
+
+:+1: \textbf{It is just as important to learn how to debug your code as it is learning to write code.}
+
+When stuck for coding solutions, experienced R users regularly:
+
+\textbf{1. Search Online}
+
+Often, a quick Google (or your preferred search engine) will give you the syntax you need to perform/fix what you want in R.
+
+\textbf{2. Look at documentation}
+
+Some of the more frequently used packages such as \href{https://ggplot2.tidyverse.org/}{ggplot2} (a powerful packages for creating graphs) have very thorough documentation that can be very helpful in learning how to use it.
+
+\textbf{3. Use R help pages}
+
+R has a built-in help system. For example, if you want to find out more about the \texttt{mean()} function, you can type:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{?mean}
+\end{Highlighting}
+\end{Shaded}
+
+The Help pane in RStudio will then display information about the function. See \textbf{Getting to Know Rstudio} to find out more information about the Help pane.
+
+R help pages can initially look intimidating. You will usually see information about:
+
+\begin{itemize}
+\tightlist
+\item
+  What the function does.
+\item
+  How to use it.
+\item
+  The value it returns.
+\item
+  Examples of it in use.
+\end{itemize}
+
+The \textbf{Examples} section is particularly useful when you are learning.
+
+You can often copy an example, run it yourself and then modify it.
+
+\textbf{4. Ask peers}
+
+In industry, academia and any other workplace it is very common to ask peers and colleagues for help with coding. Often, a solution to your problem will already exist and they may have seen it somewhere before. This is especially useful when your code is giving you errors - an extra pair of eyes always helps! In some cases, you often spot the error as your explaining your out loud to someone else.
+
+\textbf{5. Using AI}
+
+It's fairly commonplace now to use AI to debug or write code for you. Whilst this can be incredible useful it should be used with caution. Generative AI has a habit of producing over complex code that, whilst looking shiny and professional, is very hard to understand, modify and fix if you don't have a good grasp on the underlying language.
+
+Understanding the concepts of coding are fundamental in providing solutions to problems and performing novel research. The long-term benefit of learning, reading and writing code yourself far outweigh the short term benefit of generating a sophisticated analysis with no development of your understanding.
+
+Not only this, for some university assessments, the use of AI may not be tolerated at all, so it is good to check that you are using AI in a way that is honest, fair and responsible. Thorough guidance on the use of AI at The University of Sheffield can be found on the \href{https://sheffield.ac.uk/study-skills/digital/generative-ai/assessment\#unfair-means}{StudySkills@Sheffield} webpage.
+
+\section{MASH support}\label{mash-support}
+
+There are lots of ways to learn R, and you do not have to learn it alone. Here at MASH, we offer friendly and specialist support from workshops to 1:1 sessions to suit your needs. Here are the main ways we can support you.
+
+\subsection{MASH workshops}\label{mash-workshops}
+
+MASH runs workshops covering statistics, mathematics and software skills.
+
+R workshops are a great way to learn alongside other students and ask questions as you go.
+
+We offer \href{https://301skills.shef.ac.uk/events/284/upcoming}{R workshops for ultra-beginners}. These are designed for people who want to learn R from the very basics, without any prior knowledge - excellent if you have never coded before.
+
+We also have more bespoke R workshops such as
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://301skills.shef.ac.uk/events/287/upcoming}{MASH workshop: Using R for data visualisation}
+\item
+  \href{https://301skills.shef.ac.uk/events/391/upcoming}{MASH workshop: Using R for hypothesis testing}
+\item
+  \href{https://301skills.shef.ac.uk/events/291/upcoming}{MASH workshop: Using R for regression}
+\end{itemize}
+
+You can find and book workshops on the \href{https://students.sheffield.ac.uk/mash/workshops\#bookig-calendar}{MASH workshops booking calendar}
+
+\subsection{MASH online resources}\label{mash-online-resources}
+
+The \href{https://sheffield.ac.uk/mash/stats-resources/r\#First-steps}{MASH First steps in R resources} are designed to help you get started from the beginning, providing videos and help pages for getting started with R.
+
+\subsection{MASH 1-1 support}\label{mash-1-1-support}
+
+If you are stuck, you can also book a 1-1 appointment with MASH.
+
+A 1:1 can be particularly useful if you have a specific question about:
+
+\begin{itemize}
+\tightlist
+\item
+  A research problem
+\item
+  How to implement a statistical method
+\item
+  R code that is not working
+\item
+  Interpreting your output
+\end{itemize}
+
+You can book a 1-1 appointment on the \href{https://students.sheffield.ac.uk/mash/bookings/stats-support\#book-here}{MASH statistics 1-1 appointment booking page}
+
+\section{Where to go next}\label{where-to-go-next}
+
+Once you have got through the basics, there are lots of other resources you can use to continue learning.
+
+\subsection{YaRrr! The Pirate's Guide to R}\label{yarrr-the-pirates-guide-to-r}
+
+\href{https://bookdown.org/ndphillips/YaRrr/}{YaRrr! The Pirate's Guide to R} is a clear, free online textbook.
+
+It provides an accessible introduction to R and includes examples that you can work through yourself.
+
+\subsection{R for Data Science}\label{r-for-data-science}
+
+\href{https://www.google.co.uk/books/edition/R_for_Data_Science/I6y3DQAAQBAJ?hl=en&gbpv=0}{R for Data Science} by Hadley Wickham is a great guide for importing, wrangling, manipulating and visualising data.
+
+\subsection{Learn R by example}\label{learn-r-by-example}
+
+\href{https://www.learnbyexample.org/r/}{Learn R by example} is an easily to follow website organised around examples.
+
+It covers topics ranging from basic R syntax through data structures, functions, data import, graphics and more.
+
+\subsection{Swirl}\label{swirl}
+
+\textbf{Swirl} is a package for learning R interactively within RStudio.
+
+Instead of reading instructions on a webpage and then switching between your browser and RStudio, Swirl gives you interactive lessons directly in R.
+
+Begin by installing the \texttt{swirl} package.
+
+Type the following command into the \textbf{Console}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"swirl"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Wait for the installation to finish.
+
+Once the installation is complete, load the package:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(}\StringTok{"swirl"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Then start Swirl by typing:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{swirl}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+Swirl will begin interacting with you. Simply read the instructions on the screen and enter your responses.
+
+\section{Step-by-step process for learning R}\label{step-by-step-process-for-learning-r}
+
+\begin{quote}
+Important: There is no single ``correct'' way to learn R.
+\end{quote}
+
+However, a useful approach is:
+
+\textbf{Step 1} --- Get R and RStudio installed
+
+Make sure both are installed and that you can open RStudio.
+
+Start with the \href{https://sheffield.ac.uk/mash/stats-resources/r\#First-steps}{MASH First steps in R resources} if you need help.
+
+\textbf{Step 2} --- Learn the basic language
+
+Get comfortable with:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Objects}
+\NormalTok{my\_number }\OtherTok{\textless{}{-}} \DecValTok{10}
+
+\CommentTok{\# Vectors}
+\NormalTok{my\_numbers }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{20}\NormalTok{, }\DecValTok{30}\NormalTok{, }\DecValTok{40}\NormalTok{)}
+
+\CommentTok{\# Functions}
+\FunctionTok{mean}\NormalTok{(my\_numbers)}
+
+\CommentTok{\# Indexing}
+\NormalTok{my\_numbers[}\DecValTok{1}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+Executing \texttt{my\_numbers{[}1{]}} will give the value 10, the number with \emph{index} 1 (i.e.~the 1st number) of the vector \texttt{my\_numbers}.
+
+Knowing how to index in R is incredibly useful for removing, adding and selecting specifc rows of your data, as well as other things. It is well worth spending time to learn about it.
+
+\begin{quote}
+Note: If you have used other programming languages before, you will be aware that 0 is usually the first index of a vector. This is different in R. Indexing starts from 1.
+\end{quote}
+
+\textbf{Step 3} --- Practise
+
+Do not just read R code.
+
+\begin{itemize}
+\tightlist
+\item
+  Type it
+\item
+  Change it
+\item
+  Break it
+\item
+  Fix it
+\end{itemize}
+
+Try to predict what will happen before you run it.
+
+\textbf{Step 4} --- Work with R data sets
+
+Once you understand the basics, start working with data. R has an amazing library of built-in real world datasets. These are nice clean examples of data that are frequently used to demonstrate visualisation and data analysis.
+
+To access the data sets you need to install the \texttt{datasets} package using the following commands.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"datasets"}\NormalTok{)}
+\FunctionTok{library}\NormalTok{(datasets)}
+\end{Highlighting}
+\end{Shaded}
+
+You can then run the command
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{data}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+to view a list of the datasets available. To load a dataset you simply type the dataset. For example, for the \texttt{iris} dataset you simply run:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(iris)}
+\CommentTok{\#\textgreater{}   Sepal.Length Sepal.Width Petal.Length Petal.Width Species}
+\CommentTok{\#\textgreater{} 1          5.1         3.5          1.4         0.2  setosa}
+\CommentTok{\#\textgreater{} 2          4.9         3.0          1.4         0.2  setosa}
+\CommentTok{\#\textgreater{} 3          4.7         3.2          1.3         0.2  setosa}
+\CommentTok{\#\textgreater{} 4          4.6         3.1          1.5         0.2  setosa}
+\CommentTok{\#\textgreater{} 5          5.0         3.6          1.4         0.2  setosa}
+\CommentTok{\#\textgreater{} 6          5.4         3.9          1.7         0.4  setosa}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Note:} By putting \texttt{iris} in the function \texttt{head()}, R only shows us the first few rows of the data.
+
+Important concepts to learn with the example data are:
+
+\begin{itemize}
+\tightlist
+\item
+  Importing data
+\item
+  Cleaning data
+\item
+  Selecting variables
+\item
+  Adding new variables
+\item
+  Plotting graphs
+\item
+  Statistical analysis
+\end{itemize}
+
+\textbf{Step 5} --- Build something
+
+The best way to learn R is to use it. Try using R for something that you actually need to do.
+
+For example:
+
+\begin{quote}
+``I have a dataset. Can I use R to calculate some summary statistics and make a graph?''
+\end{quote}
+
+Maybe we wanted to create a graph showing the differences in sepal width between species in the \texttt{iris} dataset. We can make a quick plot using the following code.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(}
+\NormalTok{  Sepal.Width }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Species,}
+  \AttributeTok{data =}\NormalTok{ iris}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{01_EYNTKBYLR_files/figure-latex/unnamed-chunk-37-1.pdf}}
+
+\textbf{Step 6} - Develop it
+
+Once you have a minimal viable product of what you want to create, now it is time to develop your code. This could mean, making plots look better, making analysis more sophisticated, or simply organising your code better for yourself or another reader.
+
+For example, we might improve our code above by using the \texttt{ggplot2} package and adding in some comments for the user.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Load in ggplot packages}
+\FunctionTok{library}\NormalTok{(ggplot2)}
+
+\CommentTok{\# Plot a boxplot of sepal widths coloured by iris species}
+\FunctionTok{ggplot}\NormalTok{(iris, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Species, }\AttributeTok{y =}\NormalTok{ Sepal.Width, }\AttributeTok{fill =}\NormalTok{ Species)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}
+    \AttributeTok{title =} \StringTok{"Sepal Width by Species"}\NormalTok{,}
+    \AttributeTok{x =} \StringTok{"Species"}\NormalTok{,}
+    \AttributeTok{y =} \StringTok{"Sepal Width"}
+\NormalTok{  ) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{01_EYNTKBYLR_files/figure-latex/unnamed-chunk-38-1.pdf}}
+
+\section{Final advice}\label{final-advice}
+
+When learning R, you may sometimes feel that everyone else understands it except you.
+
+That's not true.
+
+Even experienced R users regularly search for functions, look at documentation, make mistakes and spend time figuring out why something isn't working.
+
+The difference is that, with practice, you gradually become better at solving those problems.
+
+You do not need to become an expert before you can use R.
+
+You just need to keep building your knowledge.
+
+\begin{quote}
+\textbf{Start small. Practise often. Don't be afraid of errors. Ask for help.}
+\end{quote}
+
+\section{Your R learning checklist}\label{your-r-learning-checklist}
+
+Use this checklist to keep track of your progress.
+
+\begin{itemize}
+\tightlist
+\item[$\square$]
+  I understand what R is.
+\item[$\square$]
+  I understand the difference between R and RStudio.
+\item[$\square$]
+  I have installed R.
+\item[$\square$]
+  I have installed RStudio.
+\item[$\square$]
+  I can open RStudio.
+\item[$\square$]
+  I know where to find the \href{https://sheffield.ac.uk/mash/stats-resources/r\#First-steps}{MASH First steps in R resources} page.
+\item[$\square$]
+  I know what the Console is.
+\item[$\square$]
+  I know what an R script is.
+\item[$\square$]
+  I understand the difference between the Console and a script.
+\item[$\square$]
+  I know what a command is.
+\item[$\square$]
+  I know what a function is.
+\item[$\square$]
+  I know what an argument is.
+\item[$\square$]
+  I can create an object.
+\item[$\square$]
+  I can create a vector.
+\item[$\square$]
+  I can call a function.
+\item[$\square$]
+  I know what a package is.
+\item[$\square$]
+  I know the difference between installing and loading a package.
+\item[$\square$]
+  I know how to find help for a function.
+\item[$\square$]
+  I understand what a working directory is.
+\item[$\square$]
+  I know how to save an R script.
+\item[$\square$]
+  I know how to \href{https://students.sheffield.ac.uk/mash/bookings/stats-support\#book-here}{book a MASH 1:1 appointment}.
+\item[$\square$]
+  I know how to \href{https://students.sheffield.ac.uk/mash/workshops\#bookig-calendar}{book a MASH R workshop}
+\end{itemize}
+
+\section{Glossary}\label{glossary}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Term
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Brief description
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{R} & A programming language used for statistics, data analysis and data visualisation. \\
+\textbf{RStudio} & An Integrated Development Environment (IDE) that provides an interface for working with R. \\
+\textbf{Command} & An instruction given to R to perform an action. \\
+\textbf{Function} & A piece of code designed to perform a particular task. \\
+\textbf{Argument} & Information supplied to a function that tells it what to work with or how to behave. \\
+\textbf{Object} & Something that R can store and work with, such as a number, text or vector. \\
+\textbf{Assignment} & The process of storing a value in an object, commonly using \texttt{\textless{}-}. \\
+\textbf{Package} & A collection of additional functions, data and resources that extends R's capabilities. \\
+\textbf{Script} & A saved file containing R code, usually with the \texttt{.R} file extension. \\
+\textbf{Console} & The RStudio pane where R commands are entered and executed. \\
+\textbf{Source} & The RStudio pane where you write, edit and save R scripts. \\
+\textbf{Environment} & The RStudio pane showing objects currently stored in your R session. \\
+\textbf{History} & An RStudio tab showing commands previously entered during your session. \\
+\textbf{Working directory} & The folder R uses as its default location for reading and writing files. \\
+\textbf{Comment} & Text beginning with \texttt{\#} that R ignores when executing code. \\
+\textbf{Debugging} & The process of finding and fixing problems in code. \\
+\textbf{Error} & A message from R indicating that something has gone wrong when running code. \\
+\textbf{Warning} & A message from R indicating that something may not have worked as expected. \\
+\end{longtable}
+
+\chapter{Downloading R and RStudio}\label{downloading-r-and-rstudio}
+
+\section{Introduction}\label{introduction}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+This is the first document in our ``First Steps in \textbf{\emph{R}}'' series of resources.
+
+\textbf{\emph{R}} is a programming language specifically designed for doing statistics. The \textbf{\emph{R}} software can be downloaded on its own but it is more usual to download both \textbf{\emph{R}} and \textbf{\emph{RStudio}}. \textbf{\emph{RStudio}} is a more convenient way of interacting \textbf{\emph{R}}. The \textbf{\emph{R}} \emph{software} must be installed before \textbf{\emph{RStudio}} will work.
+
+\section{\texorpdfstring{Downloading \textbf{\emph{R}} for Windows (do this first, before downloading \textbf{\emph{RStudio}})}{Downloading R for Windows (do this first, before downloading RStudio)}}\label{downloading-r-for-windows-do-this-first-before-downloading-rstudio}
+
+\textbf{\emph{R}} can be downloaded from CRAN (the Comprehensive R Archive Network).
+
+Click ``\textbf{Download R-4.4.1 for Windows}''.
+
+Figure 1: The link to click to download R for Windows.
+
+When the file has downloaded, open it just as you would when installing any other new program.
+
+We would recommend you agree with the default settings and perhaps consider clicking the boxes to add a desktop shortcut and a \textbf{\emph{Quick Launch}} shortcut.
+
+\section{\texorpdfstring{Downloading \textbf{\emph{R}} for other operating systems}{Downloading R for other operating systems}}\label{downloading-r-for-other-operating-systems}
+
+Go to CRAN (the Comprehensive R Archive Network). Select the appropriate operating system from the options given then download the latest release from the following page.
+
+Figure 2: The links to click to download R for other operating systems.
+
+\section{\texorpdfstring{Downloading \textbf{\emph{RStudio}} (you will need to download \textbf{\emph{R}} first to enable \textbf{\emph{RStudio}} to work)}{Downloading RStudio (you will need to download R first to enable RStudio to work)}}\label{downloading-rstudio-you-will-need-to-download-r-first-to-enable-rstudio-to-work}
+
+Go to R Studio.
+
+Scroll down a little and choose the free version of \textbf{\emph{RStudio}} and click ``\textbf{Download}.''
+
+Figure 3: The button to click to download RStudio.
+
+Click ``\textbf{Download} \textbf{\emph{RStudio}} \textbf{for Windows}'' (or select your operating system from the list a little further down).
+
+Again, open the file just as you would when installing any other new program and select the default options.
+
+\chapter{First interactions with R and RStudio}\label{first-interactions-with-r-and-rstudio}
+
+\section{Introduction}\label{introduction-1}
+
+This document is part of our ``First Steps in \textbf{\emph{R}}'' resources. It is assumed that the reader has downloaded \textbf{\emph{R}} and \textbf{\emph{RStudio}}. No other pre-knowledge is required.
+
+Most of the time we are used to interacting with a computer through a Graphical User Interface (GUI) (i.e.~with folders, files, windows etc). In \textbf{\emph{R}} and \textbf{\emph{RStudio}}, we type instructions (code) instead. The window the instructions are typed into is called the console. Of course, we must type our instructions in a way the computer will understand - this is why it's called a programming \emph{language}. This is the way computers were operated before the development of GUIs. \textbf{\emph{R}} is a programming language which has been developed specifically for doing statistics. \textbf{\emph{R}} and \textbf{\emph{RStudio}} are pieces of software which allow the computer to read the code we type and execute it (i.e.~follow the instructions).
+
+\section{\texorpdfstring{Opening \textbf{\emph{R}}}{Opening R}}\label{opening-r}
+
+If you open the \textbf{\emph{R}} software you will get a window in which you can type code. This is the console. It is possible to use the \textbf{\emph{R}} package to do statistics with \textbf{\emph{R}} but \textbf{\emph{RStudio}} is much more friendly to use. \textbf{\emph{RStudio}} is called an Integrated Development Environment (IDE) for \textbf{\emph{R}}. Note that for \textbf{\emph{RStudio}} to work, it requires that \textbf{\emph{R}} is also installed. Because of its ease of use, once you've used \textbf{\emph{RStudio}}, you will probably find you never open \textbf{\emph{R}} again! All of the materials in this series use \textbf{\emph{RStudio}} for this reason.
+
+\section{\texorpdfstring{First Opening \textbf{\emph{RStudio}}}{First Opening RStudio}}\label{first-opening-rstudio}
+
+When you open \textbf{\emph{RStudio}} for the first time there will be three windows. The one on the left is the console. You can type code directly in here and \textbf{\emph{RStudio}} will follow your instructions as soon as you press return. One thing \textbf{\emph{R}} can do is simple calculations like a calculator. You can experiment by typing calculations in the console. If you type 4+6 and press return, \textbf{\emph{R}} will give you the answer \(10\).
+
+Figure 1: RStudio when it is opened for the first time.
+
+If you'd like to carry out other calculations, here are the ways you must enter them into \textbf{\emph{RStudio}} for some simple operations.
+
+\begin{longtable}[]{@{}cc@{}}
+\toprule\noalign{}
+Arithmetic Operation & R Code \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(4+6\) & 4+6 \\
+\(6-4\) & 6-4 \\
+\(4 \times 6\) & 4*6 \\
+\(4 \div 6\) & 4/6 \\
+\(4^{6}\) & 4\^{}6 \\
+\(\mathrm{e}^{4}\) & exp(4) \\
+\(\log_{10} (4)\) & log10(4) \\
+\(\ln(4)\) & log(4) \\
+\end{longtable}
+
+Note that you cannot go back and delete text you have put in the console. If you've never done any coding at first this may seem strange but you'll get used to it quickly.
+
+\section{Inputting Code Using a Script}\label{inputting-code-using-a-script}
+
+A Script is the name for some code that has been written and which we want \textbf{\emph{R}} to execute for us. You can write a script, edit it, save it then open it in \textbf{\emph{RStudio}} and run it whenever you like. \textbf{\emph{RStudio}} will let you let you edit your script until you're happy with it and then run all or just some of it by highlighting and clicking run. If you choose ``\textbf{Save As}\ldots{}'' in the file menu (as you would when saving, say, a \textbf{\emph{Word}} document) the script is what gets saved. To create a \textbf{Script file} for the first time, in \textbf{\emph{RStudio}}, click ``\textbf{File}'' then select ``\textbf{New File}'' and ``\textbf{R Script}.''
+
+Figure 2: How to create a Script file in RStudio for the first time.
+
+A fourth window opens up on the top left in \textbf{\emph{RStudio}}. Try typing a few calculations in here. You will see that \textbf{\emph{RStudio}} will let you type without carrying out any of the calculations. See what happens if you highlight the text and click ``\textbf{Run}.''
+
+Figure 3: The fourth window, for scripts, in RStudio.
+
+You should find that all the calculations are carried out at once in the console like so:
+
+Figure 4: The calculations are carried out in the console in RStudio all at once when the script is run.
+
+\section{The Environment}\label{the-environment}
+
+As we write code, we will create ``\textbf{\emph{objects}}''. The word has a technical use in \textbf{\emph{R}} programming which we will deal with in future worksheets. For now we will think of an object as being similar to a variable in algebra - i.e.~a letter to which we can assign a value.
+
+We can tell \textbf{\emph{R}} that we are creating a new object using the ``\textbf{\emph{assignment operator}}'':
+
+\textless-
+
+You can think of this as an arrow. The name of the new object should go on the left and the definition goes on the right. So the code
+
+x \textless- 3
+
+would create a new object called x which is defined to have the value \(3\). If we then type
+
+x+4
+
+We should find that \textbf{\emph{R}} calculates \(3+4\) and returns the answer \(7\).
+
+Type
+
+x \textless- 3
+
+in the console then look in the top right window. You should find that it looks like this.
+
+Figure 5: The top right window (the ``Environment'') in RStudio, where x is defined to have the value \(3\).
+
+(Note: You can use = as an assignment operator as well as \textless-. However, there is a technical difference in the way \textbf{\emph{R}} reads =. In most situations, either = or \textless- can be used interchangeably but it is a good practice to stick to \textless- when defining a new object.)
+
+When we are writing code we may want to define many new objects. These objects then exist in the \textbf{\emph{R}} ``Environment''. As we create new objects, the top right window keeps a record of them for us. This helps us keep track and can help us ensure that we do not create two objects with the same name.
+
+We can ask \textbf{\emph{R}} to give us the same information by typing ls() in the console. ``ls'' is short for list - we are asking \textbf{\emph{R}} to list all the objects in the environment.
+
+You can remove an object from the environment by typing
+
+rm()
+
+with the name of the object in the brackets.
+
+For example,
+
+rm(x)
+
+would remove our variable x from the environment.
+
+You can delete all objects from the environment by clicking the broom icon in the top ribbon of the ``Environment'' window:
+
+Figure 6: How to delete all objects from the environment in RStudio.
+
+Alternatively, you can type the following command in the console:
+
+rm(list=ls())
+
+(Note: we don't need to worry about the details of this command at the moment but in case you're interested: ``rm'' tells \textbf{\emph{R}} to remove the thing in the brackets. The rest of the code tells \textbf{\emph{R}} that it is going to remove an object which is a ``list'' and that list is called ls(). A ``list'' is a category of object in \textbf{\emph{R}}. ls() is specifically the list of everything in the environment.)
+
+\section{The Bottom Right Window}\label{the-bottom-right-window}
+
+There are several tabs in the window in the bottom right. For the moment we will only worry about two of them: ``Plots'' and ``Help''. If we ask \textbf{\emph{RStudio}} to draw a graph or chart, it will appear in this window under this tab. If we ask \textbf{\emph{RStudio}} for help - which we will often do when learning how to use a new piece of code - the answer will appear under the ``Help'' tab.
+
+\section{Exercise}\label{exercise}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  In the console, create an object called y and give it the value \(15\).\\
+\item
+  Create another object called z and give it the value \(5\).\\
+\item
+  Calculate y divided by z.\\
+\item
+  Clear the environment and repeat the above by writing a script to do all three stages and running it.
+\item
+  Change the value of y in your script to \(20\) and run it again.
+\end{enumerate}
+
+\subsection{Solutions}\label{solutions}
+
+Solutions
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textgreater{} y \textless- 15
+\item
+  \textgreater{} z \textless- 5\\
+  \textgreater{} y\\
+  {[}1{]} 15\\
+  \textgreater{} z\\
+  {[}1{]} 5
+\item
+  \textgreater{} y/z\\
+  {[}1{]} 3
+\item
+  Script:\\
+  y \textless- 20\\
+  z \textless- 5\\
+  y\\
+  z\\
+  y/z\\
+  And here it is run:\\
+  \textgreater{} y \textless- 20\\
+  \textgreater{} z \textless- 5\\
+  \textgreater{} y\\
+  {[}1{]} 20\\
+  \textgreater{} z\\
+  {[}1{]} 5\\
+  \textgreater{} y/z\\
+  {[}1{]} 4
+\end{enumerate}
+
+  \bibliography{book.bib,packages.bib}
+
+\end{document}

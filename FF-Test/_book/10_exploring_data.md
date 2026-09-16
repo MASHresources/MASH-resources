@@ -1,0 +1,273 @@
+# Exploring Data
+
+## Introduction 
+
+This document is part of our "First Steps in ***R***" resources. It is assumed that the reader understands the idea of an object, a function and a package in ***R***. If you would like to recap these topics, the documents and videos are on the MASH website.
+
+## Built-in Datasets
+
+When ***R*** and ***RStudio*** are first installed, several useful packages are installed by default. Two packages in particular contain datasets which are often used for exercises while learning ***R***. The "datasets" package containing $104$ datasets is one that is already loaded. This means that all of its datasets are available immediately. To view information on the <code style="color: blue;">datasets</code> package type the following into the ***R*** console:
+
+<center>
+    <code style="color: blue;">library(help="datasets")</code>
+</center>
+
+This will give you brief details of the datasets including the name of each and a short description.
+
+The command
+
+<center>
+    <code style="color: blue;">data()</code>
+</center>
+
+will produce a list of the datasets in the <code style="color: blue;">datasets</code> package.
+
+A second useful package, "MASS", contains $87$ datasets. It is not loaded by default so to access its datasets we must first load the package using the command
+
+<center>
+    <code style="color: blue;">library(MASS)</code>
+</center>
+
+
+## Viewing a Dataset
+
+"mtcars" is a dataset contained in the <code style="color: blue;">datasets</code> package. We will use this dataset as an example for the rest of this document. Like other datasets in the above packages, it is stored as a data frame in ***R***. Therefore we can view the data by simply typing
+
+<center>
+    <code style="color: blue;">mtcars</code>
+</center>
+
+into the console.
+
+<figure>
+    <center>
+        <img src="media/10_media/I_Getting_to_know_a_dataset_fig1.png" width="600" title="Figure 1"
+             alt="An image showing the console in RStudio, where 'mtcars' is typed in. Underneath a data frame is outputted, which has different makes and models of car as the row titles and 'mpg', 'cyl', 'disp', 'hp', 'drat', 'wt', 'qsec', 'vs', 'am', 'gear' and 'carb' as the column titles, and data is provided.">
+        <figcaption style="text-align:center">
+            Figure 1: The <code style="color: blue;">mtcars</code> data frame is shown in the console in <b><em>RStudio</b></em>.
+        </figcaption>
+    </center>
+</figure>
+
+We can find the details of what data is collected and how it is recorded using 
+
+<center>
+    <code style="color: blue;">?mtcars</code>
+</center>
+
+The "Help" window then shows us the following:
+
+<figure>
+    <center>
+        <img src="media/10_media/I_Getting_to_know_a_dataset_fig2.png" width="600" title="Figure 2"
+             alt="An image showing the 'Help' tab of the bottom right window in RStudio. A description of 'Motor Trend Car Road Tests' is given, as well as its usage and format.">
+        <figcaption style="text-align:center">
+            Figure 2: The "Help" tab of the bottom right window in <b><em>RStudio</b></em> when <code style="color: blue;">?mtcars</code> is typed into the console.
+        </figcaption>
+    </center>
+</figure>
+
+If we want to access one variable from a dataset, we can use "\$". For example,
+
+<center>
+    <code style="color: blue;">mtcars$cyl</code>
+</center>
+    
+tells ***R*** to look at the <code style="color: blue;">mtcars</code> data frame and then find the variable labelled "cyl".
+
+<figure>
+    <center>
+        <img src="media/10_media/I_Getting_to_know_a_dataset_fig3.png" width="700" title="Figure 3"
+             alt="An image showing the console in RStudio, where 'mtcars$cyl' is typed in. Underneath are the numbers '6', '6', '4', '6', '8', '6', '8', '4', '4', '6', '6', '8', '8', '8', '8', '8', '8', '4', '4', '4', '4', '8', '8', '8', '8', '4', '4', '4', '8', '6', '8', '4'.">
+        <figcaption style="text-align:center">
+            Figure 3: The data in the <code style="color: blue;">cyl</code> column of the <code style="color: blue;">mtcars</code> data frame is shown in the console in <b><em>RStudio</b></em>.
+        </figcaption>
+    </center>
+</figure>
+
+## Attaching the Dataset
+
+If we are going to work with a dataset a lot we can use the "attach" command like so
+
+<center>
+    <code style="color: blue;">attach(mtcars)</code>
+</center>
+
+Once a dataset is attached, the variables can be accessed without needing to use the <code style="color: blue;">mtcars$</code> prefix:
+
+<figure>
+    <center>
+        <img src="media/10_media/I_Getting_to_know_a_dataset_fig4.png" width="700" title="Figure 4"
+             alt="An image showing the console in RStudio, where 'attach(mtcars)' and 'cyl' are typed in. Underneath are the numbers '6', '6', '4', '6', '8', '6', '8', '4', '4', '6', '6', '8', '8', '8', '8', '8', '8', '4', '4', '4', '4', '8', '8', '8', '8', '4', '4', '4', '8', '6', '8', '4'.">
+        <figcaption style="text-align:center">
+            Figure 4: By attaching the <code style="color: blue;">mtcars</code> dataset, the data in the <code style="color: blue;">cyl</code> column of the <code style="color: blue;">mtcars</code> data frame is shown in the console in <b><em>RStudio</b></em>.
+        </figcaption>
+    </center>
+</figure>
+
+Once you have finished working with the dataset, it is good practice to "detach" like so:
+
+<center>
+    <code style="color: blue;">detach(mtcars)</code>
+</center>
+
+## Functions For Getting to Know a Dataset
+
+We can display a full dataset by simply typing the name of the data frame in which it is stored. However, a dataset may be too large to get a feel for the data this way. The following functions are useful for getting to know a dataset:
+
+<center>
+    <code style="color: blue;">names()</code>
+</center>
+
+gives a list of all the column names in the data frame.
+
+<figure>
+    <center>
+        <img src="media/10_media/I_Getting_to_know_a_dataset_fig5.png" width="700" title="Figure 5"
+             alt="An image showing the console in RStudio, where 'names(mtcars)' is typed in. Underneath are the words 'mpg', 'cyl', 'disp', 'hp', 'drat', 'wt', 'qsec', 'vs', 'am', 'gear' and 'carb'.">
+        <figcaption style="text-align:center">
+            Figure 5: A list of all the column names of the <code style="color: blue;">mtcars</code> data frame is shown in the console in <b><em>RStudio</b></em>.
+        </figcaption>
+    </center>
+</figure>
+
+<center>
+    <code style="color: blue;">dim()</code>
+</center>
+
+gives the number of rows and columns (in that order).
+
+<figure>
+    <center>
+        <img src="media/10_media/I_Getting_to_know_a_dataset_fig6.png" width="200" title="Figure 6"
+             alt="An image showing the console in RStudio, where 'dim(mtcars)' is typed in. Underneath are the numbers '32' and '11'.">
+        <figcaption style="text-align:center">
+            Figure 6: The number of rows and columns of the <code style="color: blue;">mtcars</code> data frame is outputted in the console in <b><em>RStudio</b></em>.
+        </figcaption>
+    </center>
+</figure>
+
+In this example you can see that there are $32$ rows and $11$ variables in the data frame.
+
+<code style="color: blue;">nrow()</code> and <code style="color: blue;">ncol()</code> can also be used for just the numbers of rows and/or columns.
+
+<center>
+    <code style="color: blue;">head()</code>
+</center>
+
+gives the first few rows of the data frame.
+
+<figure>
+    <center>
+        <img src="media/10_media/I_Getting_to_know_a_dataset_fig7.png" width="600" title="Figure 7"
+             alt="An image showing the console in RStudio, where 'head(mtcars)' is typed in. Underneath are the first six rows of the 'mtcars' data frame.">
+        <figcaption style="text-align:center">
+            Figure 7: The first six rows of the <code style="color: blue;">mtcars</code> data frame are outputted in the console in <b><em>RStudio</b></em>.
+        </figcaption>
+    </center>
+</figure>
+
+<code style="color: blue;">tail()</code> is similar to <code style="color: blue;">head()</code> but gives the last few rows.
+
+<center>
+    <code style="color: blue;">str()</code>
+</center>
+
+stands for "structure". This gives the number of observations and variables (rows and columns) followed by the name, data type of each column (numerical vector, character vector, logical vector or factor) and the first few entries in each variable:
+
+<figure>
+    <center>
+        <img src="media/10_media/I_Getting_to_know_a_dataset_fig8.png" width="600" title="Figure 8"
+             alt="An image showing the console in RStudio, where 'str(mtcars)' is typed in. Underneath, the 'mtcars' data frame is said to have 32 observations of 11 variables, and the name, data type and the first few entries of each column are given.">
+        <figcaption style="text-align:center">
+            Figure 8: The structure of the <code style="color: blue;">mtcars</code> data frame is detailed in the console in <b><em>RStudio</b></em>.
+        </figcaption>
+    </center>
+</figure>
+
+"num" is short for numerical. All the variables in this particular data frame happen to be numerical vectors.
+
+<center>
+    <code style="color: blue;">summary()</code>
+</center>
+
+gives a summary of each variable in the dataset.
+
+<figure>
+    <center>
+        <img src="media/10_media/I_Getting_to_know_a_dataset_fig9.png" width="700" title="Figure 9"
+             alt="An image showing the console in RStudio, where 'summary(mtcars)' is typed in. Underneath, the values of the minimum, first quartile, median, mean, third quartile and maximum are given for each of the variables in the 'mtcars' dataset.">
+        <figcaption style="text-align:center">
+            Figure 9: A summary of each variable in the<code style="color: blue;">mtcars</code> dataset is outputted in the console in <b><em>RStudio</b></em>.
+        </figcaption>
+    </center>
+</figure>
+
+A column which stores a numeric vector gets summarised as above. A column which is stored in ***R*** as a factor is summarised with how many times each level appears in the column. To see this try investigating the dataset "esoph" which is part of the <code style="color: blue;">dataset</code> package. Hint: type <code style="color: blue;">?esoph</code> to see what data are stored in the dataset then <code style="color: blue;">str(esoph)</code> to see which columns are numeric vectors and which are factors. Finally type <code style="color: blue;">summary(esoph)</code> to see what the summary of a factor looks like.
+
+## Exercise
+
+1. Use the <code style="color: blue;">data()</code> command in the console to view a list of available datasets.  
+Choose a dataset from the list and find out the following information:  
+a) What data are stored in the dataset  
+b) How many sampling units and how many variables there are  
+c) What type of variables the dataset contains (numeric, factor etc)  
+d) The maximum and minimum values of any numeric variables
+
+### Solutions 
+
+<details>
+<summary>Solutions</summary>
+    
+1. Initially I chose "InsectSprays".   
+a) I typed <code style="color: blue;">?InsectSprays</code> and the following information was displayed in the "Help" window (bottom right):  
+<figure>
+    <center>
+        <img src="media/10_media/I_Getting_to_know_a_dataset_fig10.png" width="700" title="Figure 10"
+             alt="An image showing the 'Help' tab of the bottom right window in RStudio. A description of 'Effectiveness of Insect Sprays' is given, as well as its usage and format.">
+        <figcaption style="text-align:center">
+            Figure 10: The "Help" tab of the bottom right window in <b><em>RStudio</b></em> when <code style="color: blue;">?InsectSprays</code> is typed into the console.
+        </figcaption>
+    </center>
+</figure>  
+
+b) There are two variables in the dataset and $72$ observations/sampling units.         
+c) The first variable is numeric and contains the insect count. The second variable is a factor that codes for the type of insect spray that was used. At this point there is no information on the number of levels of the factor, but the usefulness of using the command <code style="color: blue;">?InsectSprays</code> is that the "Help" window gives you additional information such as the source of the dataset and a description of it.    
+
+I then typed <code style="color: blue;">str(InsectSprays)</code> to obtain the following info in the console window, which includes information on the number of level of the factor variable.
+
+<figure>
+    <center>
+        <img src="media/10_media/I_Getting_to_know_a_dataset_fig11.png" width="700" title="Figure 11"
+             alt="An image showing the console in RStudio, where 'str(InsectSprays)' is typed in. Underneath, the 'InsectSprays' data frame is said to have 72 observations of 2 variables, and the name, data type and first few entries of each column are given.">
+        <figcaption style="text-align:center">
+            Figure 11: The structure of the <code style="color: blue;">InsectSprays</code> data frame is detailed in the console in <b><em>RStudio</b></em>.
+        </figcaption>
+    </center>
+</figure>
+
+d) There is only one numeric variable in this dataset so could type <code style="color: blue;">summary(InsectSprays$count)</code> to get only the info for this variable:
+
+<figure>
+    <center>
+        <img src="media/10_media/I_Getting_to_know_a_dataset_fig12.png" width="600" title="Figure 12"
+             alt="An image showing the console in RStudio, where 'summary(InsectSprays$count)' is typed in. Some summary statistics for the 'count' variable are outputted: the minimum is 0, the first quartile is 3, the median is 7, the mean is 9.5, the third quartile is 14.25 and the maximum is 26.">
+        <figcaption style="text-align:center">
+            Figure 12: Some summary statistics for the "count" variable in the <code style="color: blue;">InsectSprays</code> dataset are outputted in the console in <b><em>RStudio</b></em>.
+        </figcaption>
+    </center>
+</figure>
+
+Alternatively, could simply type <code style="color: blue;">summary(InsectSprays)</code> and get the information for all variables:
+
+<figure>
+    <center>
+        <img src="media/10_media/I_Getting_to_know_a_dataset_fig13.png" width="300" title="Figure 13"
+             alt="An image showing the console in RStudio, where 'summary(InsectSprays)' is typed in. Some summary statistics for both the 'count' and 'spray' variables are outputted. For 'count', these are the same as above, but for 'spray', the minimum is given to be 'A:12', the first quartile is 'B:12', the median is 'C:12', the mean is 'D:12', the third quartile is 'E:12' and the maximum is 'F:12'.  ">
+        <figcaption style="text-align:center">
+            Figure 13: Some summary statistics for all variables in the <code style="color: blue;">InsectSprays</code> dataset are outputted in the console in <b><em>RStudio</b></em>.
+        </figcaption>
+    </center>
+</figure>
+    
+</details>

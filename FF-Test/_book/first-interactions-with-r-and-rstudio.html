@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 4 First interactions with R and RStudio | First Steps in R</title>
+<meta name="author" content="MASH">
+<meta name="description" content="4.1 Introduction This document is part of our “First Steps in R” resources. It is assumed that the reader has downloaded R and RStudio. No other pre-knowledge is required. Most of the time we are...">
+<meta name="generator" content="bookdown 0.48 with bs4_book()">
+<meta property="og:title" content="Chapter 4 First interactions with R and RStudio | First Steps in R">
+<meta property="og:type" content="book">
+<meta property="og:description" content="4.1 Introduction This document is part of our “First Steps in R” resources. It is assumed that the reader has downloaded R and RStudio. No other pre-knowledge is required. Most of the time we are...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 4 First interactions with R and RStudio | First Steps in R">
+<meta name="twitter:description" content="4.1 Introduction This document is part of our “First Steps in R” resources. It is assumed that the reader has downloaded R and RStudio. No other pre-knowledge is required. Most of the time we are...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.10.0/transition.js"></script><script src="libs/bs3compat-0.10.0/tabs.js"></script><script src="libs/bs3compat-0.10.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">First Steps in R</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
+<li><a class="" href="everything-you-need-to-know-before-you-learn-r.html"><span class="header-section-number">2</span> Everything you need to know before you learn R</a></li>
+<li><a class="" href="downloading-r-and-rstudio.html"><span class="header-section-number">3</span> Downloading R and RStudio</a></li>
+<li><a class="active" href="first-interactions-with-r-and-rstudio.html"><span class="header-section-number">4</span> First interactions with R and RStudio</a></li>
+<li><a class="" href="vectors.html"><span class="header-section-number">5</span> Vectors</a></li>
+<li><a class="" href="functions.html"><span class="header-section-number">6</span> Functions</a></li>
+<li><a class="" href="matricies.html"><span class="header-section-number">7</span> Matricies</a></li>
+<li><a class="" href="dataframes.html"><span class="header-section-number">8</span> Dataframes</a></li>
+<li><a class="" href="other-objects.html"><span class="header-section-number">9</span> Other objects</a></li>
+<li><a class="" href="packages.html"><span class="header-section-number">10</span> Packages</a></li>
+<li><a class="" href="exploring-data.html"><span class="header-section-number">11</span> Exploring Data</a></li>
+<li><a class="" href="importing-data.html"><span class="header-section-number">12</span> Importing Data</a></li>
+<li><a class="" href="where-to-go-next-1.html"><span class="header-section-number">13</span> Where to go next</a></li>
+<li><a class="" href="swirl-2.html"><span class="header-section-number">14</span> Swirl</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="first-interactions-with-r-and-rstudio" class="section level1" number="4">
+<h1>
+<span class="header-section-number">4</span> First interactions with R and RStudio<a class="anchor" aria-label="anchor" href="#first-interactions-with-r-and-rstudio"><i class="fas fa-link"></i></a>
+</h1>
+<div id="introduction-1" class="section level2" number="4.1">
+<h2>
+<span class="header-section-number">4.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>This document is part of our “First Steps in <strong><em>R</em></strong>” resources. It is assumed that the reader has downloaded <strong><em>R</em></strong> and <strong><em>RStudio</em></strong>. No other pre-knowledge is required.</p>
+<p>Most of the time we are used to interacting with a computer through a Graphical User Interface (GUI) (i.e. with folders, files, windows etc). In <strong><em>R</em></strong> and <strong><em>RStudio</em></strong>, we type instructions (code) instead. The window the instructions are typed into is called the console. Of course, we must type our instructions in a way the computer will understand - this is why it’s called a programming <em>language</em>. This is the way computers were operated before the development of GUIs. <strong><em>R</em></strong> is a programming language which has been developed specifically for doing statistics. <strong><em>R</em></strong> and <strong><em>RStudio</em></strong> are pieces of software which allow the computer to read the code we type and execute it (i.e. follow the instructions).</p>
+</div>
+<div id="opening-r" class="section level2" number="4.2">
+<h2>
+<span class="header-section-number">4.2</span> Opening <strong><em>R</em></strong><a class="anchor" aria-label="anchor" href="#opening-r"><i class="fas fa-link"></i></a>
+</h2>
+<p>If you open the <strong><em>R</em></strong> software you will get a window in which you can type code. This is the console. It is possible to use the <strong><em>R</em></strong> package to do statistics with <strong><em>R</em></strong> but <strong><em>RStudio</em></strong> is much more friendly to use. <strong><em>RStudio</em></strong> is called an Integrated Development Environment (IDE) for <strong><em>R</em></strong>. Note that for <strong><em>RStudio</em></strong> to work, it requires that <strong><em>R</em></strong> is also installed. Because of its ease of use, once you’ve used <strong><em>RStudio</em></strong>, you will probably find you never open <strong><em>R</em></strong> again! All of the materials in this series use <strong><em>RStudio</em></strong> for this reason.</p>
+</div>
+<div id="first-opening-rstudio" class="section level2" number="4.3">
+<h2>
+<span class="header-section-number">4.3</span> First Opening <strong><em>RStudio</em></strong><a class="anchor" aria-label="anchor" href="#first-opening-rstudio"><i class="fas fa-link"></i></a>
+</h2>
+<p>When you open <strong><em>RStudio</em></strong> for the first time there will be three windows. The one on the left is the console. You can type code directly in here and <strong><em>RStudio</em></strong> will follow your instructions as soon as you press return. One thing <strong><em>R</em></strong> can do is simple calculations like a calculator. You can experiment by typing calculations in the console. If you type <code style="color:blue;">4+6</code> and press return, <strong><em>R</em></strong> will give you the answer <span class="math inline">\(10\)</span>.</p>
+<figure><center>
+<img src="media/03_media/B_First_Time_Opening_R_and_RStudio_fig1.png" width="900" title="Figure 1" alt="An image showing RStudio when it is opened for the first time. There are three windows: the one on the left is the console, the one on the top right shows the 'Environment' and the one on the bottom right shows files that can be selected. In the console, '4+6' is typed in and '10' is outputted."><figcaption style="text-align:center">
+Figure 1: <b><em>RStudio</em></b> when it is opened for the first time.
+</figcaption>
+</center>
+</figure><p>If you’d like to carry out other calculations, here are the ways you must enter them into <strong><em>RStudio</em></strong> for some simple operations.</p>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="center">Arithmetic Operation</th>
+<th align="center">R Code</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(4+6\)</span></td>
+<td align="center"><code style="color:blue;">4+6</code></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(6-4\)</span></td>
+<td align="center"><code style="color:blue;">6-4</code></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(4 \times 6\)</span></td>
+<td align="center"><code style="color:blue;">4*6</code></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(4 \div 6\)</span></td>
+<td align="center"><code style="color:blue;">4/6</code></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(4^{6}\)</span></td>
+<td align="center"><code style="color:blue;">4^6</code></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\mathrm{e}^{4}\)</span></td>
+<td align="center"><code style="color:blue;">exp(4)</code></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\log_{10} (4)\)</span></td>
+<td align="center"><code style="color:blue;">log10(4)</code></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\ln(4)\)</span></td>
+<td align="center"><code style="color:blue;">log(4)</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>Note that you cannot go back and delete text you have put in the console. If you’ve never done any coding at first this may seem strange but you’ll get used to it quickly.</p>
+</div>
+<div id="inputting-code-using-a-script" class="section level2" number="4.4">
+<h2>
+<span class="header-section-number">4.4</span> Inputting Code Using a Script<a class="anchor" aria-label="anchor" href="#inputting-code-using-a-script"><i class="fas fa-link"></i></a>
+</h2>
+<p>A Script is the name for some code that has been written and which we want <strong><em>R</em></strong> to execute for us. You can write a script, edit it, save it then open it in <strong><em>RStudio</em></strong> and run it whenever you like. <strong><em>RStudio</em></strong> will let you let you edit your script until you’re happy with it and then run all or just some of it by highlighting and clicking run. If you choose “<strong>Save As</strong>…” in the file menu (as you would when saving, say, a <strong><em>Word</em></strong> document) the script is what gets saved. To create a <strong>Script file</strong> for the first time, in <strong><em>RStudio</em></strong>, click “<strong>File</strong>” then select “<strong>New File</strong>” and “<strong>R Script</strong>.”</p>
+<figure><center>
+<img src="media/03_media/B_First_Time_Opening_R_and_RStudio_fig2.png" width="800" title="Figure 2" alt="An image showing how to create a Script file in RStudio for the first time. In the top left corner, the 'File' tab is selected, then 'New File' is selected from the drop-down menu and 'R Script' is circled at the top of the next drop-down menu."><figcaption style="text-align:center">
+Figure 2: How to create a Script file in <b><em>RStudio</em></b> for the first time.
+</figcaption>
+</center>
+</figure><p>A fourth window opens up on the top left in <strong><em>RStudio</em></strong>. Try typing a few calculations in here. You will see that <strong><em>RStudio</em></strong> will let you type without carrying out any of the calculations. See what happens if you highlight the text and click “<strong>Run</strong>.”</p>
+<figure><center>
+<img src="media/03_media/B_First_Time_Opening_R_and_RStudio_fig3.png" width="900" title="Figure 3" alt="An image showing the fourth window, for scripts, in RStudio. The calculations '4+6', '7*5' and 'log10(100)' are typed into the window and are all highlighted. In the top right corner, the 'Run' button is circled."><figcaption style="text-align:center">
+Figure 3: The fourth window, for scripts, in <b><em>RStudio</em></b>.
+</figcaption>
+</center>
+</figure><p>You should find that all the calculations are carried out at once in the console like so:</p>
+<figure><center>
+<img src="media/03_media/B_First_Time_Opening_R_and_RStudio_fig4.png" width="500" title="Figure 4" alt="An image showing the console in RStudio, where there is the calculation '4+6', which outputs '10', the calculation '7*5', which outputs '35', and 'log10(100)', which outputs '2'."><figcaption style="text-align:center">
+Figure 4: The calculations are carried out in the console in <b><em>RStudio</em></b> all at once when the script is run.
+</figcaption>
+</center>
+</figure>
+</div>
+<div id="the-environment" class="section level2" number="4.5">
+<h2>
+<span class="header-section-number">4.5</span> The Environment<a class="anchor" aria-label="anchor" href="#the-environment"><i class="fas fa-link"></i></a>
+</h2>
+<p>As we write code, we will create “<strong><em>objects</em></strong>”. The word has a technical use in <strong><em>R</em></strong> programming which we will deal with in future worksheets. For now we will think of an object as being similar to a variable in algebra - i.e. a letter to which we can assign a value.</p>
+<p>We can tell <strong><em>R</em></strong> that we are creating a new object using the “<strong><em>assignment operator</em></strong>”:</p>
+<center>
+<code style="color: blue;">&lt;-</code>
+</center>
+<p>You can think of this as an arrow. The name of the new object should go on the left and the definition goes on the right. So the code</p>
+<center>
+<code style="color: blue;">x &lt;- 3</code>
+</center>
+<p>would create a new object called <code style="color: blue;">x</code> which is defined to have the value <span class="math inline">\(3\)</span>. If we then type</p>
+<center>
+<code style="color: blue;">x+4</code>
+</center>
+<p>We should find that <strong><em>R</em></strong> calculates <span class="math inline">\(3+4\)</span> and returns the answer <span class="math inline">\(7\)</span>.</p>
+<p>Type</p>
+<center>
+<code style="color: blue;">x &lt;- 3</code>
+</center>
+<p>in the console then look in the top right window. You should find that it looks like this.</p>
+<figure><center>
+<img src="media/03_media/B_First_Time_Opening_R_and_RStudio_fig5.png" width="900" title="Figure 5" alt="An image showing the top right window (the 'Environment') in RStudio. Under 'Values', 'x' and '3' are displayed inline."><figcaption style="text-align:center">
+Figure 5: The top right window (the “Environment”) in <b><em>RStudio</em></b>, where <code style="color: blue;">x</code> is defined to have the value <span class="math inline">\(3\)</span>.
+</figcaption>
+</center>
+</figure><p>(Note: You can use <code style="color: blue;">=</code> as an assignment operator as well as <code style="color: blue;">&lt;-</code>. However, there is a technical difference in the way <strong><em>R</em></strong> reads <code style="color: blue;">=</code>. In most situations, either <code style="color: blue;">=</code> or <code style="color: blue;">&lt;-</code> can be used interchangeably but it is a good practice to stick to <code style="color: blue;">&lt;-</code> when defining a new object.)</p>
+<p>When we are writing code we may want to define many new objects. These objects then exist in the <strong><em>R</em></strong> “Environment”. As we create new objects, the top right window keeps a record of them for us. This helps us keep track and can help us ensure that we do not create two objects with the same name.</p>
+<p>We can ask <strong><em>R</em></strong> to give us the same information by typing <code style="color: blue;"><a href="https://rdrr.io/r/base/ls.html">ls()</a></code> in the console. “ls” is short for list - we are asking <strong><em>R</em></strong> to list all the objects in the environment.</p>
+<p>You can remove an object from the environment by typing</p>
+<center>
+<code style="color: blue;"><a href="https://rdrr.io/r/base/rm.html">rm()</a></code>
+</center>
+<p>with the name of the object in the brackets.</p>
+<p>For example,</p>
+<center>
+<code style="color: blue;">rm(x)</code>
+</center>
+<p>would remove our variable <code style="color: blue;">x</code> from the environment.</p>
+<p>You can delete all objects from the environment by clicking the broom icon in the top ribbon of the “Environment” window:</p>
+<figure><center>
+<img src="media/03_media/B_First_Time_Opening_R_and_RStudio_fig6.png" width="900" title="Figure 6" alt="An image showing how to delete all objects from the environment in RStudio. The 'Environment' window is displayed and the broom icon in the top ribbon of the window is circled."><figcaption style="text-align:center">
+Figure 6: How to delete all objects from the environment in <b><em>RStudio</em></b>.
+</figcaption>
+</center>
+</figure><p>Alternatively, you can type the following command in the console:</p>
+<center>
+<code style="color: blue;">rm(list=ls())</code>
+</center>
+<p>(Note: we don’t need to worry about the details of this command at the moment but in case you’re interested: “rm” tells <strong><em>R</em></strong> to remove the thing in the brackets. The rest of the code tells <strong><em>R</em></strong> that it is going to remove an object which is a “list” and that list is called <code style="color: blue;"><a href="https://rdrr.io/r/base/ls.html">ls()</a></code>. A “list” is a category of object in <strong><em>R</em></strong>. <code style="color: blue;"><a href="https://rdrr.io/r/base/ls.html">ls()</a></code> is specifically the list of everything in the environment.)</p>
+</div>
+<div id="the-bottom-right-window" class="section level2" number="4.6">
+<h2>
+<span class="header-section-number">4.6</span> The Bottom Right Window<a class="anchor" aria-label="anchor" href="#the-bottom-right-window"><i class="fas fa-link"></i></a>
+</h2>
+<p>There are several tabs in the window in the bottom right. For the moment we will only worry about two of them: “Plots” and “Help”. If we ask <strong><em>RStudio</em></strong> to draw a graph or chart, it will appear in this window under this tab. If we ask <strong><em>RStudio</em></strong> for help - which we will often do when learning how to use a new piece of code - the answer will appear under the “Help” tab.</p>
+</div>
+<div id="exercise" class="section level2" number="4.7">
+<h2>
+<span class="header-section-number">4.7</span> Exercise<a class="anchor" aria-label="anchor" href="#exercise"><i class="fas fa-link"></i></a>
+</h2>
+<ol style="list-style-type: decimal">
+<li>In the console, create an object called <code style="color: blue;">y</code> and give it the value <span class="math inline">\(15\)</span>.<br>
+</li>
+<li>Create another object called <code style="color: blue;">z</code> and give it the value <span class="math inline">\(5\)</span>.<br>
+</li>
+<li>Calculate <code style="color: blue;">y</code> divided by <code style="color: blue;">z</code>.<br>
+</li>
+<li>Clear the environment and repeat the above by writing a script to do all three stages and running it.</li>
+<li>Change the value of <code style="color: blue;">y</code> in your script to <span class="math inline">\(20\)</span> and run it again.</li>
+</ol>
+<div id="solutions" class="section level3" number="4.7.1">
+<h3>
+<span class="header-section-number">4.7.1</span> Solutions<a class="anchor" aria-label="anchor" href="#solutions"><i class="fas fa-link"></i></a>
+</h3>
+<details><summary>
+Solutions
+</summary><ol style="list-style-type: decimal">
+<li><p><code style="color: blue;">&gt; y &lt;- 15</code></p></li>
+<li><p><code style="color: blue;">&gt; z &lt;- 5</code><br><code style="color: blue;">&gt; y</code><br><code>[1] 15</code><br><code style="color: blue;">&gt; z</code><br><code>[1] 5</code></p></li>
+<li><p><code style="color: blue;">&gt; y/z</code><br><code>[1] 3</code></p></li>
+<li><p>Script:<br><code>y &lt;- 20</code><br><code>z &lt;- 5</code><br><code>y</code><br><code>z</code><br><code>y/z</code><br>
+And here it is run:<br><code style="color: blue;">&gt; y &lt;- 20</code><br><code style="color: blue;">&gt; z &lt;- 5</code><br><code style="color: blue;">&gt; y</code><br><code>[1] 20</code><br><code style="color: blue;">&gt; z</code><br><code>[1] 5</code><br><code style="color: blue;">&gt; y/z</code><br><code>[1] 4</code></p></li>
+</ol></details>
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="downloading-r-and-rstudio.html"><span class="header-section-number">3</span> Downloading R and RStudio</a></div>
+<div class="next"><a href="vectors.html"><span class="header-section-number">5</span> Vectors</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#first-interactions-with-r-and-rstudio"><span class="header-section-number">4</span> First interactions with R and RStudio</a></li>
+<li><a class="nav-link" href="#introduction-1"><span class="header-section-number">4.1</span> Introduction</a></li>
+<li><a class="nav-link" href="#opening-r"><span class="header-section-number">4.2</span> Opening R</a></li>
+<li><a class="nav-link" href="#first-opening-rstudio"><span class="header-section-number">4.3</span> First Opening RStudio</a></li>
+<li><a class="nav-link" href="#inputting-code-using-a-script"><span class="header-section-number">4.4</span> Inputting Code Using a Script</a></li>
+<li><a class="nav-link" href="#the-environment"><span class="header-section-number">4.5</span> The Environment</a></li>
+<li><a class="nav-link" href="#the-bottom-right-window"><span class="header-section-number">4.6</span> The Bottom Right Window</a></li>
+<li>
+<a class="nav-link" href="#exercise"><span class="header-section-number">4.7</span> Exercise</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#solutions"><span class="header-section-number">4.7.1</span> Solutions</a></li></ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/03_FirstInteractions.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/03_FirstInteractions.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>First Steps in R</strong>" was written by MASH. It was last built on 2026-09-16.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>
