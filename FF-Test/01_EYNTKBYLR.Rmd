@@ -20,7 +20,9 @@ By the end, you should understand:
 -   How to continue learning R independently
 
 ::: {.success-box}
-👍 **The most important thing to remember:** You do not need to understand everything before you start. Learning R is a process.
+👍 **The most important thing to remember:** 
+
+You do not need to understand everything before you start. Learning R is a process.
 :::
 
 ## What is R?
@@ -106,7 +108,7 @@ Before being proficient in R, you will need to learn:
 
 This can feel daunting at first but is **completely normal**.
 
-The first few sessions of learning R are often the hardest because you are learning a new way of communicating with a computer.
+The first few sessions of learning R are often the hardest because you are learning a new way of communicating with a computer, but with a bit of practise, you'll soon get the hang of it. 
 
 In software such as Excel, to plot a graph you might:
 
@@ -135,6 +137,11 @@ boxplot(my_data)
 The [University of Sheffield MASH R resources page](https://sheffield.ac.uk/mash/stats-resources/r) contains a guide to downloading and setting up both [R](https://cran.r-project.org/) and [RStudio](https://posit.co/products/open-source/rstudio).
 
 Alternatively, go to both the [R](https://cran.r-project.org/) and [RStudio](https://posit.co/products/open-source/rstudio) webpages and download the appropriate version for your device.
+
+::: {.warning-box}
+⚠️ It is important that you download **both** R and RStudio.
+:::
+
 
 ## Getting to know RStudio
 
@@ -581,7 +588,7 @@ In industry, academia and any other workplace it is very common to ask peers and
 
 **5. Using AI**
 
-It's fairly commonplace now to use AI to debug or write code for you. Whilst this can be incredible useful it should be used with caution. Generative AI has a habit of producing over complex code that, whilst looking shiny and professional, is very hard to understand, modify and fix if you don't have a good grasp on the underlying language.
+It's fairly commonplace now to use AI to debug or write code for you. Whilst this can be incredible useful it should be used with caution. Generative AI currently has a habit of producing over complex code that, whilst looking shiny and professional, is very hard to understand, modify and fix if you don't have a good grasp on the underlying language.
 
 Understanding the concepts of coding are fundamental in providing solutions to problems and performing novel research. The long-term benefit of learning, reading and writing code yourself far outweigh the short term benefit of generating a sophisticated analysis with no development of your understanding.
 
@@ -626,7 +633,7 @@ You can book a 1-1 appointment on the [MASH statistics 1-1 appointment booking p
 
 ## Where to go next
 
-Once you have got through the basics, there are lots of other resources you can use to continue learning.
+Once you have mastered the basics, there are lots of other resources you can use to continue learning.
 
 ### YaRrr! The Pirate's Guide to R
 
@@ -725,19 +732,13 @@ Try to predict what will happen before you run it.
 
 Once you understand the basics, start working with data. R has an amazing library of built-in real world datasets. These are nice clean examples of data that are frequently used to demonstrate visualisation and data analysis.
 
-To access the data sets you need to install the `datasets` package using the following commands.
-
-```{r, eval=FALSE, warning=FALSE}
-install.packages("datasets")
-library(datasets)
-```
-
-You can then run the command
+To view a list of the datasets available, simply run the following command.
 
 ```{r}
 data()
 ```
-to view a list of the datasets available. To load a dataset you simply type the dataset. For example, for the `iris` dataset you simply run:
+
+To load a dataset you simply type the dataset. For example, for the `iris` dataset you simply run:
 
 ```{r}
 head(iris)

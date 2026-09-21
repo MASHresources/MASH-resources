@@ -108,7 +108,7 @@ Before being proficient in R, you will need to learn:
 
 This can feel daunting at first but is **completely normal**.
 
-The first few sessions of learning R are often the hardest because you are learning a new way of communicating with a computer.
+The first few sessions of learning R are often the hardest because you are learning a new way of communicating with a computer, but with a bit of practise, you'll soon get the hang of it. 
 
 In software such as Excel, to plot a graph you might:
 
@@ -134,6 +134,11 @@ and get a plot such as
 The [University of Sheffield MASH R resources page](https://sheffield.ac.uk/mash/stats-resources/r) contains a guide to downloading and setting up both [R](https://cran.r-project.org/) and [RStudio](https://posit.co/products/open-source/rstudio).
 
 Alternatively, go to both the [R](https://cran.r-project.org/) and [RStudio](https://posit.co/products/open-source/rstudio) webpages and download the appropriate version for your device.
+
+::: {.warning-box}
+⚠️ It is important that you download **both** R and RStudio.
+:::
+
 
 ## Getting to know RStudio
 

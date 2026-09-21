@@ -48,8 +48,8 @@ pre code {
 .sidebar-book nav[aria-label="Table of contents"]::before {
   content: "";
   display: block;
-  width: 140px;
-  height: 80px;
+  width: 150px;
+  height: 100px;
   margin: 20px auto 15px auto;
   background-image: url("media/MASH_logo.png");
   background-repeat: no-repeat;
