@@ -1,7 +1,7 @@
 --- 
 title: "First Steps in R"
 author: "MASH"
-date: "2026-09-16"
+date: "2026-09-21"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -16,4 +16,5 @@ csl: chicago-fullnote-bibliography.csl
 ---
 
 # About
+
 What this book is about 

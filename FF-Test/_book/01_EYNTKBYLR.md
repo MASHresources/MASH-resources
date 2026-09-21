@@ -4,7 +4,6 @@ If you are completely new to R, you are in the right place.
 
 Learning R can feel intimidating at first. Unlike software such as Excel and SPSS, R asks you to **type instructions** to tell the computer what you want it to do rather than clicking icons and menus.
 
-That can feel strange at first.
 
 The good news is that you do **not** need to be a programmer to learn R. You just need to learn a few basic ideas, practise them, and gradually build up your understanding.
 
@@ -96,7 +95,8 @@ Packages are collections of additional functions, data and other resources that 
 
 R is powerful, but there are some things that can make it difficult to use when you first start. The main thing being that you have to interact with it as a programming language.
 
-If you are used to software where you select options from menus, R may initially feel unfamiliar and there will initially be quite a lot to learn.
+
+If you are used to software where you select options from menus, R may initially feel unfamiliar and there will be quite a lot to learn.
 
 Before being proficient in R, you will need to learn:
 
@@ -106,7 +106,7 @@ Before being proficient in R, you will need to learn:
 -   How to structure your code
 -   How to find and fix errors
 
-This can feel daunting at first but is \*\* completely normal.\*\*
+This can feel daunting at first but is **completely normal**.
 
 The first few sessions of learning R are often the hardest because you are learning a new way of communicating with a computer.
 
