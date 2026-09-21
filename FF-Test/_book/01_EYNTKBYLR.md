@@ -20,7 +20,9 @@ By the end, you should understand:
 -   How to continue learning R independently
 
 ::: {.success-box}
-👍 **The most important thing to remember:** You do not need to understand everything before you start. Learning R is a process.
+👍 **The most important thing to remember:** 
+
+You do not need to understand everything before you start. Learning R is a process.
 :::
 
 ## What is R?
@@ -613,7 +615,7 @@ In industry, academia and any other workplace it is very common to ask peers and
 
 **5. Using AI**
 
-It's fairly commonplace now to use AI to debug or write code for you. Whilst this can be incredible useful it should be used with caution. Generative AI has a habit of producing over complex code that, whilst looking shiny and professional, is very hard to understand, modify and fix if you don't have a good grasp on the underlying language.
+It's fairly commonplace now to use AI to debug or write code for you. Whilst this can be incredible useful it should be used with caution. Generative AI currently has a habit of producing over complex code that, whilst looking shiny and professional, is very hard to understand, modify and fix if you don't have a good grasp on the underlying language.
 
 Understanding the concepts of coding are fundamental in providing solutions to problems and performing novel research. The long-term benefit of learning, reading and writing code yourself far outweigh the short term benefit of generating a sophisticated analysis with no development of your understanding.
 
@@ -658,7 +660,7 @@ You can book a 1-1 appointment on the [MASH statistics 1-1 appointment booking p
 
 ## Where to go next
 
-Once you have got through the basics, there are lots of other resources you can use to continue learning.
+Once you have mastered the basics, there are lots of other resources you can use to continue learning.
 
 ### YaRrr! The Pirate's Guide to R
 
@@ -761,21 +763,14 @@ Try to predict what will happen before you run it.
 
 Once you understand the basics, start working with data. R has an amazing library of built-in real world datasets. These are nice clean examples of data that are frequently used to demonstrate visualisation and data analysis.
 
-To access the data sets you need to install the `datasets` package using the following commands.
-
-
-``` r
-install.packages("datasets")
-library(datasets)
-```
-
-You can then run the command
+To view a list of the datasets available, simply run the following command.
 
 
 ``` r
 data()
 ```
-to view a list of the datasets available. To load a dataset you simply type the dataset. For example, for the `iris` dataset you simply run:
+
+To load a dataset you simply type the dataset. For example, for the `iris` dataset you simply run:
 
 
 ``` r
@@ -819,7 +814,7 @@ boxplot(
 )
 ```
 
-<img src="01_EYNTKBYLR_files/figure-html/unnamed-chunk-37-1.png" alt="" width="672" />
+<img src="01_EYNTKBYLR_files/figure-html/unnamed-chunk-36-1.png" alt="" width="672" />
 
 
 **Step 6** - Develop it
@@ -844,7 +839,7 @@ ggplot(iris, aes(x = Species, y = Sepal.Width, fill = Species)) +
   theme_minimal()
 ```
 
-<img src="01_EYNTKBYLR_files/figure-html/unnamed-chunk-38-1.png" alt="" width="672" />
+<img src="01_EYNTKBYLR_files/figure-html/unnamed-chunk-37-1.png" alt="" width="672" />
 
 
 ## Final advice
