@@ -41,6 +41,8 @@ and it will return:
 #> [1] 4
 ```
 
+We'll get to where you type these instructions soon!
+
 R is widely used for statistics, data analysis and data visualisation. It is used by students, researchers, universities, governments, businesses and many other organisations.
 
 R is especially useful when you need to:
@@ -174,11 +176,15 @@ You can type directly into it. The result will appear underneath. Unlike an R sc
 -   Checking the result of a function
 -   Troubleshooting
 
-> Tip: you can press the **Up** key with your cursor in the Console to quickly cycle through commands you have typed recently\*\*
+::: {.sucess-box}
+👍 **Tip:**
+You can press the **Up** key with your cursor in the Console to quickly cycle through commands you have typed recently
+:::
+
 
 ### 3. Environment / History
 
-The **Environment** pane shows objects that currently exist in your R session.
+The **Environment** pane shows objects that currently exist in your R session. Objects are bits of information R can store and work with, we'll cover these in more detail later in this chapter.
 
 For example, if you run the code:
 
@@ -194,6 +200,9 @@ The **Environment** therefore gives you a useful overview of the objects you hav
 There are other tabs within this pane, the next most useful being the **History** tab which shows all the commands that you have previously entered.
 
 This can be useful when you are trying to remember something you did earlier in your session.
+
+
+Below we'll learn how we write code, create objects and perform functions with our objects. 
 
 ### 4. Files / Plots / Packages / Help
 
@@ -343,6 +352,10 @@ Here:
 -   `mean` is the function;
 -   `c(2, 4, 6, 8)` is the input;
 -   the function calculates the mean.
+
+::: {.info-box}
+ℹ️ Actually, c() is also a function in itself. The c stands for combine, so in th above example, we are combining 2,4,6,8. 
+:::
 
 Functions are generally followed by parentheses:
 
@@ -585,7 +598,7 @@ Often, a quick Google (or your preferred search engine) will give you the syntax
 
 **2. Look at documentation**
 
-Some of the more frequently used packages such as [ggplot2](<https://ggplot2.tidyverse.org/>) (a powerful packages for creating graphs) have very thorough documentation that can be very helpful in learning how to use it. 
+Some of the more frequently used packages such as [ggplot2](<https://ggplot2.tidyverse.org/>) (a powerful package for creating graphs) have very thorough documentation that can be very helpful in learning how to use it. 
 
 **3. Use R help pages** 
 
@@ -647,7 +660,7 @@ The [MASH First steps in R resources](https://sheffield.ac.uk/mash/stats-resourc
 
 ### MASH 1-1 support
 
-If you are stuck, you can also book a 1-1 appointment with MASH.
+You can also book a 1-1 appointment with MASH.
 
 A 1:1 can be particularly useful if you have a specific question about:
 
@@ -744,9 +757,11 @@ my_numbers[1]
 
 Executing `my_numbers[1]` will give the value 10, the number with *index* 1 (i.e. the 1st number) of the vector `my_numbers`. 
 
-Knowing how to index in R is incredibly useful for removing, adding and selecting specifc rows of your data, as well as other things. It is well worth spending time to learn about it.
+Knowing how to index in R is incredibly useful for removing, adding and selecting specfic rows of your data, as well as other things. It is well worth spending time to learn about it.
 
-> Note: If you have used other programming languages before, you will be aware that 0 is usually the first index of a vector. This is different in R. Indexing starts from 1.   
+::: {.info-box}
+ℹ️ If you have used other programming languages before, you will be aware that 0 is usually the first index of a vector. This is different in R. Indexing starts from 1.   
+:::
 
 **Step 3** — Practise
 

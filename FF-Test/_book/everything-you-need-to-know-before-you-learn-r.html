@@ -96,6 +96,7 @@
 <code class="sourceCode R"><span><span class="fl">2</span> <span class="op">+</span> <span class="fl">2</span></span></code></pre></div>
 <p>and it will return:</p>
 <pre><code>#&gt; [1] 4</code></pre>
+<p>We’ll get to where you type these instructions soon!</p>
 <p>R is widely used for statistics, data analysis and data visualisation. It is used by students, researchers, universities, governments, businesses and many other organisations.</p>
 <p>R is especially useful when you need to:</p>
 <ul>
@@ -225,15 +226,16 @@
 <li>Checking the result of a function</li>
 <li>Troubleshooting</li>
 </ul>
-<blockquote>
-<p>Tip: you can press the <strong>Up</strong> key with your cursor in the Console to quickly cycle through commands you have typed recently**</p>
-</blockquote>
+<div class="sucess-box">
+<p>👍 <strong>Tip:</strong>
+You can press the <strong>Up</strong> key with your cursor in the Console to quickly cycle through commands you have typed recently</p>
+</div>
 </div>
 <div id="environment-history" class="section level3" number="2.3.3">
 <h3>
 <span class="header-section-number">2.3.3</span> 3. Environment / History<a class="anchor" aria-label="anchor" href="#environment-history"><i class="fas fa-link"></i></a>
 </h3>
-<p>The <strong>Environment</strong> pane shows objects that currently exist in your R session.</p>
+<p>The <strong>Environment</strong> pane shows objects that currently exist in your R session. Objects are bits of information R can store and work with, we’ll cover these in more detail later in this chapter.</p>
 <p>For example, if you run the code:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">student_scores</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">65</span>, <span class="fl">72</span>, <span class="fl">81</span>, <span class="fl">69</span>, <span class="fl">88</span><span class="op">)</span></span></code></pre></div>
@@ -241,6 +243,7 @@
 <p>The <strong>Environment</strong> therefore gives you a useful overview of the objects you have created.</p>
 <p>There are other tabs within this pane, the next most useful being the <strong>History</strong> tab which shows all the commands that you have previously entered.</p>
 <p>This can be useful when you are trying to remember something you did earlier in your session.</p>
+<p>Below we’ll learn how we write code, create objects and perform functions with our objects.</p>
 </div>
 <div id="files-plots-packages-help" class="section level3" number="2.3.4">
 <h3>
@@ -380,6 +383,9 @@
 <code>c(2, 4, 6, 8)</code> is the input;</li>
 <li>the function calculates the mean.</li>
 </ul>
+<div class="info-box">
+<p>ℹ️ Actually, c() is also a function in itself. The c stands for combine, so in th above example, we are combining 2,4,6,8.</p>
+</div>
 <p>Functions are generally followed by parentheses:</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">function_name</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -547,7 +553,7 @@ In mean.default("this is not a number") :
 <p><strong>1. Search Online</strong></p>
 <p>Often, a quick Google (or your preferred search engine) will give you the syntax you need to perform/fix what you want in R.</p>
 <p><strong>2. Look at documentation</strong></p>
-<p>Some of the more frequently used packages such as <a href="https://ggplot2.tidyverse.org/">ggplot2</a> (a powerful packages for creating graphs) have very thorough documentation that can be very helpful in learning how to use it.</p>
+<p>Some of the more frequently used packages such as <a href="https://ggplot2.tidyverse.org/">ggplot2</a> (a powerful package for creating graphs) have very thorough documentation that can be very helpful in learning how to use it.</p>
 <p><strong>3. Use R help pages</strong></p>
 <p>R has a built-in help system. For example, if you want to find out more about the <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> function, you can type:</p>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
@@ -600,7 +606,7 @@ In mean.default("this is not a number") :
 <h3>
 <span class="header-section-number">2.5.3</span> MASH 1-1 support<a class="anchor" aria-label="anchor" href="#mash-1-1-support"><i class="fas fa-link"></i></a>
 </h3>
-<p>If you are stuck, you can also book a 1-1 appointment with MASH.</p>
+<p>You can also book a 1-1 appointment with MASH.</p>
 <p>A 1:1 can be particularly useful if you have a specific question about:</p>
 <ul>
 <li>A research problem</li>
@@ -682,10 +688,10 @@ In mean.default("this is not a number") :
 <span><span class="co"># Indexing</span></span>
 <span><span class="va">my_numbers</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span></code></pre></div>
 <p>Executing <code>my_numbers[1]</code> will give the value 10, the number with <em>index</em> 1 (i.e. the 1st number) of the vector <code>my_numbers</code>.</p>
-<p>Knowing how to index in R is incredibly useful for removing, adding and selecting specifc rows of your data, as well as other things. It is well worth spending time to learn about it.</p>
-<blockquote>
-<p>Note: If you have used other programming languages before, you will be aware that 0 is usually the first index of a vector. This is different in R. Indexing starts from 1.</p>
-</blockquote>
+<p>Knowing how to index in R is incredibly useful for removing, adding and selecting specfic rows of your data, as well as other things. It is well worth spending time to learn about it.</p>
+<div class="info-box">
+<p>ℹ️ If you have used other programming languages before, you will be aware that 0 is usually the first index of a vector. This is different in R. Indexing starts from 1.</p>
+</div>
 <p><strong>Step 3</strong> — Practise</p>
 <p>Do not just read R code.</p>
 <ul>
@@ -954,7 +960,7 @@ In mean.default("this is not a number") :
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>First Steps in R</strong>" was written by MASH. It was last built on 2026-09-21.</p>
+    <p>"<strong>First Steps in R</strong>" was written by MASH. It was last built on 2026-09-22.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
