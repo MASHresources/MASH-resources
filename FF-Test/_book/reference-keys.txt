@@ -1,4 +1,7 @@
 about
+videos
+learning-checklist
+glossary
 your-r-learning-checklist
 everything-you-need-to-know-before-you-learn-r
 what-is-r
@@ -113,4 +116,4 @@ websitesonline-textbooks
 swirl
 swirl-1
 swirl-2
-glossary
+glossary-1
