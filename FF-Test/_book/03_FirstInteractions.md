@@ -1,5 +1,122 @@
 # First interactions with R and RStudio
 
+
+
+
+## Getting to know RStudio
+
+When you open RStudio, you will probably see several different sections or **panes**.
+
+The exact arrangement can vary depending on your version and settings.
+
+A common layout contains four main panes:
+
+1.  (Top-left) **Source**
+2.  (Bottom-left) **Console**
+3.  (Top-right) **Environment / History**
+4.  (Bottom-left) **Files / Plots / Packages / Help**
+
+### 1. Source
+
+The **Source** pane is where you can write, edit and save your code. If it is the first time opening Rstudio, the **Source** pane may not appear until you click the following.
+
+File \> New File \> R Script
+
+The **Source pane** is where you should normally develop your analysis. The saved code is referred to as a script and has the file extension `.R`. These files can be reopened and worked on at any time.
+
+### 2. Console
+
+The **Console** is where R receives and executes commands.
+
+You can type directly into it. The result will appear underneath. Unlike an R script, the **Console** is temporary and anything you type into it is not saved. The **Console** is particularly useful for:
+
+-   Trying out commands
+-   Testing ideas
+-   Checking the result of a function
+-   Troubleshooting
+
+::: {.sucess-box}
+👍 **Tip:**
+You can press the **Up** key with your cursor in the Console to quickly cycle through commands you have typed recently
+:::
+
+
+### 3. Environment / History
+
+The **Environment** pane shows objects that currently exist in your R session. Objects are bits of information R can store and work with, we'll cover these in more detail later in this chapter.
+
+For example, if you run the code:
+
+
+``` r
+student_scores <- c(65, 72, 81, 69, 88)
+```
+
+the object `student_scores` will appear in the **Environment**. *We'll talk more about objects later*.
+
+The **Environment** therefore gives you a useful overview of the objects you have created.
+
+There are other tabs within this pane, the next most useful being the **History** tab which shows all the commands that you have previously entered.
+
+This can be useful when you are trying to remember something you did earlier in your session.
+
+
+Below we'll learn how we write code, create objects and perform functions with our objects. 
+
+### 4. Files / Plots / Packages / Help
+
+The last window contains several tabs including **Files, Plots, Packages and Help**.
+
+The **Files** tab allows you to navigate through folders on your computer (see **Working Directories** for more detail).
+
+**Plots** displays graphs that you create in R.
+
+**Packages** allows you to see packages that are installed in your R session.
+
+**Help** displays R's documentation when you request it using the `?` command (see [Errors](#Errors) for further help).
+
+The following table summarises the pane functions.
+
+| Window          | What it does                       |
+|-----------------|------------------------------------|
+| **Source**      | Write and edit R scripts           |
+| **Console**     | Run R commands                     |
+| **Environment** | View objects currently stored in R |
+| **History**     | View previously entered commands   |
+| **Files**       | Navigate through files and folders |
+| **Plots**       | View graphs                        |
+| **Packages**    | Install and manage packages        |
+| **Help**        | Access R documentation             |
+
+### Working directories
+
+One concept that often causes confusion when you first start using R is the **working directory**.
+
+The **working directory** is the folder that R is currently using as its default location for reading and writing files.
+
+You can find your current working directory by running:
+
+
+``` r
+getwd()
+```
+
+`getwd()` means **get working directory**.
+
+You can change the working directory using `setwd()` and the path to your desired folder. For example:
+
+
+``` r
+setwd("C:/Users/YourName/Documents/R")
+```
+
+The exact path will depend on your computer.
+
+::: {.info-box}
+ℹ️ You do not necessarily need to use `setwd()`. Instead, in the **Files** tab, click **...** on the right-hand side, click through the file explorer to find the folder you want then click **Open**. Click the cog symbol titled **More** then Select **Set as Working Directory**.
+:::
+
+Below is MASH OLD TEXT 
 ## Introduction 
 
 This document is part of our "First Steps in ***R***" resources. It is assumed that the reader has downloaded ***R*** and ***RStudio***. No other pre-knowledge is required.
