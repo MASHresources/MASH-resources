@@ -16,6 +16,7 @@ By the end, you should understand:
 -   Some advantages and disadvantages of R versus other software
 -   Main parts of the RStudio interface
 -   How to begin coding in R
+-   Best practices on fixing errors
 -   Where to find help and learning materials
 -   How to continue learning R independently
 
@@ -87,7 +88,7 @@ R can be used for an enormous range of tasks from calculating statistics, plotti
 
 R is widely used in scientific research and academia, as well as industry. R has an enormous library of **packages** to help you perform even quite specific tasks.
 
-Packages are collections of additional functions, data and other resources that extend what R can do.
+Packages are collections of additional functions, data and other resources that extend what R can do. These are discussed in more detail in Chapter \@ref(packages).
 
 ::: {.info-box}
 ℹ️ R can do a huge amount. And if it cannot already do something you need, there is often a package that can help — or you can potentially create your own solution.
@@ -172,9 +173,11 @@ These first steps will guide you through:
 -   Downloading RStudio
 -   Interacting with R
 -   Understanding objects and functions
--   Working with vectors
+-   Working with vectors, matrices and dataframes
 -   Getting started with data
 -   Installing packages
+-   Finding support 
+-   Where to go next to learn more
 
 These are a good place to get started!
 

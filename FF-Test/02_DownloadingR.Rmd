@@ -1,14 +1,5 @@
-# Downloading R and RStudio
+# Downloading R and RStudio {#downloadingR}
 
-## Introduction 
-
----
-
-
-
-This is the first document in our "First Steps in ***R***" series of resources.
-
-***R*** is a programming language specifically designed for doing statistics. The ***R*** software can be downloaded on its own but it is more usual to download both ***R*** and ***RStudio***. ***RStudio*** is a more convenient way of interacting ***R***. The ***R*** *software* must be installed before ***RStudio*** will work.
 
 ## Downloading ***R*** for Windows (do this first, before downloading ***RStudio***)
 
