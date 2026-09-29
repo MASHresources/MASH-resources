@@ -45,7 +45,7 @@
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
 <li><a class="active" href="everything-you-need-to-know-before-you-learn-r.html"><span class="header-section-number">2</span> Everything you need to know before you learn R</a></li>
-<li><a class="" href="downloading-r-and-rstudio.html"><span class="header-section-number">3</span> Downloading R and RStudio</a></li>
+<li><a class="" href="downloadingR.html"><span class="header-section-number">3</span> Downloading R and RStudio</a></li>
 <li><a class="" href="first-interactions-with-r-and-rstudio.html"><span class="header-section-number">4</span> First interactions with R and RStudio</a></li>
 <li><a class="" href="vectors.html"><span class="header-section-number">5</span> Vectors</a></li>
 <li><a class="" href="functions.html"><span class="header-section-number">6</span> Functions</a></li>
@@ -55,9 +55,10 @@
 <li><a class="" href="packages.html"><span class="header-section-number">10</span> Packages</a></li>
 <li><a class="" href="exploring-data.html"><span class="header-section-number">11</span> Exploring Data</a></li>
 <li><a class="" href="importing-data.html"><span class="header-section-number">12</span> Importing Data</a></li>
-<li><a class="" href="where-to-go-next.html"><span class="header-section-number">13</span> Where to go next</a></li>
-<li><a class="" href="swirl-1.html"><span class="header-section-number">14</span> Swirl</a></li>
-<li><a class="" href="glossary-1.html"><span class="header-section-number">15</span> Glossary</a></li>
+<li><a class="" href="next-steps.html"><span class="header-section-number">13</span> Next Steps</a></li>
+<li><a class="" href="swirl.html"><span class="header-section-number">14</span> Swirl</a></li>
+<li><a class="" href="support.html"><span class="header-section-number">15</span> Support</a></li>
+<li><a class="" href="glossary-1.html"><span class="header-section-number">16</span> Glossary</a></li>
 </ul>
 
         <div class="book-extra">
@@ -80,6 +81,7 @@
 <li>Some advantages and disadvantages of R versus other software</li>
 <li>Main parts of the RStudio interface</li>
 <li>How to begin coding in R</li>
+<li>Best practices on fixing errors</li>
 <li>Where to find help and learning materials</li>
 <li>How to continue learning R independently</li>
 </ul>
@@ -144,7 +146,7 @@
 <span class="header-section-number">2.1.2.3</span> It’s widely used!<a class="anchor" aria-label="anchor" href="#its-widely-used"><i class="fas fa-link"></i></a>
 </h4>
 <p>R is widely used in scientific research and academia, as well as industry. R has an enormous library of <strong>packages</strong> to help you perform even quite specific tasks.</p>
-<p>Packages are collections of additional functions, data and other resources that extend what R can do.</p>
+<p>Packages are collections of additional functions, data and other resources that extend what R can do. These are discussed in more detail in Chapter <a href="packages.html#packages">10</a>.</p>
 <div class="info-box">
 <p>ℹ️ R can do a huge amount. And if it cannot already do something you need, there is often a package that can help — or you can potentially create your own solution.</p>
 </div>
@@ -184,7 +186,7 @@
 <h2>
 <span class="header-section-number">2.2</span> Installing R and RStudio<a class="anchor" aria-label="anchor" href="#installing-r-and-rstudio"><i class="fas fa-link"></i></a>
 </h2>
-<p>Section <a href="#downloadingR"><strong>??</strong></a> of this book, Downloading R and RStudio, contains a guide to downloading and setting up both <a href="https://cran.r-project.org/">R</a> and <a href="https://posit.co/products/open-source/rstudio">RStudio</a>.</p>
+<p>Section <a href="downloadingR.html#downloadingR">3</a> of this book, Downloading R and RStudio, contains a guide to downloading and setting up both <a href="https://cran.r-project.org/">R</a> and <a href="https://posit.co/products/open-source/rstudio">RStudio</a>.</p>
 <p>Alternatively, go to both the <a href="https://cran.r-project.org/">R</a> and <a href="https://posit.co/products/open-source/rstudio">RStudio</a> webpages and download the appropriate version for your device.</p>
 <div class="warning-box">
 <p>⚠️ It is important that you download <strong>both</strong> R and RStudio.</p>
@@ -210,9 +212,11 @@
 <li>Downloading RStudio</li>
 <li>Interacting with R</li>
 <li>Understanding objects and functions</li>
-<li>Working with vectors</li>
+<li>Working with vectors, matrices and dataframes</li>
 <li>Getting started with data</li>
 <li>Installing packages</li>
+<li>Finding support</li>
+<li>Where to go next to learn more</li>
 </ul>
 <p>These are a good place to get started!</p>
 <div id="what-is-a-command" class="section level3" number="2.3.1">
@@ -564,7 +568,7 @@ In mean.default("this is not a number") :
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="index.html"><span class="header-section-number">1</span> About</a></div>
-<div class="next"><a href="downloading-r-and-rstudio.html"><span class="header-section-number">3</span> Downloading R and RStudio</a></div>
+<div class="next"><a href="downloadingR.html"><span class="header-section-number">3</span> Downloading R and RStudio</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
@@ -605,7 +609,7 @@ In mean.default("this is not a number") :
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>First Steps in R</strong>" was written by MASH. It was last built on 2026-09-28.</p>
+    <p>"<strong>First Steps in R</strong>" was written by MASH. It was last built on 2026-09-29.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

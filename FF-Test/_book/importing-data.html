@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 12 Importing Data | First Steps in R</title>
 <meta name="author" content="MASH">
-<meta name="description" content="12.1 Introduction This document is part of our “First Steps in R” resources. It is assumed that the reader understands how to define objects and call a function in R. If you would like to recap...">
+<meta name="description" content="In this chapter we will cover common ways to import data into R. It is by no means exhaustive! Users who are new to R may wish to use the suggested method and read no further. It is assumed that...">
 <meta name="generator" content="bookdown 0.48 with bs4_book()">
 <meta property="og:title" content="Chapter 12 Importing Data | First Steps in R">
 <meta property="og:type" content="book">
-<meta property="og:description" content="12.1 Introduction This document is part of our “First Steps in R” resources. It is assumed that the reader understands how to define objects and call a function in R. If you would like to recap...">
+<meta property="og:description" content="In this chapter we will cover common ways to import data into R. It is by no means exhaustive! Users who are new to R may wish to use the suggested method and read no further. It is assumed that...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 12 Importing Data | First Steps in R">
-<meta name="twitter:description" content="12.1 Introduction This document is part of our “First Steps in R” resources. It is assumed that the reader understands how to define objects and call a function in R. If you would like to recap...">
+<meta name="twitter:description" content="In this chapter we will cover common ways to import data into R. It is by no means exhaustive! Users who are new to R may wish to use the suggested method and read no further. It is assumed that...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.10.0/transition.js"></script><script src="libs/bs3compat-0.10.0/tabs.js"></script><script src="libs/bs3compat-0.10.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -45,7 +45,7 @@
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
 <li><a class="" href="everything-you-need-to-know-before-you-learn-r.html"><span class="header-section-number">2</span> Everything you need to know before you learn R</a></li>
-<li><a class="" href="downloading-r-and-rstudio.html"><span class="header-section-number">3</span> Downloading R and RStudio</a></li>
+<li><a class="" href="downloadingR.html"><span class="header-section-number">3</span> Downloading R and RStudio</a></li>
 <li><a class="" href="first-interactions-with-r-and-rstudio.html"><span class="header-section-number">4</span> First interactions with R and RStudio</a></li>
 <li><a class="" href="vectors.html"><span class="header-section-number">5</span> Vectors</a></li>
 <li><a class="" href="functions.html"><span class="header-section-number">6</span> Functions</a></li>
@@ -55,9 +55,10 @@
 <li><a class="" href="packages.html"><span class="header-section-number">10</span> Packages</a></li>
 <li><a class="" href="exploring-data.html"><span class="header-section-number">11</span> Exploring Data</a></li>
 <li><a class="active" href="importing-data.html"><span class="header-section-number">12</span> Importing Data</a></li>
-<li><a class="" href="where-to-go-next.html"><span class="header-section-number">13</span> Where to go next</a></li>
-<li><a class="" href="swirl-1.html"><span class="header-section-number">14</span> Swirl</a></li>
-<li><a class="" href="glossary-1.html"><span class="header-section-number">15</span> Glossary</a></li>
+<li><a class="" href="next-steps.html"><span class="header-section-number">13</span> Next Steps</a></li>
+<li><a class="" href="swirl.html"><span class="header-section-number">14</span> Swirl</a></li>
+<li><a class="" href="support.html"><span class="header-section-number">15</span> Support</a></li>
+<li><a class="" href="glossary-1.html"><span class="header-section-number">16</span> Glossary</a></li>
 </ul>
 
         <div class="book-extra">
@@ -69,36 +70,30 @@
 <h1>
 <span class="header-section-number">12</span> Importing Data<a class="anchor" aria-label="anchor" href="#importing-data"><i class="fas fa-link"></i></a>
 </h1>
-<div id="introduction-8" class="section level2" number="12.1">
+<p>In this chapter we will cover common ways to import data into R. It is by no means exhaustive! Users who are new to R may wish to use the suggested method and read no further. It is assumed that you understand how to define objects and call a function.</p>
+<div id="preparing-data" class="section level2" number="12.1">
 <h2>
-<span class="header-section-number">12.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction-8"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.1</span> Preparing Data<a class="anchor" aria-label="anchor" href="#preparing-data"><i class="fas fa-link"></i></a>
 </h2>
-<p>This document is part of our “First Steps in <strong><em>R</em></strong>” resources. It is assumed that the reader understands how to define objects and call a function in <strong><em>R</em></strong>. If you would like to recap these topics, the documents and videos are on the MASH website.</p>
-<p>This document provides a guide to some of the ways to import a dataset to <strong><em>R</em></strong>. It is by no means exhaustive! Users who are new to <strong><em>R</em></strong> may wish to use the suggested method below and read no further.</p>
-</div>
-<div id="preparing-data" class="section level2" number="12.2">
-<h2>
-<span class="header-section-number">12.2</span> Preparing Data<a class="anchor" aria-label="anchor" href="#preparing-data"><i class="fas fa-link"></i></a>
-</h2>
-<p>It is sensible to ensure the data is well prepared to avoid any issues with reading data into <strong><em>R</em></strong>.</p>
-<p>In this document, we will be reading data from an Excel file. Before importing the data to <strong><em>R</em></strong>, we must make sure that it is recorded in a way which will make it easy for <strong><em>R</em></strong> to read.</p>
+<p>It is sensible to ensure the data is well prepared to avoid any issues with reading data into R.</p>
+<p>In this example, we will be reading data from an Excel file. Before importing the data to R, we must make sure that it is recorded in a way which will make it easy for R to read.</p>
 <p>Here are some useful practices:</p>
 <ul>
 <li>Use short names for variables and sampling units</li>
 <li>Avoid names with symbols such as ?, $, %, ^, &amp;, *, (, ), -, /, #, I, [, ], { and }.</li>
 <li>Avoid names, values and fields with blank spaces as they will be interpreted as separate variables, resulting in errors.</li>
-<li>Use . or _ to link words together if you need to, for example <code style="color: blue;">gene.length</code> or <code style="color: blue;">gene_length</code>.</li>
+<li>Use . or _ to link words together if you need to, for example <code>gene.length</code> or <code>gene_length</code>.</li>
 <li>Do not make any comments in the Excel file. This will result in extra columns or NAs.</li>
-<li>Replace missing values with NA. R recognises NA as missing data but <strong><em>R</em></strong> would not recognise (for example) n/a as missing data.</li>
+<li>Replace missing values with NA. R recognises NA as missing data but R would not recognise (for example) n/a as missing data.</li>
 </ul>
 </div>
-<div id="importing-the-data---suggested-method" class="section level2" number="12.3">
+<div id="importing-the-data---suggested-method" class="section level2" number="12.2">
 <h2>
-<span class="header-section-number">12.3</span> Importing the Data - Suggested Method<a class="anchor" aria-label="anchor" href="#importing-the-data---suggested-method"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.2</span> Importing the Data - Suggested Method<a class="anchor" aria-label="anchor" href="#importing-the-data---suggested-method"><i class="fas fa-link"></i></a>
 </h2>
-<p>This section focusses on one method for importing an Excel file, which I found easy to use when getting to know <strong><em>RStudio</em></strong>. You may prefer to stick to this method, at least until you are more familiar with <strong><em>R</em></strong>. Data can be imported to <strong><em>R</em></strong> in various ways from various different pieces of software and other possibilities are discussed at the end of this document.</p>
+<p>This section focusses on one method for importing an Excel file, which I found easy to use when getting to know <strong><em>RStudio</em></strong>. You may prefer to stick to this method, at least until you are more familiar with R. Data can be imported to R in various ways from various different pieces of software and other possibilities are discussed at the end of this document.</p>
 <p>In the examples we will use the “Birthweight” dataset which can be found at <a href="https://www.sheffield.ac.uk/mash/statistics/datasets" target="_blank" title="Go to MASH">MASH</a>. The reader can follow the methods described with any Excel dataset.</p>
-<p>Whichever file you decide to use, before importing into <strong><em>R</em></strong>, save it as <code>.txt</code> (as tab-delimited text file) or <code>.csv</code> (comma delimited). To do this in Excel, just select the required file type when saving. In the examples we will use <code>.csv</code>.</p>
+<p>Whichever file you decide to use, before importing into R, save it as <code>.txt</code> (as tab-delimited text file) or <code>.csv</code> (comma delimited). To do this in Excel, just select the required file type when saving. In the examples we will use <code>.csv</code>.</p>
 <figure><center>
 <img src="media/11_media/J_Preparing_data_for_R_fig1.png" width="700" title="Figure 1" alt="An image showing the 'Save As' tab in Excel, with 'Birthweight_reduced_R' as the file selected and the options 'Text (Tab delimited) (*.txt)' and 'CSV (Comma delimited) (*.csv)' circled in the drop-down menu. 'CSV (Comma delimited) (*.csv)' is also selected."><figcaption style="text-align:center">
 Figure 1: The <code>.txt</code> and <code>.csv</code> file type options when saving Excel files.
@@ -108,19 +103,19 @@ Figure 1: The <code>.txt</code> and <code>.csv</code> file type options when sav
 <center>
 <code style="color: blue;">birthweight &lt;- read.csv(file.choose())</code>
 </center>
-<p>This code allows us to browse for the file on the computer. The first part tells <strong><em>R</em></strong> that we are going to define a new object called “birthweight” (we could choose any name). Next we say that the definition of the object comes from the command “read.csv”. This tells <strong><em>R</em></strong> to create a data frame from the <code>.csv</code> file we are about to describe. The argument of the <code style="color: blue;">read.csv</code> function is another function, “file.choose”. This function will open a window which allows you to browse your folders and select the file you want. Note: the window sometimes opens <strong>behind</strong> the <strong><em>RStudio</em></strong> window leaving the user to wonder where on earth it is!</p>
+<p>This code allows us to browse for the file on the computer. The first part tells R that we are going to define a new object called “birthweight” (we could choose any name). Next we say that the definition of the object comes from the command “read.csv”. This tells R to create a data frame from the <code>.csv</code> file we are about to describe. The argument of the <code style="color: blue;">read.csv</code> function is another function, “file.choose”. This function will open a window which allows you to browse your folders and select the file you want. Note: the window sometimes opens <strong>behind</strong> the <strong><em>RStudio</em></strong> window leaving the user to wonder where on earth it is!</p>
 <figure><center>
 <img src="media/11_media/J_Preparing_data_for_R_fig2.png" width="500" title="Figure 2" alt="An image showing the 'Select file' window for browsing folders and files when using the 'file.choose()' function as the argument of the 'read.csv' function in RStudio. 'Example folder' is the folder to 'Look in' and the file called 'Birthweight_reduced_R' is highlighted."><figcaption style="text-align:center">
 Figure 2: The ‘Select file’ window for browsing folders and files when using the <code style="color: blue;"><a href="https://rdrr.io/r/base/file.choose.html">file.choose()</a></code> function as the argument of the <code style="color: blue;">read.csv</code> function in <b><em>RStudio</em></b>.
 </figcaption>
 </center>
 </figure><p>Navigate to the folder where the file is, select the file and click “<strong>Open</strong>”.</p>
-<p>The dataset has now been imported to <strong><em>R</em></strong> as a data frame. In the example, the data frame is called <code style="color: blue;">birthweight</code>.</p>
+<p>The dataset has now been imported to R as a data frame. In the example, the data frame is called <code style="color: blue;">birthweight</code>.</p>
 <p>If the file is saved as a <code>.txt</code> instead of a <code>.csv</code> the above instructions can be followed using <code style="color: blue;">read.delim</code> in place of <code style="color: blue;">read.csv</code>.</p>
 </div>
-<div id="typing-a-file-path" class="section level2" number="12.4">
+<div id="typing-a-file-path" class="section level2" number="12.3">
 <h2>
-<span class="header-section-number">12.4</span> Typing a File Path<a class="anchor" aria-label="anchor" href="#typing-a-file-path"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.3</span> Typing a File Path<a class="anchor" aria-label="anchor" href="#typing-a-file-path"><i class="fas fa-link"></i></a>
 </h2>
 <p>The file path of the file can be typed directly into the <code style="color: blue;">read.csv</code> function but you must remember:</p>
 <ul>
@@ -130,15 +125,15 @@ Figure 2: The ‘Select file’ window for browsing folders and files when using
 </ul>
 <p>So a <code>.csv</code> file at this location:</p>
 <p><code>C:Namefolder_reduced_R</code></p>
-<p>can be read into <strong><em>R</em></strong> as a data frame called “test” using this command:</p>
+<p>can be read into R as a data frame called “test” using this command:</p>
 <center>
 <code style="color: blue;">test &lt;- read.csv(“C:\Users\User Name\Documents\Example folder\Birthweight_reduced_R.csv”)</code>
 </center>
 <p>Note that unless the file is in the working directory (see below) the <code style="color: blue;"><a href="https://rdrr.io/r/base/file.choose.html">file.choose()</a></code> function is usually an easier option.</p>
 </div>
-<div id="importing-a-file-using-the-menus" class="section level2" number="12.5">
+<div id="importing-a-file-using-the-menus" class="section level2" number="12.4">
 <h2>
-<span class="header-section-number">12.5</span> Importing a File Using the Menus<a class="anchor" aria-label="anchor" href="#importing-a-file-using-the-menus"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.4</span> Importing a File Using the Menus<a class="anchor" aria-label="anchor" href="#importing-a-file-using-the-menus"><i class="fas fa-link"></i></a>
 </h2>
 <p>One final method for reading a file in is to use the menus. Files with the format <code>.csv</code> can be imported from menus by using the file browser tab in the bottom right window to browse to the file you want, then click on the file name and select “<strong>Import Dataset</strong>”:</p>
 <figure><center>
@@ -148,15 +143,15 @@ Figure 3: The bottom right window in <b><em>RStudio</em></b>, where files can be
 </center>
 </figure><p>Alternatively, you can go to <strong>File -&gt; Import Dataset</strong> to import <code>.txt</code> files or to import directly from Excel or SPSS (although you may need to install extra packages).</p>
 </div>
-<div id="the-working-directory" class="section level2" number="12.6">
+<div id="the-working-directory" class="section level2" number="12.5">
 <h2>
-<span class="header-section-number">12.6</span> The Working Directory<a class="anchor" aria-label="anchor" href="#the-working-directory"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.5</span> The Working Directory<a class="anchor" aria-label="anchor" href="#the-working-directory"><i class="fas fa-link"></i></a>
 </h2>
-<p><strong><em>R</em></strong> has a location where it will save files to and import data from by default. This is referred to as the working directory. You can query what <strong><em>R</em></strong> currently considers its working directory by running the command</p>
+<p>R has a location where it will save files to and import data from by default. This is referred to as the working directory. You can query what R currently considers its working directory by running the command</p>
 <center>
 <code style="color: blue;"><a href="https://rdrr.io/r/base/getwd.html">getwd()</a></code>
 </center>
-<p>If a file is in the working directory and saved as a <code>.csv</code> then it can be imported to <strong><em>R</em></strong> as a data frame like so:</p>
+<p>If a file is in the working directory and saved as a <code>.csv</code> then it can be imported to R as a data frame like so:</p>
 <center>
 <code>Name of data frame here</code><code style="color: blue;">&lt;- read.csv(“</code><code>Type file name here</code><code style="color: blue;">”)</code>
 </center>
@@ -186,17 +181,17 @@ Figure 5: How to use the menus in <b><em>RStudio</em></b> to change the working 
 Figure 6: How to select a new folder as the working directory in <b><em>RStudio</em></b>.
 </figcaption>
 </center>
-</figure><p>If you’re going to be importing and exporting lots of data to and from a particular folder, you may like to set this folder as your working directory at the beginning of a session. If you are working on multiple projects in <strong><em>R</em></strong> you could have one folder per project and change the working directory when you start work on a different project.</p>
+</figure><p>If you’re going to be importing and exporting lots of data to and from a particular folder, you may like to set this folder as your working directory at the beginning of a session. If you are working on multiple projects in R you could have one folder per project and change the working directory when you start work on a different project.</p>
 </div>
-<div id="a-warning" class="section level2" number="12.7">
+<div id="a-warning" class="section level2" number="12.6">
 <h2>
-<span class="header-section-number">12.7</span> A Warning<a class="anchor" aria-label="anchor" href="#a-warning"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.6</span> A Warning<a class="anchor" aria-label="anchor" href="#a-warning"><i class="fas fa-link"></i></a>
 </h2>
-<p>Sometimes <strong><em>R</em></strong> will happily read data using an inappropriate function and create an object without raising an error. However, the data might be unusable. Hence, we should always check the data frame that we have created. Consider:</p>
+<p>Sometimes R will happily read data using an inappropriate function and create an object without raising an error. However, the data might be unusable. Hence, we should always check the data frame that we have created. Consider:</p>
 <center>
 <code style="color: blue;">test &lt;- read.delim(“Birthweight_reduced_R.csv”)</code>
 </center>
-<p>Here we have asked <strong><em>R</em></strong> to read a <code>.csv</code> file but we have used <code style="color: blue;">read.delim</code> instead of <code style="color: blue;">read.csv</code>.</p>
+<p>Here we have asked R to read a <code>.csv</code> file but we have used <code style="color: blue;">read.delim</code> instead of <code style="color: blue;">read.csv</code>.</p>
 <p>If we examine our data frame using</p>
 <center>
 <code style="color: blue;">head(test)</code><br>
@@ -216,18 +211,17 @@ Figure 7: The structure of the “test” data frame, but with the data read as 
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="exploring-data.html"><span class="header-section-number">11</span> Exploring Data</a></div>
-<div class="next"><a href="where-to-go-next.html"><span class="header-section-number">13</span> Where to go next</a></div>
+<div class="next"><a href="next-steps.html"><span class="header-section-number">13</span> Next Steps</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#importing-data"><span class="header-section-number">12</span> Importing Data</a></li>
-<li><a class="nav-link" href="#introduction-8"><span class="header-section-number">12.1</span> Introduction</a></li>
-<li><a class="nav-link" href="#preparing-data"><span class="header-section-number">12.2</span> Preparing Data</a></li>
-<li><a class="nav-link" href="#importing-the-data---suggested-method"><span class="header-section-number">12.3</span> Importing the Data - Suggested Method</a></li>
-<li><a class="nav-link" href="#typing-a-file-path"><span class="header-section-number">12.4</span> Typing a File Path</a></li>
-<li><a class="nav-link" href="#importing-a-file-using-the-menus"><span class="header-section-number">12.5</span> Importing a File Using the Menus</a></li>
-<li><a class="nav-link" href="#the-working-directory"><span class="header-section-number">12.6</span> The Working Directory</a></li>
-<li><a class="nav-link" href="#a-warning"><span class="header-section-number">12.7</span> A Warning</a></li>
+<li><a class="nav-link" href="#preparing-data"><span class="header-section-number">12.1</span> Preparing Data</a></li>
+<li><a class="nav-link" href="#importing-the-data---suggested-method"><span class="header-section-number">12.2</span> Importing the Data - Suggested Method</a></li>
+<li><a class="nav-link" href="#typing-a-file-path"><span class="header-section-number">12.3</span> Typing a File Path</a></li>
+<li><a class="nav-link" href="#importing-a-file-using-the-menus"><span class="header-section-number">12.4</span> Importing a File Using the Menus</a></li>
+<li><a class="nav-link" href="#the-working-directory"><span class="header-section-number">12.5</span> The Working Directory</a></li>
+<li><a class="nav-link" href="#a-warning"><span class="header-section-number">12.6</span> A Warning</a></li>
 </ul>
 
       <div class="book-extra">
@@ -245,7 +239,7 @@ Figure 7: The structure of the “test” data frame, but with the data read as 
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>First Steps in R</strong>" was written by MASH. It was last built on 2026-09-28.</p>
+    <p>"<strong>First Steps in R</strong>" was written by MASH. It was last built on 2026-09-29.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

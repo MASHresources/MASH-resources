@@ -1,7 +1,7 @@
 --- 
 title: "First Steps in R"
 author: "MASH"
-date: "2026-09-28"
+date: "2026-09-29"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -31,15 +31,15 @@ Each section contains an embedded video that can be played when viewing this res
 
 However, whether you choose to read the material, watch the videos, or use both, we strongly encourage you to code along as you learn. Practising the examples yourself is one of the best ways to develop your confidence and understanding of R.
 
+## Glossary 
+
+At the end of the resource, you will find a glossary containing key R and programming terms introduced throughout the book. This can be used as a quick reference whenever you come across a term you cannot remember or would like to revisit.
+
 ## Learning checklist
 
 At the beginning of your learning journey, it can be difficult to know whether you are ready to move on to more advanced topics. To help with this, a learning checklist is provided below to help you monitor your progress.
 
 Work through the checklist as you learn and use it to identify areas where you may need a little more practice. Once you feel confident that you have achieved the items on the list, you will be ready to explore more advanced R topics.
-
-## Glossary 
-
-At the end of the resource, you will find a glossary containing key R and programming terms introduced throughout the book. This can be used as a quick reference whenever you come across a term you cannot remember or would like to revisit.
 
 Happy coding! 
 
@@ -52,7 +52,6 @@ Use this checklist to keep track of your progress.
 -   [ ] I have installed R.
 -   [ ] I have installed RStudio.
 -   [ ] I can open RStudio.
--   [ ] I know where to find the [MASH First steps in R resources](https://sheffield.ac.uk/mash/stats-resources/r#First-steps) page.
 -   [ ] I know what the Console is.
 -   [ ] I know what an R script is.
 -   [ ] I understand the difference between the Console and a script.
@@ -67,6 +66,9 @@ Use this checklist to keep track of your progress.
 -   [ ] I know how to find help for a function.
 -   [ ] I understand what a working directory is.
 -   [ ] I know how to save an R script.
+-   [ ] I know how to create a dataframe
+-   [ ] I know how to view the structure a dataframe 
+-   [ ] I know how to import data into R
 -   [ ] I know how to [book a MASH 1:1 appointment](https://students.sheffield.ac.uk/mash/bookings/stats-support#book-here).
 -   [ ] I know how to [book a MASH R workshop](https://students.sheffield.ac.uk/mash/workshops#bookig-calendar)
 
