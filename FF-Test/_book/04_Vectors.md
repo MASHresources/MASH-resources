@@ -1,9 +1,8 @@
 # Vectors 
 
 ::: {.info-box}
-ℹ️ *To understand computations in R, two slogans are helpful: 
-1. Everything that exists in R is an object. 
-2. Everything that happens is a function call*.
+ℹ️ *To understand computations in R, two slogans are helpful: 1. Everything that exists in R is an object. 2. Everything that happens is a function call*.
+
 John Chambers, one of the creators of the R programming language.
 :::
 

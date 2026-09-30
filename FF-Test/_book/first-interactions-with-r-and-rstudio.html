@@ -42,7 +42,24 @@
 </form>
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
-        <ul class="book-toc list-unstyled"><li><a class="" href="index.html"><span class="header-section-number">Chapter 4</span> First interactions with R and RStudio</a></li></ul>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
+<li><a class="" href="everything-you-need-to-know-before-you-learn-r.html"><span class="header-section-number">2</span> Everything you need to know before you learn R</a></li>
+<li><a class="" href="downloadingR.html"><span class="header-section-number">3</span> Downloading R and RStudio</a></li>
+<li><a class="active" href="first-interactions-with-r-and-rstudio.html"><span class="header-section-number">4</span> First interactions with R and RStudio</a></li>
+<li><a class="" href="vectors.html"><span class="header-section-number">5</span> Vectors</a></li>
+<li><a class="" href="functions.html"><span class="header-section-number">6</span> Functions</a></li>
+<li><a class="" href="matricies.html"><span class="header-section-number">7</span> Matricies</a></li>
+<li><a class="" href="dataframes.html"><span class="header-section-number">8</span> Dataframes</a></li>
+<li><a class="" href="other-objects.html"><span class="header-section-number">9</span> Other objects</a></li>
+<li><a class="" href="packages.html"><span class="header-section-number">10</span> Packages</a></li>
+<li><a class="" href="exploring-data.html"><span class="header-section-number">11</span> Exploring Data</a></li>
+<li><a class="" href="importing-data.html"><span class="header-section-number">12</span> Importing Data</a></li>
+<li><a class="" href="next-steps.html"><span class="header-section-number">13</span> Next Steps</a></li>
+<li><a class="" href="swirl.html"><span class="header-section-number">14</span> Swirl</a></li>
+<li><a class="" href="support.html"><span class="header-section-number">15</span> Support</a></li>
+<li><a class="" href="glossary-1.html"><span class="header-section-number">16</span> Glossary</a></li>
+</ul>
 
         <div class="book-extra">
           <p><a id="book-repo" href="https://github.com/MASHresources/MASH-resources/tree/main/FF-Test">View book source <i class="fab fa-github"></i></a></p>
@@ -120,7 +137,7 @@ You can press the <strong>Up</strong> key with your cursor in the Console to qui
 </h2>
 <p>The <strong>Environment</strong> pane shows objects that currently exist in your R session. Objects are bits of information R can store and work with.</p>
 <p>For example, if you run the code:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">student_scores</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">65</span>, <span class="fl">72</span>, <span class="fl">81</span>, <span class="fl">69</span>, <span class="fl">88</span><span class="op">)</span></span></code></pre></div>
 <p>the object <code>student_scores</code> will appear in the <strong>Environment</strong>. We’ll talk more about objects later.</p>
 <p>The <strong>Environment</strong> therefore gives you a useful overview of the objects you have created.</p>
@@ -185,11 +202,11 @@ You can press the <strong>Up</strong> key with your cursor in the Console to qui
 <p>One concept that often causes confusion when you first start using R is the <strong>working directory</strong>.</p>
 <p>The <strong>working directory</strong> is the folder that R is currently using as its default location for reading and writing files.</p>
 <p>You can find your current working directory by running:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/getwd.html">getwd</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><code><a href="https://rdrr.io/r/base/getwd.html">getwd()</a></code> means <strong>get working directory</strong>.</p>
 <p>You can change the working directory using <code><a href="https://rdrr.io/r/base/getwd.html">setwd()</a></code> and the path to your desired folder. For example:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/getwd.html">setwd</a></span><span class="op">(</span><span class="st">"C:/Users/YourName/Documents/R"</span><span class="op">)</span></span></code></pre></div>
 <p>The exact path will depend on your computer.</p>
 <div class="info-box">
@@ -219,11 +236,11 @@ You can press the <strong>Up</strong> key with your cursor in the Console to qui
 <p>👍 To quickly highlight your entire script click <strong>Ctrl + A</strong> with your cursor anywhere in the script.</p>
 </div>
 <p>An example command is:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fl">2</span> <span class="op">+</span> <span class="fl">2</span></span></code></pre></div>
 <p>an instruction asking R to add two numbers.</p>
 <p>Another example is:</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">even_numbers</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">4</span>, <span class="fl">6</span>, <span class="fl">8</span><span class="op">)</span></span></code></pre></div>
 <p>This tells R to create an <em>object</em> named <code>even_numbers</code> by combing the numbers 2,4,6 and 8. Note here, that in programming we call this a vector. Vectors are formed in R using the function <code><a href="https://rdrr.io/r/base/c.html">c()</a></code> where <code>c</code> stands for combine.</p>
 <p>You will quickly become familiar with the basic structure of R commands.</p>
@@ -276,7 +293,7 @@ You can press the <strong>Up</strong> key with your cursor in the Console to qui
 <p>A <strong>function</strong> is a piece of code designed to perform a particular task.</p>
 <p>Functions are one of the most important concepts in R.</p>
 <p>For example:</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">4</span>, <span class="fl">6</span>, <span class="fl">8</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>gives the following output.</p>
 <pre><code>#&gt; [1] 5</code></pre>
@@ -292,11 +309,11 @@ You can press the <strong>Up</strong> key with your cursor in the Console to qui
 <p>ℹ️ Actually, c() is also a function in itself. The c stands for combine, so in th above example, we are combining 2,4,6,8.</p>
 </div>
 <p>Functions are generally followed by parentheses:</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">function_name</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p>The information that you give to a function is called an <strong>argument</strong>.</p>
 <p>For example:</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fl">3.14159</span>, digits <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 3.14</span></span></code></pre></div>
 <p>Here:</p>
@@ -316,15 +333,15 @@ You can press the <strong>Up</strong> key with your cursor in the Console to qui
 <p>Objects are another fundamental idea in R.</p>
 <p>An object is something that R can store and work with.</p>
 <p>For example:</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">age</span> <span class="op">&lt;-</span> <span class="fl">21</span></span></code></pre></div>
 <p>Here we have created an object called <code>age</code>.</p>
 <p>We can then ask R to show us its value:</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">age</span></span>
 <span><span class="co">#&gt; [1] 21</span></span></code></pre></div>
 <p>We can also use it in another calculation:</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">age</span> <span class="op">+</span> <span class="fl">1</span></span>
 <span><span class="co">#&gt; [1] 22</span></span></code></pre></div>
 </div>
@@ -334,15 +351,15 @@ You can press the <strong>Up</strong> key with your cursor in the Console to qui
 </h3>
 <p>The <code>&lt;-</code> symbol is commonly used to assign a value to an object.</p>
 <p>For example:</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">my_number</span> <span class="op">&lt;-</span> <span class="fl">10</span></span></code></pre></div>
 <p>This means store the value <code>10</code> in an object called <code>my_number</code>.</p>
 <p>Objects can contain different types of information. They do not have to contain just single numbers.</p>
 <p>For example, an object can contain text:</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">student_name</span> <span class="op">&lt;-</span> <span class="st">"Alex"</span></span></code></pre></div>
 <p>Or several numbers:</p>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">test_scores</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">65</span>, <span class="fl">72</span>, <span class="fl">81</span>, <span class="fl">69</span>, <span class="fl">88</span><span class="op">)</span></span></code></pre></div>
 <p>For now, the important thing is simply to understand that R allows you to <strong>store information in objects and then use those objects later</strong>.</p>
 <p>If you want to display a list of all the objects currently saved in the Environment, you can use the code <code><a href="https://rdrr.io/r/base/ls.html">ls()</a></code>.</p>
@@ -371,14 +388,14 @@ Figure 6: How to delete all objects from the environment in <b><em>RStudio</em><
 <li>Do not include dots or other symbols</li>
 </ol>
 <p>Good examples are:</p>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">age</span> <span class="op">&lt;-</span> <span class="fl">21</span></span>
 <span><span class="va">average_score</span> <span class="op">&lt;-</span> <span class="fl">75</span></span>
 <span><span class="va">TestScores</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">65</span>, <span class="fl">72</span>, <span class="fl">81</span>, <span class="fl">69</span>, <span class="fl">88</span><span class="op">)</span></span></code></pre></div>
 <p>Compared with bad names:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="first-interactions-with-r-and-rstudio.html#cb17-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">21</span></span>
-<span id="cb17-2"><a href="first-interactions-with-r-and-rstudio.html#cb17-2" tabindex="-1"></a>average score <span class="ot">&lt;-</span> <span class="dv">75</span></span>
-<span id="cb17-3"><a href="first-interactions-with-r-and-rstudio.html#cb17-3" tabindex="-1"></a>TEST.SCORES<span class="sc">!</span> <span class="er">&lt;</span><span class="sc">-</span>  <span class="fu">c</span>(<span class="dv">65</span>, <span class="dv">72</span>, <span class="dv">81</span>, <span class="dv">69</span>, <span class="dv">88</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="first-interactions-with-r-and-rstudio.html#cb29-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">21</span></span>
+<span id="cb29-2"><a href="first-interactions-with-r-and-rstudio.html#cb29-2" tabindex="-1"></a>average score <span class="ot">&lt;-</span> <span class="dv">75</span></span>
+<span id="cb29-3"><a href="first-interactions-with-r-and-rstudio.html#cb29-3" tabindex="-1"></a>TEST.SCORES<span class="sc">!</span> <span class="er">&lt;</span><span class="sc">-</span>  <span class="fu">c</span>(<span class="dv">65</span>, <span class="dv">72</span>, <span class="dv">81</span>, <span class="dv">69</span>, <span class="dv">88</span>)</span></code></pre></div>
 <p>The last two objects <code>average score</code> and <code>TEST.SCORES!</code> are so bad that they will give you the following error!</p>
 <pre><code>#&gt; Error in parse(text = input): &lt;text&gt;:1:9: unexpected symbol
 #&gt; 1: average score
@@ -391,13 +408,13 @@ Figure 6: How to delete all objects from the environment in <b><em>RStudio</em><
 <p>You can add comments to your R code using the <code>#</code> symbol.</p>
 <p>Anything after <code>#</code> on that line will be treated as a comment rather than R code and wont be executed when you run that line or script.</p>
 <p>For example:</p>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Calculate the mean of the scores</span></span>
 <span><span class="va">scores</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">5</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">scores</span><span class="op">)</span></span></code></pre></div>
 <p>Comments are useful for explaining what your code is doing.</p>
 <p>You can also use comments to organise a script:</p>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># -----------------------------------</span></span>
 <span><span class="co"># Calculate summary statistics</span></span>
 <span><span class="co"># -----------------------------------</span></span>
@@ -411,21 +428,21 @@ Figure 6: How to delete all objects from the environment in <b><em>RStudio</em><
 <p>Keeping your code organised. As your R scripts become longer, organisation becomes increasingly important.</p>
 <p>You can use comments and headings to divide your code into sections.</p>
 <p>For example:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="first-interactions-with-r-and-rstudio.html#cb21-1" tabindex="-1"></a><span class="co"># Load student scores data</span></span>
-<span id="cb21-2"><a href="first-interactions-with-r-and-rstudio.html#cb21-2" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">65</span>, <span class="dv">72</span>, <span class="dv">81</span>, <span class="dv">69</span>, <span class="fl">88.</span> <span class="fl">65.</span> <span class="fl">55.</span> <span class="fl">45.</span> <span class="fl">77.</span> <span class="fl">89.</span> <span class="fl">67.</span> <span class="fl">89.</span> <span class="fl">66.</span> <span class="fl">66.</span> <span class="fl">65.</span> <span class="fl">67.</span> <span class="dv">90</span>)</span>
-<span id="cb21-3"><a href="first-interactions-with-r-and-rstudio.html#cb21-3" tabindex="-1"></a></span>
-<span id="cb21-4"><a href="first-interactions-with-r-and-rstudio.html#cb21-4" tabindex="-1"></a><span class="co"># Explore data</span></span>
-<span id="cb21-5"><a href="first-interactions-with-r-and-rstudio.html#cb21-5" tabindex="-1"></a><span class="fu">mean</span>(data)</span>
-<span id="cb21-6"><a href="first-interactions-with-r-and-rstudio.html#cb21-6" tabindex="-1"></a><span class="fu">sd</span>(data)</span>
-<span id="cb21-7"><a href="first-interactions-with-r-and-rstudio.html#cb21-7" tabindex="-1"></a><span class="fu">median</span>(data)</span>
-<span id="cb21-8"><a href="first-interactions-with-r-and-rstudio.html#cb21-8" tabindex="-1"></a></span>
-<span id="cb21-9"><a href="first-interactions-with-r-and-rstudio.html#cb21-9" tabindex="-1"></a><span class="co"># Plot data</span></span>
-<span id="cb21-10"><a href="first-interactions-with-r-and-rstudio.html#cb21-10" tabindex="-1"></a></span>
-<span id="cb21-11"><a href="first-interactions-with-r-and-rstudio.html#cb21-11" tabindex="-1"></a><span class="do">## hisotgram</span></span>
-<span id="cb21-12"><a href="first-interactions-with-r-and-rstudio.html#cb21-12" tabindex="-1"></a><span class="fu">hist</span>(data)</span>
-<span id="cb21-13"><a href="first-interactions-with-r-and-rstudio.html#cb21-13" tabindex="-1"></a></span>
-<span id="cb21-14"><a href="first-interactions-with-r-and-rstudio.html#cb21-14" tabindex="-1"></a><span class="do">## boxplot</span></span>
-<span id="cb21-15"><a href="first-interactions-with-r-and-rstudio.html#cb21-15" tabindex="-1"></a><span class="fu">boxplot</span>(data)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="first-interactions-with-r-and-rstudio.html#cb33-1" tabindex="-1"></a><span class="co"># Load student scores data</span></span>
+<span id="cb33-2"><a href="first-interactions-with-r-and-rstudio.html#cb33-2" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">65</span>, <span class="dv">72</span>, <span class="dv">81</span>, <span class="dv">69</span>, <span class="fl">88.</span> <span class="fl">65.</span> <span class="fl">55.</span> <span class="fl">45.</span> <span class="fl">77.</span> <span class="fl">89.</span> <span class="fl">67.</span> <span class="fl">89.</span> <span class="fl">66.</span> <span class="fl">66.</span> <span class="fl">65.</span> <span class="fl">67.</span> <span class="dv">90</span>)</span>
+<span id="cb33-3"><a href="first-interactions-with-r-and-rstudio.html#cb33-3" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="first-interactions-with-r-and-rstudio.html#cb33-4" tabindex="-1"></a><span class="co"># Explore data</span></span>
+<span id="cb33-5"><a href="first-interactions-with-r-and-rstudio.html#cb33-5" tabindex="-1"></a><span class="fu">mean</span>(data)</span>
+<span id="cb33-6"><a href="first-interactions-with-r-and-rstudio.html#cb33-6" tabindex="-1"></a><span class="fu">sd</span>(data)</span>
+<span id="cb33-7"><a href="first-interactions-with-r-and-rstudio.html#cb33-7" tabindex="-1"></a><span class="fu">median</span>(data)</span>
+<span id="cb33-8"><a href="first-interactions-with-r-and-rstudio.html#cb33-8" tabindex="-1"></a></span>
+<span id="cb33-9"><a href="first-interactions-with-r-and-rstudio.html#cb33-9" tabindex="-1"></a><span class="co"># Plot data</span></span>
+<span id="cb33-10"><a href="first-interactions-with-r-and-rstudio.html#cb33-10" tabindex="-1"></a></span>
+<span id="cb33-11"><a href="first-interactions-with-r-and-rstudio.html#cb33-11" tabindex="-1"></a><span class="do">## hisotgram</span></span>
+<span id="cb33-12"><a href="first-interactions-with-r-and-rstudio.html#cb33-12" tabindex="-1"></a><span class="fu">hist</span>(data)</span>
+<span id="cb33-13"><a href="first-interactions-with-r-and-rstudio.html#cb33-13" tabindex="-1"></a></span>
+<span id="cb33-14"><a href="first-interactions-with-r-and-rstudio.html#cb33-14" tabindex="-1"></a><span class="do">## boxplot</span></span>
+<span id="cb33-15"><a href="first-interactions-with-r-and-rstudio.html#cb33-15" tabindex="-1"></a><span class="fu">boxplot</span>(data)</span></code></pre></div>
 <p>This makes your script much easier to read.</p>
 </div>
 </div>
@@ -449,7 +466,7 @@ Figure 6: How to delete all objects from the environment in <b><em>RStudio</em><
 </h3>
 <details><summary>
 Solutions
-</summary><div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+</summary><div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#1. </span></span>
 <span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fl">15</span>    </span>
 <span></span>
@@ -495,15 +512,44 @@ Solutions
 </div>
 </div>
   <div class="chapter-nav">
-<div class="empty"></div>
-<div class="empty"></div>
+<div class="prev"><a href="downloadingR.html"><span class="header-section-number">3</span> Downloading R and RStudio</a></div>
+<div class="next"><a href="vectors.html"><span class="header-section-number">5</span> Vectors</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <div id="book-on-this-page"></div>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#first-interactions-with-r-and-rstudio"><span class="header-section-number">4</span> First interactions with R and RStudio</a></li>
+<li><a class="nav-link" href="#opening-r"><span class="header-section-number">4.1</span> Opening R</a></li>
+<li><a class="nav-link" href="#opening-rstudio"><span class="header-section-number">4.2</span> Opening RStudio</a></li>
+<li><a class="nav-link" href="#source"><span class="header-section-number">4.3</span> 1. Source</a></li>
+<li><a class="nav-link" href="#console"><span class="header-section-number">4.4</span> 2. Console</a></li>
+<li><a class="nav-link" href="#environment-history"><span class="header-section-number">4.5</span> 3. Environment / History</a></li>
+<li><a class="nav-link" href="#files-plots-packages-help"><span class="header-section-number">4.6</span> 4. Files / Plots / Packages / Help</a></li>
+<li><a class="nav-link" href="#working-directories"><span class="header-section-number">4.7</span> Working directories</a></li>
+<li>
+<a class="nav-link" href="#learning-to-write-code"><span class="header-section-number">4.8</span> Learning to write code</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#what-is-a-command"><span class="header-section-number">4.8.1</span> What is a command?</a></li>
+<li><a class="nav-link" href="#what-is-a-function"><span class="header-section-number">4.8.2</span> What is a function?</a></li>
+<li><a class="nav-link" href="#objects"><span class="header-section-number">4.8.3</span> Objects</a></li>
+<li><a class="nav-link" href="#assignment"><span class="header-section-number">4.8.4</span> Assignment</a></li>
+<li><a class="nav-link" href="#naming-objects"><span class="header-section-number">4.8.5</span> Naming objects</a></li>
+<li><a class="nav-link" href="#comments"><span class="header-section-number">4.8.6</span> Comments</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#exercise"><span class="header-section-number">4.9</span> Exercise</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#solutions"><span class="header-section-number">4.9.1</span> Solutions</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#video-content-1"><span class="header-section-number">4.10</span> Video Content</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#opening-r-and-rstudio"><span class="header-section-number">4.10.1</span> Opening R and Rstudio</a></li>
+<li><a class="nav-link" href="#first-interactions-with-rstudio"><span class="header-section-number">4.10.2</span> First interactions with Rstudio</a></li>
+</ul>
+</li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-          
+<li><a id="book-source" href="https://github.com/MASHresources/MASH-resources/tree/main/FF-Test/blob/master/03_FirstInteractions.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/MASHresources/MASH-resources/tree/main/FF-Test/edit/master/03_FirstInteractions.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>
