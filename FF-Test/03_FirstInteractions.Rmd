@@ -1,10 +1,10 @@
 # First interactions with R and RStudio
 
+## Opening R
 
+If you open the R software you will get a window in which you can type code. This is the **Console** (more on this later). It is possible to do all your coding in this Console but RStudio is much more friendly to use.  Because of its ease of use, once you've used RStudio, you will probably find you never open R again! All of the materials in this book use RStudio for this reason.
 
-
-## Getting to know RStudio
-
+## Opening RStudio
 When you open RStudio, you will probably see several different sections or **panes**.
 
 The exact arrangement can vary depending on your version and settings.
@@ -16,7 +16,17 @@ A common layout contains four main panes:
 3.  (Top-right) **Environment / History**
 4.  (Bottom-left) **Files / Plots / Packages / Help**
 
-### 1. Source
+<figure>
+    <center>
+        <img src="media/03_media/B_First_Time_Opening_R_and_RStudio_fig1.png" width="900" title="Figure 1"
+             alt="An image showing RStudio when it is opened for the first time. There are three windows: the one on the left is the console, the one on the top right shows the 'Environment' and the one on the bottom right shows files that can be selected. In the console, '4+6' is typed in and '10' is outputted.">
+        <figcaption style="text-align:center">
+            Figure 1: <b><em>RStudio</b></em> when it is opened for the first time.
+        </figcaption>
+    </center>
+</figure>
+
+## 1. Source
 
 The **Source** pane is where you can write, edit and save your code. If it is the first time opening Rstudio, the **Source** pane may not appear until you click the following.
 
@@ -24,9 +34,21 @@ File \> New File \> R Script
 
 The **Source pane** is where you should normally develop your analysis. The saved code is referred to as a script and has the file extension `.R`. These files can be reopened and worked on at any time.
 
-### 2. Console
+<figure>
+    <center>
+        <img src="media/03_media/B_First_Time_Opening_R_and_RStudio_fig2.png" 
+             width="600" 
+             title="Figure 2"
+             alt="An image showing how to create a Script file in RStudio for the first time. In the top left corner, the 'File' tab is selected, then 'New File' is selected from the drop-down menu and 'R Script' is circled at the top of the next drop-down menu.">
+        <figcaption style="text-align:center">
+            Figure 2: How to create a Script file in <b><em>RStudio</em></b> for the first time.
+        </figcaption>
+    </center>
+</figure>
 
-The **Console** is where R receives and executes commands.
+## 2. Console
+
+The **Console** is where R receives and executes commands. This is the same **Console** as in the standalone R program discussed at the beginning of this section.
 
 You can type directly into it. The result will appear underneath. Unlike an R script, the **Console** is temporary and anything you type into it is not saved. The **Console** is particularly useful for:
 
@@ -35,15 +57,15 @@ You can type directly into it. The result will appear underneath. Unlike an R sc
 -   Checking the result of a function
 -   Troubleshooting
 
-::: {.sucess-box}
+::: {.success-box}
 👍 **Tip:**
-You can press the **Up** key with your cursor in the Console to quickly cycle through commands you have typed recently
+You can press the **Up** key with your cursor in the Console to quickly cycle through commands you have typed recently.
 :::
 
 
-### 3. Environment / History
+## 3. Environment / History
 
-The **Environment** pane shows objects that currently exist in your R session. Objects are bits of information R can store and work with, we'll cover these in more detail later in this chapter.
+The **Environment** pane shows objects that currently exist in your R session. Objects are bits of information R can store and work with.
 
 For example, if you run the code:
 
@@ -51,7 +73,7 @@ For example, if you run the code:
 student_scores <- c(65, 72, 81, 69, 88)
 ```
 
-the object `student_scores` will appear in the **Environment**. *We'll talk more about objects later*.
+the object `student_scores` will appear in the **Environment**. We'll talk more about objects later.
 
 The **Environment** therefore gives you a useful overview of the objects you have created.
 
@@ -59,14 +81,11 @@ There are other tabs within this pane, the next most useful being the **History*
 
 This can be useful when you are trying to remember something you did earlier in your session.
 
-
-Below we'll learn how we write code, create objects and perform functions with our objects. 
-
-### 4. Files / Plots / Packages / Help
+## 4. Files / Plots / Packages / Help
 
 The last window contains several tabs including **Files, Plots, Packages and Help**.
 
-The **Files** tab allows you to navigate through folders on your computer (see **Working Directories** for more detail).
+The **Files** tab allows you to navigate through folders on your computer.
 
 **Plots** displays graphs that you create in R.
 
@@ -87,7 +106,7 @@ The following table summarises the pane functions.
 | **Packages**    | Install and manage packages        |
 | **Help**        | Access R documentation             |
 
-### Working directories
+## Working directories
 
 One concept that often causes confusion when you first start using R is the **working directory**.
 
@@ -110,35 +129,52 @@ setwd("C:/Users/YourName/Documents/R")
 The exact path will depend on your computer.
 
 ::: {.info-box}
-ℹ️ You do not necessarily need to use `setwd()`. Instead, in the **Files** tab, click **...** on the right-hand side, click through the file explorer to find the folder you want then click **Open**. Click the cog symbol titled **More** then Select **Set as Working Directory**.
+ℹ️ You do not necessarily need to use `setwd()`. Instead, in the **Files** tab, click **...** on the right-hand side, click through the file explorer to find the folder you want then click **Open**. Click the ⚙️ symbol titled **More** then Select **Set as Working Directory**.
 :::
 
-Below is MASH OLD TEXT 
-## Introduction 
+## Learning to write code
+Now that you've covered the fundamentals of the RStudio interface, you are ready to begin writing you first bits of code.
 
-This document is part of our "First Steps in ***R***" resources. It is assumed that the reader has downloaded ***R*** and ***RStudio***. No other pre-knowledge is required.
+::: {.success-box}
+👍 For the remainder of this book, when R code snippets are provided, have a go yourself at using them. You can copy them directly using the clipboard icon button in the top-right of the code block, but it is recommended that you type them from scratch. This may feel tedious, but it will help you in remembering commonly used code. 
+:::
 
-Most of the time we are used to interacting with a computer through a Graphical User Interface (GUI) (i.e. with folders, files, windows etc). In ***R*** and ***RStudio***, we type instructions (code) instead. The window the instructions are typed into is called the console. Of course, we must type our instructions in a way the computer will understand - this is why it's called a programming *language*. This is the way computers were operated before the development of GUIs. ***R*** is a programming language which has been developed specifically for doing statistics. ***R*** and ***RStudio*** are pieces of software which allow the computer to read the code we type and execute it (i.e. follow the instructions).
 
-## Opening ***R***
+### What is a command?
 
-If you open the ***R*** software you will get a window in which you can type code. This is the console. It is possible to use the ***R*** package to do statistics with ***R*** but ***RStudio*** is much more friendly to use. ***RStudio*** is called an Integrated Development Environment (IDE) for ***R***. Note that for ***RStudio*** to work, it requires that ***R*** is also installed. Because of its ease of use, once you've used ***RStudio***, you will probably find you never open ***R*** again! All of the materials in this series use ***RStudio*** for this reason.
+A **command** is an instruction that you give to R.
 
-## First Opening ***RStudio***
+To run a command in the **Console** you simply type your command and press **Enter**.
 
-When you open ***RStudio*** for the first time there will be three windows. The one on the left is the console. You can type code directly in here and ***RStudio*** will follow your instructions as soon as you press return. One thing ***R*** can do is simple calculations like a calculator. You can experiment by typing calculations in the console. If you type <code style="color:blue;">4+6</code> and press return, ***R*** will give you the answer $10$.
+To run a command in the **Source** pane (script) there are two ways:
 
-<figure>
-    <center>
-        <img src="media/03_media/B_First_Time_Opening_R_and_RStudio_fig1.png" width="900" title="Figure 1"
-             alt="An image showing RStudio when it is opened for the first time. There are three windows: the one on the left is the console, the one on the top right shows the 'Environment' and the one on the bottom right shows files that can be selected. In the console, '4+6' is typed in and '10' is outputted.">
-        <figcaption style="text-align:center">
-            Figure 1: <b><em>RStudio</b></em> when it is opened for the first time.
-        </figcaption>
-    </center>
-</figure>
+-   Highlight the line(s) of code and press **Ctrl + Enter** on your keyboard or the **Run** key in the top right of the Source pane.
 
-If you'd like to carry out other calculations, here are the ways you must enter them into ***RStudio*** for some simple operations.
+-   Put your cursor on the line of code and press **Ctrl + Enter**. This also moves the cursor to the next line so you can easily run the next line.
+
+::: {.success-box}
+👍 To quickly highlight your entire script click **Ctrl + A** with your cursor anywhere in the script.
+:::
+
+An example command is:
+
+```{r, eval=FALSE}
+2 + 2
+```
+
+an instruction asking R to add two numbers.
+
+Another example is:
+
+```{r, eval=FALSE}
+even_numbers <- c(2, 4, 6, 8)
+```
+
+This tells R to create an *object* named `even_numbers` by combing the numbers 2,4,6 and 8. Note here, that in programming we call this a vector. Vectors are formed in R using the function `c()` where `c` stands for combine. 
+
+You will quickly become familiar with the basic structure of R commands. 
+
+If you'd like to carry out other calculations, here are the ways you must enter them into RStudio for some simple operations.
 
 | Arithmetic Operation | R Code |
 | :---: | :---: |
@@ -151,115 +187,119 @@ If you'd like to carry out other calculations, here are the ways you must enter 
 | $\log_{10} (4)$ | <code style="color:blue;">log10(4)</code> |
 | $\ln(4)$ | <code style="color:blue;">log(4)</code> |
 
-Note that you cannot go back and delete text you have put in the console. If you've never done any coding at first this may seem strange but you'll get used to it quickly.
 
-## Inputting Code Using a Script
+### What is a function?
 
-A Script is the name for some code that has been written and which we want ***R*** to execute for us. You can write a script, edit it, save it then open it in ***RStudio*** and run it whenever you like. ***RStudio*** will let you let you edit your script until you're happy with it and then run all or just some of it by highlighting and clicking run. If you choose "**Save As**..." in the file menu (as you would when saving, say, a ***Word*** document) the script is what gets saved. To create a **Script file** for the first time, in ***RStudio***, click "**File**" then select "**New File**" and "**R Script**."
+A **function** is a piece of code designed to perform a particular task.
 
-<figure>
-    <center>
-        <img src="media/03_media/B_First_Time_Opening_R_and_RStudio_fig2.png" width="800" title="Figure 2"
-             alt="An image showing how to create a Script file in RStudio for the first time. In the top left corner, the 'File' tab is selected, then 'New File' is selected from the drop-down menu and 'R Script' is circled at the top of the next drop-down menu.">
-        <figcaption style="text-align:center">
-            Figure 2: How to create a Script file in <b><em>RStudio</b></em> for the first time.
-        </figcaption>
-    </center>
-</figure>
+Functions are one of the most important concepts in R.
 
-A fourth window opens up on the top left in ***RStudio***. Try typing a few calculations in here. You will see that ***RStudio*** will let you type without carrying out any of the calculations. See what happens if you highlight the text and click "**Run**."
+For example:
 
-<figure>
-    <center>
-        <img src="media/03_media/B_First_Time_Opening_R_and_RStudio_fig3.png" width="900" title="Figure 3"
-             alt="An image showing the fourth window, for scripts, in RStudio. The calculations '4+6', '7*5' and 'log10(100)' are typed into the window and are all highlighted. In the top right corner, the 'Run' button is circled.">
-        <figcaption style="text-align:center">
-            Figure 3: The fourth window, for scripts, in <b><em>RStudio</b></em>.
-        </figcaption>
-    </center>
-</figure>
+```{r, eval=FALSE}
+mean(c(2, 4, 6, 8))
+```
+gives the following output.
 
-You should find that all the calculations are carried out at once in the console like so:
+```{r, echo=FALSE}
+mean(c(2, 4, 6, 8))
+```
 
-<figure>
-    <center>
-        <img src="media/03_media/B_First_Time_Opening_R_and_RStudio_fig4.png" width="500" title="Figure 4"
-             alt="An image showing the console in RStudio, where there is the calculation '4+6', which outputs '10', the calculation '7*5', which outputs '35', and 'log10(100)', which outputs '2'.">
-        <figcaption style="text-align:center">
-            Figure 4: The calculations are carried out in the console in <b><em>RStudio</b></em> all at once when the script is run.
-        </figcaption>
-    </center>
-</figure>
+Here:
 
-## The Environment
+-   `mean` is the function;
+-   `c(2, 4, 6, 8)` is the input;
+-   the function calculates the mean.
 
-As we write code, we will create "***objects***". The word has a technical use in ***R*** programming which we will deal with in future worksheets. For now we will think of an object as being similar to a variable in algebra - i.e. a letter to which we can assign a value.
+::: {.info-box}
+ℹ️ Actually, c() is also a function in itself. The c stands for combine, so in th above example, we are combining 2,4,6,8. 
+:::
 
-We can tell ***R*** that we are creating a new object using the "***assignment operator***":
+Functions are generally followed by parentheses:
 
-<center>
-    <code style="color: blue;">&lt;-</code>
-</center>
+```{r, eval=FALSE}
+function_name()
+```
 
-You can think of this as an arrow. The name of the new object should go on the left and the definition goes on the right. So the code
+The information that you give to a function is called an **argument**.
 
-<center>
-    <code style="color: blue;">x &lt;- 3</code>
-</center>
+For example:
 
-would create a new object called <code style="color: blue;">x</code> which is defined to have the value $3$. If we then type
+```{r}
+round(3.14159, digits = 2)
+```
+
+Here:
+
+-   `round()` is the function;
+-   `3.14159` is the value being rounded;
+-   `digits = 2` tells R how many decimal places to use.
+
+### Objects
+
+Objects are another fundamental idea in R.
+
+An object is something that R can store and work with.
+
+For example:
+
+```{r}
+age <- 21
+```
+
+Here we have created an object called `age`.
+
+We can then ask R to show us its value:
+
+```{r}
+age
+```
+
+We can also use it in another calculation:
+
+```{r}
+age + 1
+```
+
+### Assignment
+
+The `<-` symbol is commonly used to assign a value to an object.
+
+For example:
+
+```{r}
+my_number <- 10
+```
+
+This means store the value `10` in an object called `my_number`.
+
+Objects can contain different types of information. They do not have to contain just single numbers.
+
+For example, an object can contain text:
+
+```{r}
+student_name <- "Alex"
+```
+
+Or several numbers:
+
+```{r}
+test_scores <- c(65, 72, 81, 69, 88)
+```
+
+For now, the important thing is simply to understand that R allows you to **store information in objects and then use those objects later**.
+
+If you want to display a list of all the objects currently saved in the Environment, you can use the code `ls()`.
+
+You can remove an object from the environment by typing `rm()`with the name of the object in the brackets.
+
+For example `rm(test_scores)` will remove the variable named *test_scores from the environment.
+
+You can delete all objects from the environment by clicking the broom icon in the top ribbon of the **Environment** window:
     
-<center>
-    <code style="color: blue;">x+4</code>
-</center>
-
-We should find that ***R*** calculates $3+4$ and returns the answer $7$.
-
-Type
-
-<center>
-    <code style="color: blue;">x &lt;- 3</code>
-</center>
-
-in the console then look in the top right window. You should find that it looks like this.
-
 <figure>
     <center>
-        <img src="media/03_media/B_First_Time_Opening_R_and_RStudio_fig5.png" width="900" title="Figure 5"
-             alt="An image showing the top right window (the 'Environment') in RStudio. Under 'Values', 'x' and '3' are displayed inline.">
-        <figcaption style="text-align:center">
-            Figure 5: The top right window (the "Environment") in <b><em>RStudio</b></em>, where <code style="color: blue;">x</code> is defined to have the value $3$.
-        </figcaption>
-    </center>
-</figure>
-
-(Note: You can use <code style="color: blue;">=</code> as an assignment operator as well as <code style="color: blue;">&lt;-</code>. However, there is a technical difference in the way ***R*** reads <code style="color: blue;">=</code>. In most situations, either <code style="color: blue;">=</code> or <code style="color: blue;">&lt;-</code> can be used interchangeably but it is a good practice to stick to <code style="color: blue;">&lt;-</code> when defining a new object.)
-
-When we are writing code we may want to define many new objects. These objects then exist in the ***R*** "Environment". As we create new objects, the top right window keeps a record of them for us. This helps us keep track and can help us ensure that we do not create two objects with the same name.
-
-We can ask ***R*** to give us the same information by typing <code style="color: blue;">ls()</code> in the console. "ls" is short for list - we are asking ***R*** to list all the objects in the environment.
-
-You can remove an object from the environment by typing
-
-<center>
-    <code style="color: blue;">rm()</code>
-</center>
-
-with the name of the object in the brackets.
-
-For example,
-
-<center>
-    <code style="color: blue;">rm(x)</code>
-</center>
-
-would remove our variable <code style="color: blue;">x</code> from the environment.
-
-You can delete all objects from the environment by clicking the broom icon in the top ribbon of the "Environment" window:
-    
-<figure>
-    <center>
-        <img src="media/03_media/B_First_Time_Opening_R_and_RStudio_fig6.png" width="900" title="Figure 6"
+        <img src="media/03_media/B_First_Time_Opening_R_and_RStudio_fig6.png" width="600" title="Figure 6"
              alt="An image showing how to delete all objects from the environment in RStudio. The 'Environment' window is displayed and the broom icon in the top ribbon of the window is circled.">
         <figcaption style="text-align:center">
             Figure 6: How to delete all objects from the environment in <b><em>RStudio</b></em>.
@@ -267,54 +307,153 @@ You can delete all objects from the environment by clicking the broom icon in th
     </center>
 </figure>
 
-Alternatively, you can type the following command in the console:
+Alternatively, you can type the following command in the console `rm(list=ls())`
 
-<center>
-    <code style="color: blue;">rm(list=ls())</code>
-</center>
+::: {.info-box}
+ℹ️ `rm()` tells R to remove the thing in the brackets. The rest of the code tells R that it is going to remove an object which is a "list" and that list is called `ls()`. Specifically the list of everything in the Environment.)
+:::
 
-(Note: we don't need to worry about the details of this command at the moment but in case you're interested: "rm" tells ***R*** to remove the thing in the brackets. The rest of the code tells ***R*** that it is going to remove an object which is a "list" and that list is called <code style="color: blue;">ls()</code>. A "list" is a category of object in ***R***. <code style="color: blue;">ls()</code> is specifically the list of everything in the environment.)
+### Naming objects
 
-## The Bottom Right Window
+It is a good idea to give objects sensible names. When naming objects, best practices are to:
 
-There are several tabs in the window in the bottom right. For the moment we will only worry about two of them: "Plots" and "Help". If we ask ***RStudio*** to draw a graph or chart, it will appear in this window under this tab. If we ask ***RStudio*** for help - which we will often do when learning how to use a new piece of code - the answer will appear under the "Help" tab.
+1.  Be informative about that the object represents
+2.  Do not use spaces
+3.  If it has multiple words in the name, separate these by underscores or capitalise each word.
+4.  Do not include dots or other symbols
+
+Good examples are:
+
+```{r, eval=FALSE}
+age <- 21
+average_score <- 75
+TestScores <- c(65, 72, 81, 69, 88)
+```
+
+Compared with bad names:
+
+```{r, eval=FALSE}
+x <- 21
+average score <- 75
+TEST.SCORES! <-  c(65, 72, 81, 69, 88)
+```
+
+The last two objects `average score` and `TEST.SCORES!` are so bad that they will give you the following error!
+
+```{r, echo=FALSE, eval=TRUE, error=TRUE}
+average score <- 75
+TEST.SCORES! <-  c(65, 72, 81, 69, 88)
+```
+
+### Comments
+
+You can add comments to your R code using the `#` symbol.
+
+Anything after `#` on that line will be treated as a comment rather than R code and wont be executed when you run that line or script.
+
+For example:
+
+```{r, eval=FALSE}
+# Calculate the mean of the scores
+scores <- c(1,2,3,4,5)
+mean(scores)
+```
+
+Comments are useful for explaining what your code is doing.
+
+You can also use comments to organise a script:
+
+```{r, eval=FALSE}
+# -----------------------------------
+# Calculate summary statistics
+# -----------------------------------
+mean(scores)
+median(scores)
+sd(scores)
+```
+
+::: {.success-box}
+👍 **Good habit**
+
+Write comments that help you — and someone else — understand what your code is doing.
+:::
+
+
+Keeping your code organised. As your R scripts become longer, organisation becomes increasingly important.
+
+You can use comments and headings to divide your code into sections.
+
+For example:
+
+```{r, eval=FALSE}
+# Load student scores data
+data <- c(65, 72, 81, 69, 88. 65. 55. 45. 77. 89. 67. 89. 66. 66. 65. 67. 90)
+
+# Explore data
+mean(data)
+sd(data)
+median(data)
+
+# Plot data
+
+## hisotgram
+hist(data)
+
+## boxplot
+boxplot(data)
+```
+
+This makes your script much easier to read.
 
 ## Exercise
 
-1. In the console, create an object called <code style="color: blue;">y</code> and give it the value $15$.  
-2. Create another object called <code style="color: blue;">z</code> and give it the value $5$.  
-3. Calculate <code style="color: blue;">y</code> divided by <code style="color: blue;">z</code>.  
+1. In the Console, create an object called `y` and give it the value $15$.  
+2. Create another object called `z` and give it the value $5$.  
+3. Calculate `y` divided by `z`.  
 4. Clear the environment and repeat the above by writing a script to do all three stages and running it.
-5. Change the value of <code style="color: blue;">y</code> in your script to $20$ and run it again.
+5. Change the value of `y` in your script to $20$ and run it again.
 
 ### Solutions
 <details>
 <summary>Solutions</summary>
-    
-1. <code style="color: blue;">&gt; y &lt;- 15</code>    
 
-2. <code style="color: blue;">&gt; z &lt;- 5</code>  
-<code style="color: blue;">&gt; y</code>   
-<code>[1] 15</code>    
-<code style="color: blue;">&gt; z</code>   
-<code>[1] 5</code> 
+```{r, echo=TRUE, eval=TRUE}
+#1. 
+y <- 15    
 
-3. <code style="color: blue;">&gt; y/z</code>    
-<code>[1] 3</code>
+#2. 
+z <- 5
 
-4. Script:  
-<code>y &lt;- 20</code>  
-<code>z &lt;- 5</code>  
-<code>y</code>  
-<code>z</code>  
-<code>y/z</code>  
-And here it is run:  
-<code style="color: blue;">&gt; y &lt;- 20</code>   
-<code style="color: blue;">&gt; z &lt;- 5</code>  
-<code style="color: blue;">&gt; y</code>   
-<code>[1] 20</code>    
-<code style="color: blue;">&gt; z</code>   
-<code>[1] 5</code>    
-<code style="color: blue;">&gt; y/z</code>    
-<code>[1] 4</code>
-</details>
+#3.
+y/z
+
+#4. Use the broom to clear your environment, then run again using a script.
+
+#5. 
+y <- 20
+y/z
+```
+
+## Video Content
+
+### Opening R and Rstudio
+<div class="video-container">
+
+<iframe
+  src='https://cdnapisec.kaltura.com/p/2103181/embedPlaykitJs/uiconf_id/53345422?iframeembed=true&entry_id=1_mlc7h2ji&config[provider]={"widgetId":"1_ftn8tll7"}'
+  allowfullscreen
+  title="2. First Time Opening R and RStudio">
+</iframe>
+
+</div>
+
+### First interactions with Rstudio
+<div class="video-container">
+
+<iframe
+  src='https://cdnapisec.kaltura.com/p/2103181/embedPlaykitJs/uiconf_id/53345422?iframeembed=true&entry_id=1_p790kxwe&config[provider]={"widgetId":"1_ojjbbz7z"}'  
+  allowfullscreen
+  title="3. Beginning to Interact with R">
+</iframe>
+
+</div>

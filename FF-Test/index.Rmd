@@ -25,6 +25,19 @@ The best way to use this resource is to work through the sections in order and, 
 
 This is not an exhaustive guide to R and does not cover every aspect or fundamental concept of the language. Instead, it is intended to provide a useful starting point — taking you from being a complete beginner to writing your first pieces of code, working with data, and knowing where to find further learning materials and support when you are ready to explore more advanced topics.
 
+
+By the end, you should understand:
+
+-   What R is
+-   The difference between R and Rstudio
+-   Some advantages and disadvantages of R versus other software
+-   Main parts of the RStudio interface
+-   How to begin coding in R
+-   Best practices on fixing errors
+-   Where to find help and learning materials
+-   How to continue learning R independently
+
+
 ## Videos
 
 Each section contains an embedded video that can be played when viewing this resource online. The videos guide you through the content of the corresponding chapter and provide a useful alternative if you prefer to learn by watching rather than reading.

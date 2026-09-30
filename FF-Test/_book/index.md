@@ -1,7 +1,7 @@
 --- 
 title: "First Steps in R"
 author: "MASH"
-date: "2026-09-29"
+date: "2026-09-30"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -24,6 +24,19 @@ If you have never used R, or any programming language before, we recommend start
 The best way to use this resource is to work through the sections in order and, whenever code is provided, try it yourself on your own device. The resource begins by guiding you through installing R and RStudio and introducing you to the RStudio environment. You will then gradually build your coding knowledge, step by step, until you are able to create, import and work with your own data.
 
 This is not an exhaustive guide to R and does not cover every aspect or fundamental concept of the language. Instead, it is intended to provide a useful starting point — taking you from being a complete beginner to writing your first pieces of code, working with data, and knowing where to find further learning materials and support when you are ready to explore more advanced topics.
+
+
+By the end, you should understand:
+
+-   What R is
+-   The difference between R and Rstudio
+-   Some advantages and disadvantages of R versus other software
+-   Main parts of the RStudio interface
+-   How to begin coding in R
+-   Best practices on fixing errors
+-   Where to find help and learning materials
+-   How to continue learning R independently
+
 
 ## Videos
 
