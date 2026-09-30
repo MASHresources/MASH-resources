@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 5 Vectors | First Steps in R</title>
 <meta name="author" content="MASH">
-<meta name="description" content="5.1 Introduction This document is part of our “First Steps in R” resources. It is assumed that the reader has downloaded R and RStudio and is familiar with the idea of typing commands into the...">
+<meta name="description" content="ℹ️ To understand computations in R, two slogans are helpful: 1. Everything that exists in R is an object. 2. Everything that happens is a function call. John Chambers, one of the creators of the R...">
 <meta name="generator" content="bookdown 0.48 with bs4_book()">
 <meta property="og:title" content="Chapter 5 Vectors | First Steps in R">
 <meta property="og:type" content="book">
-<meta property="og:description" content="5.1 Introduction This document is part of our “First Steps in R” resources. It is assumed that the reader has downloaded R and RStudio and is familiar with the idea of typing commands into the...">
+<meta property="og:description" content="ℹ️ To understand computations in R, two slogans are helpful: 1. Everything that exists in R is an object. 2. Everything that happens is a function call. John Chambers, one of the creators of the R...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 5 Vectors | First Steps in R">
-<meta name="twitter:description" content="5.1 Introduction This document is part of our “First Steps in R” resources. It is assumed that the reader has downloaded R and RStudio and is familiar with the idea of typing commands into the...">
+<meta name="twitter:description" content="ℹ️ To understand computations in R, two slogans are helpful: 1. Everything that exists in R is an object. 2. Everything that happens is a function call. John Chambers, one of the creators of the R...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.10.0/transition.js"></script><script src="libs/bs3compat-0.10.0/tabs.js"></script><script src="libs/bs3compat-0.10.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -42,24 +42,7 @@
 </form>
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
-        <ul class="book-toc list-unstyled">
-<li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
-<li><a class="" href="everything-you-need-to-know-before-you-learn-r.html"><span class="header-section-number">2</span> Everything you need to know before you learn R</a></li>
-<li><a class="" href="downloadingR.html"><span class="header-section-number">3</span> Downloading R and RStudio</a></li>
-<li><a class="" href="first-interactions-with-r-and-rstudio.html"><span class="header-section-number">4</span> First interactions with R and RStudio</a></li>
-<li><a class="active" href="vectors.html"><span class="header-section-number">5</span> Vectors</a></li>
-<li><a class="" href="functions.html"><span class="header-section-number">6</span> Functions</a></li>
-<li><a class="" href="matricies.html"><span class="header-section-number">7</span> Matricies</a></li>
-<li><a class="" href="dataframes.html"><span class="header-section-number">8</span> Dataframes</a></li>
-<li><a class="" href="other-objects.html"><span class="header-section-number">9</span> Other objects</a></li>
-<li><a class="" href="packages.html"><span class="header-section-number">10</span> Packages</a></li>
-<li><a class="" href="exploring-data.html"><span class="header-section-number">11</span> Exploring Data</a></li>
-<li><a class="" href="importing-data.html"><span class="header-section-number">12</span> Importing Data</a></li>
-<li><a class="" href="next-steps.html"><span class="header-section-number">13</span> Next Steps</a></li>
-<li><a class="" href="swirl.html"><span class="header-section-number">14</span> Swirl</a></li>
-<li><a class="" href="support.html"><span class="header-section-number">15</span> Support</a></li>
-<li><a class="" href="glossary-1.html"><span class="header-section-number">16</span> Glossary</a></li>
-</ul>
+        <ul class="book-toc list-unstyled"><li><a class="" href="index.html"><span class="header-section-number">Chapter 5</span> Vectors</a></li></ul>
 
         <div class="book-extra">
           <p><a id="book-repo" href="https://github.com/MASHresources/MASH-resources/tree/main/FF-Test">View book source <i class="fab fa-github"></i></a></p>
@@ -70,19 +53,19 @@
 <h1>
 <span class="header-section-number">5</span> Vectors<a class="anchor" aria-label="anchor" href="#vectors"><i class="fas fa-link"></i></a>
 </h1>
-<div id="introduction" class="section level2" number="5.1">
-<h2>
-<span class="header-section-number">5.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction"><i class="fas fa-link"></i></a>
-</h2>
-<p>This document is part of our “First Steps in <strong><em>R</em></strong>” resources. It is assumed that the reader has downloaded <strong><em>R</em></strong> and <strong><em>RStudio</em></strong> and is familiar with the idea of typing commands into the console. If you would like a reminder of these ideas, resources can be found on the MASH website.</p>
-<p>John Chambers, one of the creators of the <strong><em>R</em></strong> programming language, once said “To understand computations in <strong><em>R</em></strong>, two slogans are helpful: 1. Everything that exists is an object. 2. Everything that happens is a function call.” Objects in <strong><em>R</em></strong> come in various categories such as Vectors, Matrices, Data Frames and Lists. The simplest of these is vectors.</p>
-<p>The word vector is used in different ways in different contexts. In <strong><em>R</em></strong> we can think of a vector “as a list of things in order”, similar to the idea of a vector in mathematics.</p>
+<div class="info-box">
+<p>ℹ️ <em>To understand computations in R, two slogans are helpful:
+1. Everything that exists in R is an object.
+2. Everything that happens is a function call</em>.
+John Chambers, one of the creators of the R programming language.</p>
 </div>
-<div id="defining-a-numerical-vector" class="section level2" number="5.2">
+<p>Objects in R come in various categories such as Vectors, Matrices, Data Frames and Lists. The simplest of these is vectors.</p>
+<p>The word vector is used in different ways in different contexts. In R we can think of a vector “as a list of things in order”, similar to the idea of a vector in mathematics.</p>
+<div id="defining-a-numerical-vector" class="section level2" number="5.1">
 <h2>
-<span class="header-section-number">5.2</span> Defining a Numerical Vector<a class="anchor" aria-label="anchor" href="#defining-a-numerical-vector"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1</span> Defining a Numerical Vector<a class="anchor" aria-label="anchor" href="#defining-a-numerical-vector"><i class="fas fa-link"></i></a>
 </h2>
-<p>To define a new object in <strong><em>R</em></strong> we must give it a name. The name must be a continuous string of characters with no spaces. For example, if we wanted to define an object called “New Vector” sensible names would be</p>
+<p>To define a new object in R we must give it a name. The name must be a continuous string of characters with no spaces. For example, if we wanted to define an object called “New Vector” sensible names would be</p>
 <center>
 <code style="color: blue;">NewVector</code><br><code style="color: blue;">new_vector</code><br><code style="color: blue;">new.vector</code>
 </center>
@@ -94,12 +77,12 @@
 <center>
 <code style="color: blue;">new_vector &lt;-</code>
 </center>
-<p>we have so far told <strong><em>R</em></strong> that we are going to define a new object called <code style="color: blue;">new_vector</code>. What we type next will be the definition of the object. To define a vector we need to use the letter c for “combine”. So the command</p>
+<p>we have so far told R that we are going to define a new object called <code style="color: blue;">new_vector</code>. What we type next will be the definition of the object. To define a vector we need to use the letter c for “combine”. So the command</p>
 <center>
 <code style="color: blue;">new_vector &lt;- c(2,4,6,8)</code>
 </center>
-<p>would be read by <strong><em>R</em></strong> as “combine the numbers <span class="math inline">\(2, 4, 6\)</span> and <span class="math inline">\(8\)</span> into a vector and give them the label <code style="color: blue;">new_vector</code>”. Note that the elements of a vector must be separated by commas as shown.</p>
-<p>When typing code it is important to be precise. A single character out of place might make the code unreadable for the computer. However, <strong><em>R</em></strong> will ignore spaces (unless they are in the middle of the name of the object). So <strong><em>R</em></strong> would read all of the following identically:</p>
+<p>would be read by R as “combine the numbers <span class="math inline">\(2, 4, 6\)</span> and <span class="math inline">\(8\)</span> into a vector and give them the label <code style="color: blue;">new_vector</code>”. Note that the elements of a vector must be separated by commas as shown.</p>
+<p>When typing code it is important to be precise. A single character out of place might make the code unreadable for the computer. However, R will ignore spaces (unless they are in the middle of the name of the object). So R would read all of the following identically:</p>
 <center>
 <code style="color: blue;">new_vector &lt;- c(2,4,6,8)</code><br><code style="color: blue;">new_vector &lt;- c( 2 , 4 , 6 , 8 )</code><br><code style="color: blue;">new_vector &lt;-c(2,4 , 6 , 8)</code>
 </center>
@@ -109,12 +92,12 @@
 Figure 1: The top right window (the “Environment”) in <b><em>RStudio</em></b>, where <code style="color: blue;">new_vector</code> is shown to be stored as a numerical vector.
 </figcaption>
 </center>
-</figure><p>“num” means that the vector has been stored by <strong><em>R</em></strong> as a numerical vector and <strong><em>R</em></strong> is reading the elements of the vector as numbers; <code>1:4</code> means that <strong><em>R</em></strong> has labelled the elements of the vector as first, second, third and fourth and the final part lists the elements of the vector.</p>
-<p>We can now ask <strong><em>R</em></strong> to show us the vector by typing in the console window:</p>
+</figure><p>“num” means that the vector has been stored by R as a numerical vector and R is reading the elements of the vector as numbers; <code>1:4</code> means that R has labelled the elements of the vector as first, second, third and fourth and the final part lists the elements of the vector.</p>
+<p>We can now ask R to show us the vector by typing in the console window:</p>
 <center>
 <code style="color: blue;">new_vector</code>
 </center>
-<p><strong><em>R</em></strong> will then display our vector like so:</p>
+<p>R will then display our vector like so:</p>
 <figure><center>
 <img src="media/04_media/C_Vectors_in_R_fig2.png" width="300" title="Figure 2" alt="An image showing the console in RStudio, where 'new_vector &lt;- c(2,4,6,8)' and 'new_vector' are typed in. Underneath 'new_vector', '[1] 2 4 6 8' is ouputted."><figcaption style="text-align:center">
 Figure 2: <code style="color: blue;">new_vector</code> is shown in the console in <b><em>RStudio</em></b>.
@@ -125,7 +108,7 @@ Figure 2: <code style="color: blue;">new_vector</code> is shown in the console i
 <center>
 <code style="color: blue;">new_vector +2</code>
 </center>
-<p>and <strong><em>R</em></strong> will add <span class="math inline">\(2\)</span> to each element of the vector like so:</p>
+<p>and R will add <span class="math inline">\(2\)</span> to each element of the vector like so:</p>
 <figure><center>
 <img src="media/04_media/C_Vectors_in_R_fig3.png" width="300" title="Figure 3" alt="An image showing the console in RStudio, where 'new_vector +2' is typed in after 'new_vector &lt;- c(2,4,6,8)' and 'new_vector'. Underneath 'new_vector +2', '[1] 4 6 8 10' is outputted."><figcaption style="text-align:center">
 Figure 3: <span class="math inline">\(2\)</span> is added to each element of <code style="color: blue;">new_vector</code> in the console in <b><em>RStudio</em></b>.
@@ -133,15 +116,15 @@ Figure 3: <span class="math inline">\(2\)</span> is added to each element of <co
 </center>
 </figure>
 </div>
-<div id="vectors-using" class="section level2" number="5.3">
+<div id="vectors-using" class="section level2" number="5.2">
 <h2>
-<span class="header-section-number">5.3</span> Vectors using “:”<a class="anchor" aria-label="anchor" href="#vectors-using"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2</span> Vectors using “:”<a class="anchor" aria-label="anchor" href="#vectors-using"><i class="fas fa-link"></i></a>
 </h2>
 <p>Type the following into the console</p>
 <center>
 <code style="color: blue;">vec2 &lt;- 1:100</code><br><code style="color: blue;">vec2</code>
 </center>
-<p>The first line defines a new object called <code style="color: blue;">vec2</code> and the second line asks <strong><em>R</em></strong> to display that object. You should see that <code style="color: blue;">vec2</code> is a vector which consists of the whole numbers from <span class="math inline">\(1\)</span> to <span class="math inline">\(100\)</span>. Looking in the environment will confirm that <strong><em>R</em></strong> has stored <code style="color: blue;">vec2</code> as a numerical vector:</p>
+<p>The first line defines a new object called <code style="color: blue;">vec2</code> and the second line asks R to display that object. You should see that <code style="color: blue;">vec2</code> is a vector which consists of the whole numbers from <span class="math inline">\(1\)</span> to <span class="math inline">\(100\)</span>. Looking in the environment will confirm that R has stored <code style="color: blue;">vec2</code> as a numerical vector:</p>
 <figure><center>
 <img src="media/04_media/C_Vectors_in_R_fig4.png" width="900" title="Figure 4" alt="An image showing the top right window (the 'Environment') in RStudio. Under 'Values', and underneath 'new_vector', 'vec2' and 'int [1:100] 1 2 3 4 5 6 7 8 9 10 ...' are displayed inline."><figcaption style="text-align:center">
 Figure 4: The “Environment” window in <b><em>RStudio</em></b> where <code style="color: blue;">vec2</code> is shown to be stored as a numerical vector.
@@ -152,11 +135,11 @@ Figure 4: The “Environment” window in <b><em>RStudio</em></b> where <code st
 <code style="color: blue;">2:16</code><br><code style="color: blue;">5.6:14</code><br><code style="color: blue;">3.9:10</code>
 </center>
 </div>
-<div id="character-vectors" class="section level2" number="5.4">
+<div id="character-vectors" class="section level2" number="5.3">
 <h2>
-<span class="header-section-number">5.4</span> Character Vectors<a class="anchor" aria-label="anchor" href="#character-vectors"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.3</span> Character Vectors<a class="anchor" aria-label="anchor" href="#character-vectors"><i class="fas fa-link"></i></a>
 </h2>
-<p>A character vector is similar to a numerical vector but <strong><em>R</em></strong> will interpret the elements as words rather than numbers. This might be helpful if, for example, we have some data about different people and we want to include a list of their names. We define a character vector just like a numerical vector but we must put each element of the vector in inverted commas in the definition. For example:</p>
+<p>A character vector is similar to a numerical vector but R will interpret the elements as words rather than numbers. This might be helpful if, for example, we have some data about different people and we want to include a list of their names. We define a character vector just like a numerical vector but we must put each element of the vector in inverted commas in the definition. For example:</p>
 <center>
 <code style="color: blue;">people &lt;- c(“Ali”, “Bertha”, “Charlie”)</code>
 </center>
@@ -166,15 +149,15 @@ Figure 4: The “Environment” window in <b><em>RStudio</em></b> where <code st
 Figure 5: The top right window (the “Environment”) in <b><em>RStudio</em></b> where <code style="color: blue;">people</code> is shown to be stored as a character vector.
 </figcaption>
 </center>
-</figure><p>“chr” shows that <strong><em>R</em></strong> is interpreting <code style="color: blue;">people</code> as a character vector. Note that we did not need to tell <strong><em>R</em></strong> what sort of vector we were defining. Putting the elements in inverted commas was enough for <strong><em>R</em></strong> to know that our vector was a character vector.</p>
+</figure><p>“chr” shows that R is interpreting <code style="color: blue;">people</code> as a character vector. Note that we did not need to tell R what sort of vector we were defining. Putting the elements in inverted commas was enough for R to know that our vector was a character vector.</p>
 <p>The elements of a character vector are called <strong>strings</strong>.</p>
-<p>In <strong><em>R</em></strong> ” can often be replaced by ’ without noticing the difference. The usual convention is to use “.</p>
+<p>In R ” can often be replaced by ’ without noticing the difference. The usual convention is to use “.</p>
 <p>(For completeness: if, for some reason, you want to define a string which contains the character “, you should use ’ at the beginning and the end of the definition.)</p>
-<p>You will sometimes see vectors referred to as <strong>atomic vectors</strong>, which means that they can only contain one type of data. For example, a vector can contain either numeric or character values but not both in the same vector. If we try to define a vector with some numbers and some character strings, <strong><em>R</em></strong> will interpret the numbers as character strings.</p>
+<p>You will sometimes see vectors referred to as <strong>atomic vectors</strong>, which means that they can only contain one type of data. For example, a vector can contain either numeric or character values but not both in the same vector. If we try to define a vector with some numbers and some character strings, R will interpret the numbers as character strings.</p>
 </div>
-<div id="exercise-1" class="section level2" number="5.5">
+<div id="exercise-1" class="section level2" number="5.4">
 <h2>
-<span class="header-section-number">5.5</span> Exercise<a class="anchor" aria-label="anchor" href="#exercise-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4</span> Exercise<a class="anchor" aria-label="anchor" href="#exercise-1"><i class="fas fa-link"></i></a>
 </h2>
 <ol style="list-style-type: decimal">
 <li>Define a new vector called <code style="color: blue;">vec3</code> which stores the numbers <span class="math inline">\(3\)</span>, <span class="math inline">\(4\)</span>, <span class="math inline">\(7\)</span>, <span class="math inline">\(9\)</span>, <span class="math inline">\(12\)</span>.</li>
@@ -190,10 +173,10 @@ Now type the code in the console and check your prediction.</li>
 Now type the code in the console and check your prediction.</li>
 <li>Create a character vector <code style="color: blue;">ice.cream</code> which contains the names of your favourite flavours of ice cream.</li>
 </ol>
-<p>(Note that in question <span class="math inline">\(3\)</span> we get an output along with the warning message. When <strong><em>R</em></strong> runs out of values in the second vector, it starts again with the first element.)</p>
-<div id="solutions-1" class="section level3" number="5.5.1">
+<p>(Note that in question <span class="math inline">\(3\)</span> we get an output along with the warning message. When R runs out of values in the second vector, it starts again with the first element.)</p>
+<div id="solutions-1" class="section level3" number="5.4.1">
 <h3>
-<span class="header-section-number">5.5.1</span> Solutions<a class="anchor" aria-label="anchor" href="#solutions-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4.1</span> Solutions<a class="anchor" aria-label="anchor" href="#solutions-1"><i class="fas fa-link"></i></a>
 </h3>
 <details><summary>
 Solutions
@@ -205,8 +188,8 @@ Solutions
 <li><p><code style="color: blue;">&gt; ice.cream &lt;- c(“vanilla”,“coffee”,“strawberry”)</code><br><code style="color: blue;">&gt; ice.cream</code><br><code>[1] “vanilla” “coffee” “strawberry”</code></p></li>
 </ol>
 <p>Additional notes:<br>
-2. <code style="color: blue;">vec3<em>1:5</em></code> multiplies the first element of <code style="color: blue;">vec3</code> by <span class="math inline">\(1\)</span>, the second element by <span class="math inline">\(2\)</span> and so on.<br>
-3. <code style="color: blue;">vec3+1:3</code> adds <span class="math inline">\(1\)</span> to the first element of <code style="color: blue;">vec3</code>, <span class="math inline">\(2\)</span> to the second element and <span class="math inline">\(3\)</span> to the third element. Then <strong>R</strong>* “recycles” the numbers <code style="color: blue;">1:3</code> so the fourth number in the output comes from the fourth element of <code style="color: blue;">vec3</code> plus <span class="math inline">\(1\)</span> (i.e. <span class="math inline">\(9+1=10\)</span>)</p>
+2. <code style="color: blue;">vec3*1:5</code> multiplies the first element of <code style="color: blue;">vec3</code> by <span class="math inline">\(1\)</span>, the second element by <span class="math inline">\(2\)</span> and so on.<br>
+3. <code style="color: blue;">vec3+1:3</code> adds <span class="math inline">\(1\)</span> to the first element of <code style="color: blue;">vec3</code>, <span class="math inline">\(2\)</span> to the second element and <span class="math inline">\(3\)</span> to the third element. Then R “recycles” the numbers <code style="color: blue;">1:3</code> so the fourth number in the output comes from the fourth element of <code style="color: blue;">vec3</code> plus <span class="math inline">\(1\)</span> (i.e. <span class="math inline">\(9+1=10\)</span>)</p>
 <p>&lt;&gt;</p>
 
 </details>
@@ -214,25 +197,15 @@ Solutions
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="first-interactions-with-r-and-rstudio.html"><span class="header-section-number">4</span> First interactions with R and RStudio</a></div>
-<div class="next"><a href="functions.html"><span class="header-section-number">6</span> Functions</a></div>
+<div class="empty"></div>
+<div class="empty"></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#vectors"><span class="header-section-number">5</span> Vectors</a></li>
-<li><a class="nav-link" href="#introduction"><span class="header-section-number">5.1</span> Introduction</a></li>
-<li><a class="nav-link" href="#defining-a-numerical-vector"><span class="header-section-number">5.2</span> Defining a Numerical Vector</a></li>
-<li><a class="nav-link" href="#vectors-using"><span class="header-section-number">5.3</span> Vectors using “:”</a></li>
-<li><a class="nav-link" href="#character-vectors"><span class="header-section-number">5.4</span> Character Vectors</a></li>
-<li>
-<a class="nav-link" href="#exercise-1"><span class="header-section-number">5.5</span> Exercise</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#solutions-1"><span class="header-section-number">5.5.1</span> Solutions</a></li></ul>
-</li>
-</ul>
+      <div id="book-on-this-page"></div>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/MASHresources/MASH-resources/tree/main/FF-Test/blob/master/04_Vectors.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/MASHresources/MASH-resources/tree/main/FF-Test/edit/master/04_Vectors.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+          
         </ul>
 </div>
     </nav>

@@ -18,7 +18,7 @@ A common layout contains four main panes:
 
 <figure>
     <center>
-        <img src="media/03_media/B_First_Time_Opening_R_and_RStudio_fig1.png" width="900" title="Figure 1"
+        <img src="media/03_media/B_First_Time_Opening_R_and_RStudio_fig1.png" width="600" title="Figure 1"
              alt="An image showing RStudio when it is opened for the first time. There are three windows: the one on the left is the console, the one on the top right shows the 'Environment' and the one on the bottom right shows files that can be selected. In the console, '4+6' is typed in and '10' is outputted.">
         <figcaption style="text-align:center">
             Figure 1: <b><em>RStudio</b></em> when it is opened for the first time.
@@ -178,14 +178,14 @@ If you'd like to carry out other calculations, here are the ways you must enter 
 
 | Arithmetic Operation | R Code |
 | :---: | :---: |
-| $4+6$ | <code style="color:blue;">4+6</code> |
-| $6-4$ | <code style="color:blue;">6-4</code> |
-| $4 \times 6$ | <code style="color:blue;">4*6</code> |
-| $4 \div 6$ | <code style="color:blue;">4/6</code> |
-| $4^{6}$ | <code style="color:blue;">4^6</code> |
-| $\mathrm{e}^{4}$ | <code style="color:blue;">exp(4)</code> |
-| $\log_{10} (4)$ | <code style="color:blue;">log10(4)</code> |
-| $\ln(4)$ | <code style="color:blue;">log(4)</code> |
+| $4+6$ | `4+6` |
+| $6-4$ | `6-4` |
+| $4 \times 6$ | `4*6` |
+| $4 \div 6$ | `4/6`|
+| $4^{6}$ | `4^6` |
+| $\mathrm{e}^{4}$ | `exp(4)` |
+| $\log_{10} (4)$ | `log10(4)` |
+| $\ln(4)$ | `ln(4)` |
 
 
 ### What is a function?
