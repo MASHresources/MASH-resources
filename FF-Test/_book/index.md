@@ -1,7 +1,7 @@
 --- 
 title: "First Steps in R"
 author: "MASH"
-date: "2026-09-30"
+date: "2026-11-26"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
